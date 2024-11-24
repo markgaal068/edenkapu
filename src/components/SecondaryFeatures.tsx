@@ -211,7 +211,7 @@ export function SecondaryFeatures() {
           {features.map((feature) => (
             <li
               key={feature.name}
-              className="rounded-2xl border border-gray-200 p-8 transition-colors hover:bg-gray-100"
+              className="cursor-pointer rounded-2xl border border-gray-200 p-8 transition-colors hover:bg-gray-100"
             >
               {/* <feature.icon className="h-8 w-8" /> */}
 
