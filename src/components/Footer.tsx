@@ -37,7 +37,7 @@ export function Footer() {
             </div> */}
             <Image
               src={logo}
-              className="bg-brown-400 h-20 w-auto rounded-lg p-2"
+              className="h-20 w-auto rounded-lg bg-brown-400 p-2"
               alt="édenkapu logo"
             />
             <nav className="mt-11 flex flex-wrap gap-8">
@@ -63,7 +63,7 @@ export function Footer() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col items-center border-t border-gray-200 pb-12 pt-8 md:flex-row-reverse md:justify-between md:pt-6">
+        <div className="flex flex-col items-center gap-6 border-t border-gray-200 pb-12 pt-8 lg:flex-row-reverse lg:justify-between lg:pt-6">
           {/* <form className="flex w-full justify-center md:w-auto">
             <TextField
               type="email"
@@ -78,6 +78,18 @@ export function Footer() {
               <span className="lg:hidden">Join newsletter</span>
             </Button>
           </form> */}
+          <div className="flex gap-6">
+            {/* <Link href="tel:+XXX" target="_blank">
+              XXX
+            </Link> */}
+            <Link
+              href="mailto:edenkapukavezoesfagyizo@gmail.com"
+              target="_blank"
+              className="text-sm text-gray-500 transition-opacity hover:opacity-70"
+            >
+              edenkapukavezoesfagyizo@gmail.com
+            </Link>
+          </div>
           <div className="flex gap-6">
             <Link
               href="/docs/aszf.docx"
@@ -94,7 +106,7 @@ export function Footer() {
               Adatvédelmi tájékoztató
             </Link>
           </div>
-          <p className="mt-6 text-sm text-gray-500 md:mt-0">
+          <p className="text-sm text-gray-500">
             &copy; Édenkapu {new Date().getFullYear()}. Minden jog fenntartva.
           </p>
         </div>

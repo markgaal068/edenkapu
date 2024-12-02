@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import clsx from 'clsx'
 
 import '@/styles/tailwind.css'
+import { CartProvider } from '@/context/CartContext'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -25,11 +26,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html
-      lang="en"
-      className={clsx('scroll-smooth bg-gray-50 antialiased', inter.variable)}
-    >
-      <body>{children}</body>
+    <html lang="hu" className={clsx('bg-gray-50 antialiased', inter.variable)}>
+      <body>
+        <CartProvider>{children}</CartProvider>
+      </body>
     </html>
   )
 }

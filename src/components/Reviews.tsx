@@ -264,8 +264,8 @@ function ReviewGrid() {
           />
         </>
       )}
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-gray-50" />
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-gray-50" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-gray-100" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-gray-100" />
     </div>
   )
 }
@@ -275,7 +275,7 @@ export function Reviews() {
     <section
       id="velemenyek"
       aria-labelledby="reviews-title"
-      className="pb-16 pt-20 sm:pb-24 sm:pt-32"
+      className="border-t border-gray-200 bg-gray-100 pb-16 pt-20 sm:pb-24 sm:pt-32"
     >
       <Container>
         <h2

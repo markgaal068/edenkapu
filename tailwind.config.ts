@@ -1,5 +1,6 @@
 import headlessuiPlugin from '@headlessui/tailwindcss'
 import formsPlugin from '@tailwindcss/forms'
+import daisyui from 'daisyui'
 import { type Config } from 'tailwindcss'
 
 export default {
@@ -36,7 +37,7 @@ export default {
       },
       colors: ({ colors }) => ({
         gray: colors.neutral,
-        'brown-300': '#E5B589',
+        'brown-300': '#D4A680',
         'brown-400': '#BC956C',
       }),
       fontFamily: {
@@ -68,5 +69,5 @@ export default {
       },
     },
   },
-  plugins: [formsPlugin, headlessuiPlugin],
+  plugins: [daisyui, formsPlugin, headlessuiPlugin],
 } satisfies Config

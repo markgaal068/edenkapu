@@ -7,6 +7,11 @@
     @apply box-border;
   }
 
+  *,
+  *:hover {
+    scrollbar-color: auto;
+  }
+
   *::-webkit-scrollbar {
     @apply h-2 w-2 bg-gray-50;
   }
@@ -16,11 +21,18 @@
   }
 
   *::-webkit-scrollbar-thumb {
-    @apply bg-brown-400 rounded-[100vw];
+    @apply rounded-[100vw] bg-brown-400;
   }
 
   picture {
     @apply block align-middle;
+  }
+
+  input,
+  select {
+    -webkit-appearance: none; /* For Safari/Chrome */
+    -moz-appearance: none; /* For Firefox */
+    appearance: none;
   }
 
   picture,

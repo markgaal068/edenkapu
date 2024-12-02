@@ -168,8 +168,8 @@ export function Hero() {
             </p>
             <div className="mt-8 flex flex-wrap gap-x-6 gap-y-4">
               <Link
-                className="hover:bg-brown-300 bg-brown-400 flex items-center rounded-lg px-4 text-white transition-colors"
-                href="#kapcsolat"
+                className="flex items-center rounded-lg bg-brown-400 px-4 text-white transition-colors hover:bg-brown-300"
+                href="#kinalatunk"
               >
                 Rendelj most
               </Link>

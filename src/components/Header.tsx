@@ -14,6 +14,8 @@ import { Container } from '@/components/Container'
 import { NavLinks } from '@/components/NavLinks'
 import logo from '@/images/logo.png'
 import Image from 'next/image'
+import { FaShoppingCart } from 'react-icons/fa'
+import { useCart } from '@/context/CartContext'
 
 function MenuIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
@@ -57,6 +59,9 @@ function MobileNavLink(
 }
 
 export function Header() {
+  const { cart } = useCart()
+  const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0)
+
   return (
     <header className="absolute inset-x-0 top-0 z-50">
       <nav>
@@ -65,7 +70,7 @@ export function Header() {
             <Link href="/" aria-label="Home">
               <Image
                 src={logo}
-                className="bg-brown-400 h-20 w-auto rounded-lg p-2"
+                className="h-20 w-auto rounded-lg bg-brown-400 p-2"
                 alt="édenkapu logo"
               />
             </Link>
@@ -113,21 +118,28 @@ export function Header() {
                           className="absolute inset-x-0 top-0 z-0 origin-top rounded-b-2xl bg-gray-50 px-6 pb-6 pt-32 shadow-2xl shadow-gray-900/20"
                         >
                           <div className="space-y-4">
-                            <MobileNavLink href="#kinalatunk">
+                            <MobileNavLink href="/kinalatunk">
                               Kínálatunk
                             </MobileNavLink>
-                            <MobileNavLink href="#velemenyek">
-                              Vélemények
-                            </MobileNavLink>
-                            <MobileNavLink href="#gyakori-kerdesek">
-                              Gyakori kérdések
+                            <MobileNavLink href="/rendezvenyek">
+                              Rendezvények
                             </MobileNavLink>
                           </div>
                           <div className="mt-8 flex flex-col gap-4">
-                            <Button href="/login" variant="outline">
+                            {/* <Button href="/login" variant="outline">
                               Log in
-                            </Button>
-                            <Button href="#">Download the app</Button>
+                            </Button> */}
+                            <PopoverButton
+                              as={Link}
+                              href="/kosar"
+                              className="relative flex justify-center gap-2 rounded-lg bg-gray-800 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-gray-900"
+                            >
+                              <span>Kosár</span>
+                              <span className="absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full bg-red-500 text-white">
+                                {totalItems}
+                              </span>
+                              <FaShoppingCart />
+                            </PopoverButton>
                           </div>
                         </PopoverPanel>
                       </>
@@ -138,10 +150,17 @@ export function Header() {
             </Popover>
             {/* <Button href="/login" variant="outline" className="hidden lg:block">
               Log in
-            </Button>
-            <Button href="#" className="hidden lg:block">
-              Download
             </Button> */}
+            <Link
+              href="/kosar"
+              className="relative hidden justify-center gap-2 rounded-lg bg-gray-800 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-gray-900 lg:flex"
+            >
+              <span>Kosár</span>
+              <span className="absolute -right-2 -top-2 flex h-5 w-5 items-center justify-center rounded-full bg-red-500 text-white">
+                {totalItems}
+              </span>
+              <FaShoppingCart />
+            </Link>
           </div>
         </Container>
       </nav>
