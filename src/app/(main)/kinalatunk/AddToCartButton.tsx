@@ -25,7 +25,7 @@ export default function AddToCartButton({ product }: { product: CartItem }) {
       }}
       className="block rounded-md bg-brown-400 px-4 py-2 text-center text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brown-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brown-400"
     >
-      Kosárbaa
+      Kosárba
     </button>
   )
 }
