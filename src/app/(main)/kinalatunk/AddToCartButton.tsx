@@ -3,27 +3,28 @@
 import { useCart } from '@/context/CartContext'
 import { CartItem } from '@/lib/types'
 import { StaticImageData } from 'next/image'
+import classNames from 'classnames'
+import toast from 'react-hot-toast'
 
-export default function AddToCartButton({ product }: { product: CartItem }) {
-  const { addToCart, removeFromCart } = useCart()
+export default function AddToCartButton({
+  product,
+  productPage,
+}: {
+  product: CartItem
+  productPage?: boolean
+}) {
+  const { addToCart } = useCart()
 
   return (
     <button
       onClick={() => {
-        // Remove any existing instance of this product
-        removeFromCart(product.id)
-        // Add the product with the new quantity
         addToCart(product)
-        // Optional: Add some feedback
-        // alert('Termék hozzáadva a kosárhoz!')
-
-        // Save quantity to localStorage
-        localStorage.setItem(
-          `quantity-${product.id}`,
-          product.quantity.toString(),
-        )
+        toast.success('A terméket sikeresen hozzáadta a kosárhoz!')
       }}
-      className="block rounded-md bg-brown-400 px-4 py-2 text-center text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brown-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brown-400"
+      className={classNames(
+        'block rounded-md bg-brown-400 px-4 text-center font-semibold text-white shadow-sm transition-colors hover:bg-brown-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brown-400',
+        productPage ? 'w-full py-3' : 'py-2 text-sm',
+      )}
     >
       Kosárba
     </button>

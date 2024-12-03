@@ -2,8 +2,10 @@
 
 import Image from 'next/image'
 import AddToCartButton from './AddToCartButton'
-import categories from './categories'
+import categories from '@/lib/categories'
 import { useState } from 'react'
+import Link from 'next/link'
+import { ProductType } from '@/lib/types'
 
 const Offers = () => {
   const [selectedQuantity, setSelectedQuantity] = useState(1)
@@ -16,20 +18,28 @@ const Offers = () => {
             {category.title}
           </h2>
           <div className="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-3 lg:gap-x-8">
-            {category.products.map((product) => (
+            {category.products.map((product: ProductType) => (
               <div
                 key={product.id}
-                className="flex flex-col rounded-2xl border border-gray-200"
+                className="flex flex-col overflow-hidden rounded-2xl border border-gray-200"
               >
-                <Image
-                  alt={product.imageAlt}
-                  src={product.image}
-                  className="aspect-[3/4] w-full object-cover transition-opacity sm:aspect-auto sm:h-96"
-                />
+                <Link
+                  href={`/kinalatunk/${product.id}`}
+                  className="transition-opacity hover:opacity-75"
+                >
+                  <Image
+                    alt={product.imageAlt}
+                    src={product.image}
+                    className="aspect-[3/4] w-full object-cover sm:aspect-auto sm:h-96"
+                  />
+                </Link>
                 <div className="flex flex-1 flex-col space-y-2 p-4">
-                  <h3 className="text-sm font-medium text-gray-900">
-                    {product.name}
-                  </h3>
+                  <Link
+                    href={`/kinalatunk/${product.id}`}
+                    className="w-fit font-medium text-gray-900 transition-colors hover:text-brown-400"
+                  >
+                    <h3 className="text-sm">{product.name}</h3>
+                  </Link>
                   <p className="text-sm text-gray-500">{product.description}</p>
                   <div className="flex flex-1 flex-col justify-end">
                     <p className="text-sm italic text-gray-500">
@@ -42,21 +52,18 @@ const Offers = () => {
 
                       <div className="flex gap-3">
                         <select
-                          className="select select-bordered h-10 min-h-10 max-w-xs border-none bg-transparent leading-none text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-brown-400"
+                          className="select select-bordered h-10 min-h-10 w-[75px] border-none bg-transparent leading-none text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-brown-400"
                           name={`quantity-${product.id}`}
                           aria-label={`Quantity, ${product.name}`}
                           onChange={(e) => {
                             setSelectedQuantity(parseInt(e.target.value))
                           }}
                         >
-                          <option value={1}>1</option>
-                          <option value={2}>2</option>
-                          <option value={3}>3</option>
-                          <option value={4}>4</option>
-                          <option value={5}>5</option>
-                          <option value={6}>6</option>
-                          <option value={7}>7</option>
-                          <option value={8}>8</option>
+                          {[...Array(99)].map((_, i) => (
+                            <option key={i + 1} value={i + 1}>
+                              {i + 1}
+                            </option>
+                          ))}
                         </select>
 
                         <AddToCartButton
@@ -67,7 +74,6 @@ const Offers = () => {
                             totalPrice: product.price * selectedQuantity,
                             image: product.image,
                             imageAlt: product.imageAlt,
-                            href: product.href,
                             quantity: selectedQuantity,
                           }}
                         />

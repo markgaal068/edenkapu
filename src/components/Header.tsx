@@ -135,7 +135,7 @@ export function Header() {
                               className="relative flex justify-center gap-2 rounded-lg bg-gray-800 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-gray-900"
                             >
                               <span>Kosár</span>
-                              <span className="absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full bg-red-500 text-white">
+                              <span className="absolute -right-[10px] -top-[10px] flex size-6 items-center justify-center rounded-full bg-red-500 text-xs text-white">
                                 {totalItems}
                               </span>
                               <FaShoppingCart />
@@ -156,7 +156,7 @@ export function Header() {
               className="relative hidden justify-center gap-2 rounded-lg bg-gray-800 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-gray-900 lg:flex"
             >
               <span>Kosár</span>
-              <span className="absolute -right-2 -top-2 flex h-5 w-5 items-center justify-center rounded-full bg-red-500 text-white">
+              <span className="absolute -right-[10px] -top-[10px] flex size-6 items-center justify-center rounded-full bg-red-500 text-xs text-white">
                 {totalItems}
               </span>
               <FaShoppingCart />

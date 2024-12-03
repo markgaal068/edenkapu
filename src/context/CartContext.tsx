@@ -13,6 +13,7 @@ interface CartContextType {
   cart: CartItem[]
   addToCart: (item: CartItem) => void
   removeFromCart: (itemId: number) => void
+  clearCart: () => void
 }
 
 const CartContext = createContext<CartContextType | undefined>(undefined)
@@ -46,17 +47,20 @@ export function CartProvider({ children }: { children: ReactNode }) {
     console.log('Adding item:', item) // Debug log
 
     setCart((prev) => {
-      // const basePrice = item.basePrice
-      // const totalPrice = item.basePrice * item.quantity // Use basePrice for calculation
-
-      // const itemWithTotalPrice = {
-      //   ...item,
-      //   basePrice, // Store the original price
-      //   totalPrice,
-      // }
-      const newCart = [...prev, item]
-      console.log('New cart state:', newCart) // Debug log
-      return newCart
+      const existingItem = prev.find((cartItem) => cartItem.id === item.id)
+      if (existingItem) {
+        return prev.map((cartItem) =>
+          cartItem.id === item.id
+            ? {
+                ...cartItem,
+                quantity: cartItem.quantity + item.quantity,
+                totalPrice:
+                  (cartItem.quantity + item.quantity) * item.basePrice,
+              }
+            : cartItem,
+        )
+      }
+      return [...prev, { ...item, totalPrice: item.quantity * item.basePrice }]
     })
   }
 
@@ -64,8 +68,14 @@ export function CartProvider({ children }: { children: ReactNode }) {
     setCart((prev) => prev.filter((item) => item.id !== itemId))
   }
 
+  const clearCart = () => {
+    setCart([])
+  }
+
   return (
-    <CartContext.Provider value={{ cart, addToCart, removeFromCart }}>
+    <CartContext.Provider
+      value={{ cart, addToCart, removeFromCart, clearCart }}
+    >
       {children}
     </CartContext.Provider>
   )

@@ -1,6 +1,7 @@
 import { type Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import clsx from 'clsx'
+import { Toaster } from 'react-hot-toast'
 
 import '@/styles/tailwind.css'
 import { CartProvider } from '@/context/CartContext'
@@ -28,7 +29,22 @@ export default function RootLayout({
   return (
     <html lang="hu" className={clsx('bg-gray-50 antialiased', inter.variable)}>
       <body>
-        <CartProvider>{children}</CartProvider>
+        <CartProvider>
+          <Toaster
+            position="top-center"
+            reverseOrder={true}
+            gutter={16}
+            toastOptions={{
+              duration: 10000,
+              style: {
+                fontWeight: '500',
+                background: '#262626',
+                color: '#fafafa',
+              },
+            }}
+          />
+          {children}
+        </CartProvider>
       </body>
     </html>
   )

@@ -6,6 +6,7 @@ import {
   ClockIcon,
   QuestionMarkCircleIcon,
   XMarkIcon,
+  TrashIcon,
 } from '@heroicons/react/20/solid'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -37,26 +38,28 @@ export function Cart() {
           {cart.map((product) => (
             <li key={product.id} className="flex py-6 sm:py-10">
               <div className="shrink-0">
-                <Image
-                  alt={product.imageAlt}
-                  src={product.image}
-                  className="size-24 rounded-md object-cover sm:size-48"
-                />
+                <Link
+                  href={`/kinalatunk/${product.id}`}
+                  className="transition-opacity hover:opacity-75"
+                >
+                  <Image
+                    alt={product.imageAlt}
+                    src={product.image}
+                    className="size-24 rounded-md object-cover sm:size-48"
+                  />
+                </Link>
               </div>
 
               <div className="ml-4 flex flex-1 flex-col justify-between sm:ml-6">
                 <div className="relative pr-9 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:pr-0">
                   <div>
-                    <div className="flex justify-between">
-                      <h3 className="text-sm">
-                        <Link
-                          href={product.href}
-                          className="font-medium text-gray-700 hover:text-gray-800"
-                        >
-                          {product.name}
-                        </Link>
-                      </h3>
-                    </div>
+                    <Link
+                      href={`/kinalatunk/${product.id}`}
+                      className="block w-fit font-medium text-gray-900 transition-colors hover:text-brown-400"
+                    >
+                      <h3 className="text-sm">{product.name}</h3>
+                    </Link>
+
                     {/* <div className="mt-1 flex text-sm">
                       <p className="text-gray-500">{product.color}</p>
                       {product.size ? (
@@ -71,49 +74,43 @@ export function Cart() {
                   </div>
 
                   <div className="mt-4 sm:mt-0 sm:pr-9">
-                    <div className="grid w-full max-w-16 grid-cols-1">
-                      <select
-                        className="select select-bordered mb-5 h-10 min-h-10 max-w-xs border-none bg-transparent leading-none text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-brown-400"
-                        name={`quantity-${product.id}`}
-                        aria-label={`Quantity, ${product.name}`}
-                        defaultValue={product.quantity}
-                        onChange={(e) => {
-                          const quantity = parseInt(e.target.value)
-                          console.log(quantity)
+                    <select
+                      className="select select-bordered h-10 min-h-10 w-[75px] border-none bg-transparent leading-none text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-brown-400"
+                      name={`quantity-${product.id}`}
+                      aria-label={`Quantity, ${product.name}`}
+                      defaultValue={product.quantity}
+                      onChange={(e) => {
+                        const quantity = parseInt(e.target.value)
+                        console.log(quantity)
 
-                          // Update the cart item with the new quantity
-                          const updatedProduct = {
-                            ...product,
-                            quantity: quantity,
-                            totalPrice: product.basePrice * quantity, // Calculate new total using basePrice
-                          }
+                        // Update the cart item with the new quantity
+                        const updatedProduct = {
+                          ...product,
+                          quantity: quantity,
+                          totalPrice: product.basePrice * quantity, // Calculate new total using basePrice
+                        }
 
-                          console.log(updatedProduct)
+                        console.log(updatedProduct)
 
-                          // Remove the old item and add the updated one
-                          removeFromCart(product.id)
-                          addToCart(updatedProduct)
-
-                          localStorage.setItem(
-                            `quantity-${product.id}`,
-                            quantity.toString(),
-                          )
-                        }}
-                      >
-                        <option value={1}>1</option>
-                        <option value={2}>2</option>
-                        <option value={3}>3</option>
-                        <option value={4}>4</option>
-                        <option value={5}>5</option>
-                        <option value={6}>6</option>
-                        <option value={7}>7</option>
-                        <option value={8}>8</option>
-                      </select>
-                    </div>
+                        // Remove the old item and add the updated one
+                        removeFromCart(product.id)
+                        addToCart(updatedProduct)
+                      }}
+                    >
+                      {[...Array(99)].map((_, i) => (
+                        <option key={i + 1} value={i + 1}>
+                          {i + 1}
+                        </option>
+                      ))}
+                    </select>
 
                     <div className="absolute right-0 top-0">
                       <DeleteFromCartButton product={product} />
                     </div>
+
+                    {/* <div className="ml-4 flow-root shrink-0">
+                      
+                    </div> */}
                   </div>
                 </div>
 
@@ -161,12 +158,12 @@ export function Cart() {
         </dl>
 
         <div className="mt-6">
-          <button
-            type="submit"
-            className="block w-full rounded-md bg-brown-400 px-4 py-2 text-center text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brown-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brown-400"
+          <Link
+            href="/rendeles"
+            className="block w-full rounded-md bg-brown-400 px-4 py-3 text-center font-semibold text-white shadow-sm transition-colors hover:bg-brown-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brown-400"
           >
             Tovább a rendeléshez
-          </button>
+          </Link>
         </div>
       </section>
     </form>
