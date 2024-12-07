@@ -19,10 +19,12 @@ export default function AddToCartButton({
     <button
       onClick={() => {
         addToCart(product)
-        toast.success('A terméket sikeresen hozzáadta a kosárhoz!')
+        toast.success('A terméket sikeresen hozzáadta a kosárhoz.', {
+          duration: 3000,
+        })
       }}
       className={classNames(
-        'block rounded-md bg-brown-400 px-4 text-center font-semibold text-white shadow-sm transition-colors hover:bg-brown-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brown-400',
+        'block rounded-md bg-brown-400 px-4 text-center font-medium text-white shadow-sm transition-colors hover:bg-brown-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brown-400',
         productPage ? 'w-full py-3' : 'py-2 text-sm',
       )}
     >

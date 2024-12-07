@@ -6,9 +6,9 @@ import Link from 'next/link'
 export function CallToAction() {
   return (
     <section className="py-20 sm:py-32">
-      <div className="mx-auto max-w-8xl sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-9xl sm:px-6 lg:px-8">
         <div className="relative isolate overflow-hidden bg-gray-900 px-6 py-24 text-center shadow-2xl sm:rounded-3xl sm:px-16">
-          <h2 className="mx-auto max-w-2xl text-3xl font-bold tracking-tight text-white sm:text-4xl">
+          <h2 className="mx-auto max-w-2xl text-3xl font-medium tracking-tight text-white">
             Látogass el hozzánk az édes élményekért!
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-lg/8 text-gray-300">

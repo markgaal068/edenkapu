@@ -35,7 +35,6 @@ export default function RootLayout({
             reverseOrder={true}
             gutter={16}
             toastOptions={{
-              duration: 10000,
               style: {
                 fontWeight: '500',
                 background: '#262626',

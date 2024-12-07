@@ -66,6 +66,7 @@ export default {
       maxWidth: {
         '2xl': '40rem',
         '8xl': '90rem',
+        '9xl': '100rem',
       },
     },
   },

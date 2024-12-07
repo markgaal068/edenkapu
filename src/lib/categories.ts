@@ -14,6 +14,11 @@ import pisztacias_macaron from '@/images/pisztacias_macaron.jpg'
 import sajtos_croissant from '@/images/sajtos_croissant.jpg'
 import sajtos_pogacsa from '@/images/sajtos_pogacsa.jpeg'
 import sos_rud from '@/images/sos_rud.jpg'
+import bejglik from '@/images/bejglik.jpeg'
+import desszertek from '@/images/desszertek.jpg'
+import macaronok from '@/images/macaronok.jpg'
+import sos_sutemenyek from '@/images/sos_sutemenyek.jpeg'
+import fagylaltok from '@/images/fagylaltok.jpg'
 import tepertos_pogacsa from '@/images/tepertos_pogacsa.jpg'
 import tiramisu from '@/images/tiramisu.jpg'
 import turotorta from '@/images/turotorta.jpg'
@@ -24,9 +29,13 @@ const categories = [
   {
     id: 'desszertek',
     title: 'Desszertek',
+    description:
+      'Kézműves sütemények és torták széles választéka, minden alkalomra tökéletes édességek.',
+    href: '/desszertek',
+    image: desszertek,
     products: [
       {
-        id: 101,
+        id: 'csokitorta',
         name: 'Csokitorta',
         price: 4900,
         description:
@@ -36,11 +45,11 @@ const categories = [
         imageAlt: 'Három rétegű csokoládétorta, csokoládé bevonattal.',
         breadcrumb: {
           name: 'Desszertek',
-          href: '/kinalatunk#desszertek',
+          href: '/desszertek',
         },
       },
       {
-        id: 102,
+        id: 'tiramisu',
         name: 'Tiramisu',
         price: 5200,
         description:
@@ -50,11 +59,11 @@ const categories = [
         imageAlt: 'Tiramisu desszert.',
         breadcrumb: {
           name: 'Desszertek',
-          href: '/kinalatunk#desszertek',
+          href: '/desszertek',
         },
       },
       {
-        id: 103,
+        id: 'gyumolcsos-pavlova',
         name: 'Gyümölcsös Pavlova',
         price: 4500,
         description:
@@ -64,11 +73,11 @@ const categories = [
         imageAlt: 'Gyümölcsös pavlova.',
         breadcrumb: {
           name: 'Desszertek',
-          href: '/kinalatunk#desszertek',
+          href: '/desszertek',
         },
       },
       {
-        id: 104,
+        id: 'almas-pite',
         name: 'Almás Pite',
         price: 3900,
         description:
@@ -78,11 +87,11 @@ const categories = [
         imageAlt: 'Almás pite.',
         breadcrumb: {
           name: 'Desszertek',
-          href: '/kinalatunk#desszertek',
+          href: '/desszertek',
         },
       },
       {
-        id: 105,
+        id: 'turotorta',
         name: 'Túrótorta',
         price: 4700,
         description: 'Krémes túrótorta mazsolával és vaníliás ízesítéssel.',
@@ -91,7 +100,7 @@ const categories = [
         imageAlt: 'Túrótorta.',
         breadcrumb: {
           name: 'Desszertek',
-          href: '/kinalatunk#desszertek',
+          href: '/desszertek',
         },
       },
     ],
@@ -99,9 +108,13 @@ const categories = [
   {
     id: 'macaronok',
     title: 'Macaronok',
+    description:
+      'Francia stílusú macaronok különleges ízekben, tökéletes textúrával és színekkel.',
+    href: '/macaronok',
+    image: macaronok,
     products: [
       {
-        id: 201,
+        id: 'epres-macaron',
         name: 'Epres Macaron',
         price: 490,
         description:
@@ -111,11 +124,11 @@ const categories = [
         imageAlt: 'Rózsaszín macaron epres töltelékkel.',
         breadcrumb: {
           name: 'Macaronok',
-          href: '/kinalatunk#macaronok',
+          href: '/macaronok',
         },
       },
       {
-        id: 202,
+        id: 'csokolades-macaron',
         name: 'Csokoládés Macaron',
         price: 490,
         description:
@@ -125,11 +138,11 @@ const categories = [
         imageAlt: 'Csokoládés macaron.',
         breadcrumb: {
           name: 'Macaronok',
-          href: '/kinalatunk#macaronok',
+          href: '/macaronok',
         },
       },
       {
-        id: 203,
+        id: 'pisztacias-macaron',
         name: 'Pisztáciás Macaron',
         price: 520,
         description: 'Valódi pisztáciával készült macaron, krémes töltelékkel.',
@@ -138,11 +151,11 @@ const categories = [
         imageAlt: 'Pisztáciás macaron.',
         breadcrumb: {
           name: 'Macaronok',
-          href: '/kinalatunk#macaronok',
+          href: '/macaronok',
         },
       },
       {
-        id: 204,
+        id: 'vanilias-macaron',
         name: 'Vaníliás Macaron',
         price: 490,
         description:
@@ -152,17 +165,21 @@ const categories = [
         imageAlt: 'Vaníliás macaron.',
         breadcrumb: {
           name: 'Macaronok',
-          href: '/kinalatunk#macaronok',
+          href: '/macaronok',
         },
       },
     ],
   },
   {
-    id: 'sossutemenyek',
+    id: 'sos-sutemenyek',
     title: 'Sós Sütemények',
+    description:
+      'Ropogós pogácsák és sós aprósütemények, tökéletes választás partikra és rendezvényekre.',
+    href: '/sos-sutemenyek',
+    image: sos_sutemenyek,
     products: [
       {
-        id: 301,
+        id: 'sajtos-pogacsa',
         name: 'Sajtos Pogácsa',
         price: 150,
         description:
@@ -172,11 +189,11 @@ const categories = [
         imageAlt: 'Aranybarnára sült sajtos pogácsa.',
         breadcrumb: {
           name: 'Sós Sütemények',
-          href: '/kinalatunk#sossutemenyek',
+          href: '/sos-sutemenyek',
         },
       },
       {
-        id: 302,
+        id: 'tepertos-pogacsa',
         name: 'Tepertős Pogácsa',
         price: 180,
         description: 'Hagyományos tepertős pogácsa, omlós tésztával.',
@@ -185,11 +202,11 @@ const categories = [
         imageAlt: 'Tepertős pogácsa.',
         breadcrumb: {
           name: 'Sós Sütemények',
-          href: '/kinalatunk#sossutemenyek',
+          href: '/sos-sutemenyek',
         },
       },
       {
-        id: 303,
+        id: 'sos-rud',
         name: 'Sós Rúd',
         price: 130,
         description: 'Ropogós sós rúd köménymaggal szórva.',
@@ -198,11 +215,11 @@ const categories = [
         imageAlt: 'Sós rúd.',
         breadcrumb: {
           name: 'Sós Sütemények',
-          href: '/kinalatunk#sossutemenyek',
+          href: '/sos-sutemenyek',
         },
       },
       {
-        id: 304,
+        id: 'sajtos-croissant',
         name: 'Sajtos Croissant',
         price: 650,
         description: 'Leveles tésztából készült croissant sajttal töltve.',
@@ -211,11 +228,11 @@ const categories = [
         imageAlt: 'Sajtos croissant.',
         breadcrumb: {
           name: 'Sós Sütemények',
-          href: '/kinalatunk#sossutemenyek',
+          href: '/sos-sutemenyek',
         },
       },
       {
-        id: 305,
+        id: 'medvehagymas-pogacsa',
         name: 'Medvehagymás Pogácsa',
         price: 190,
         description: 'Szezonális medvehagymás pogácsa, friss fűszernövénnyel.',
@@ -224,7 +241,7 @@ const categories = [
         imageAlt: 'Medvehagymás pogácsa.',
         breadcrumb: {
           name: 'Sós Sütemények',
-          href: '/kinalatunk#sossutemenyek',
+          href: '/sos-sutemenyek',
         },
       },
     ],
@@ -232,9 +249,13 @@ const categories = [
   {
     id: 'fagylaltok',
     title: 'Fagylaltok',
+    description:
+      'Kézműves fagylaltkülönlegességek természetes alapanyagokból, szezonális ízekben.',
+    href: '/fagylaltok',
+    image: fagylaltok,
     products: [
       {
-        id: 401,
+        id: 'malnas-fagylalt',
         name: 'Málnás Fagylalt',
         price: 590,
         description:
@@ -244,11 +265,11 @@ const categories = [
         imageAlt: 'Málna fagylalt tölcsérben.',
         breadcrumb: {
           name: 'Fagylaltok',
-          href: '/kinalatunk#fagylaltok',
+          href: '/fagylaltok',
         },
       },
       {
-        id: 402,
+        id: 'csokolades-fagylalt',
         name: 'Csokoládés Fagylalt',
         price: 450,
         description: 'Belga csokoládéból készült krémes fagylalt.',
@@ -257,11 +278,11 @@ const categories = [
         imageAlt: 'Csokoládés fagylalt.',
         breadcrumb: {
           name: 'Fagylaltok',
-          href: '/kinalatunk#fagylaltok',
+          href: '/fagylaltok',
         },
       },
       {
-        id: 403,
+        id: 'vanilias-fagylalt',
         name: 'Vaníliás Fagylalt',
         price: 450,
         description: 'Madagaszkári vaníliával készült klasszikus fagylalt.',
@@ -270,11 +291,11 @@ const categories = [
         imageAlt: 'Vaníliás fagylalt.',
         breadcrumb: {
           name: 'Fagylaltok',
-          href: '/kinalatunk#fagylaltok',
+          href: '/fagylaltok',
         },
       },
       {
-        id: 404,
+        id: 'pisztacias-fagylalt',
         name: 'Pisztáciás Fagylalt',
         price: 590,
         description: 'Szicíliai pisztáciából készült prémium fagylalt.',
@@ -283,11 +304,11 @@ const categories = [
         imageAlt: 'Pisztáciás fagylalt.',
         breadcrumb: {
           name: 'Fagylaltok',
-          href: '/kinalatunk#fagylaltok',
+          href: '/fagylaltok',
         },
       },
       {
-        id: 405,
+        id: 'citromos-fagylalt',
         name: 'Citromos Fagylalt',
         price: 450,
         description: 'Frissítő citrom sorbet, tökéletes nyári hűsítő.',
@@ -296,7 +317,7 @@ const categories = [
         imageAlt: 'Citromos fagylalt.',
         breadcrumb: {
           name: 'Fagylaltok',
-          href: '/kinalatunk#fagylaltok',
+          href: '/fagylaltok',
         },
       },
     ],
@@ -304,9 +325,13 @@ const categories = [
   {
     id: 'bejglik',
     title: 'Bejglik',
+    description:
+      'Hagyományos diós és mákos bejgli, az ünnepek elengedhetetlen édessége.',
+    href: '/bejglik',
+    image: bejglik,
     products: [
       {
-        id: 501,
+        id: 'dios-bejgli',
         name: 'Diós bejgli',
         price: 3900,
         description: 'Tradicionális karácsonyi bejgli gazdag diós töltelékkel.',
@@ -315,11 +340,11 @@ const categories = [
         imageAlt: 'Diós bejgli szelet.',
         breadcrumb: {
           name: 'Bejglik',
-          href: '/kinalatunk#bejglik',
+          href: '/bejglik',
         },
       },
       {
-        id: 502,
+        id: 'makos-bejgli',
         name: 'Mákos Bejgli',
         price: 3900,
         description: 'Klasszikus mákos bejgli házi készítésű máktöltelékkel.',
@@ -328,7 +353,7 @@ const categories = [
         imageAlt: 'Mákos bejgli.',
         breadcrumb: {
           name: 'Bejglik',
-          href: '/kinalatunk#bejglik',
+          href: '/bejglik',
         },
       },
     ],

@@ -12,7 +12,7 @@ import {
 interface CartContextType {
   cart: CartItem[]
   addToCart: (item: CartItem) => void
-  removeFromCart: (itemId: number) => void
+  removeFromCart: (itemId: string) => void
   clearCart: () => void
 }
 
@@ -64,7 +64,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
     })
   }
 
-  const removeFromCart = (itemId: number) => {
+  const removeFromCart = (itemId: string) => {
     setCart((prev) => prev.filter((item) => item.id !== itemId))
   }
 

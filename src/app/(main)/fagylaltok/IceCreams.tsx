@@ -1,22 +1,20 @@
 'use client'
 
-import Image from 'next/image'
-import AddToCartButton from './AddToCartButton'
+import AddToCartButton from '@/components/AddToCartButton'
 import categories from '@/lib/categories'
-import { useState } from 'react'
-import Link from 'next/link'
 import { ProductType } from '@/lib/types'
+import Image from 'next/image'
+import Link from 'next/link'
+import { useState } from 'react'
 
-const Offers = () => {
+const IceCreams = () => {
   const [selectedQuantity, setSelectedQuantity] = useState(1)
+  const category = categories.find((category) => category.id === 'fagylaltok')
 
   return (
     <>
-      {categories.map((category) => (
-        <section key={category.id} id={category.id} className="pt-16">
-          <h2 className="mb-8 text-xl font-bold tracking-tight text-gray-900 sm:text-2xl">
-            {category.title}
-          </h2>
+      {category && (
+        <section key={category.id} id={category.id} className="pt-10">
           <div className="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-3 lg:gap-x-8">
             {category.products.map((product: ProductType) => (
               <div
@@ -24,7 +22,7 @@ const Offers = () => {
                 className="flex flex-col overflow-hidden rounded-2xl border border-gray-200"
               >
                 <Link
-                  href={`/kinalatunk/${product.id}`}
+                  href={`/fagylaltok/${product.id}`}
                   className="transition-opacity hover:opacity-75"
                 >
                   <Image
@@ -35,7 +33,7 @@ const Offers = () => {
                 </Link>
                 <div className="flex flex-1 flex-col space-y-2 p-4">
                   <Link
-                    href={`/kinalatunk/${product.id}`}
+                    href={`/fagylaltok/${product.id}`}
                     className="w-fit font-medium text-gray-900 transition-colors hover:text-brown-400"
                   >
                     <h3 className="text-sm">{product.name}</h3>
@@ -85,9 +83,9 @@ const Offers = () => {
             ))}
           </div>
         </section>
-      ))}
+      )}
     </>
   )
 }
 
-export default Offers
+export default IceCreams

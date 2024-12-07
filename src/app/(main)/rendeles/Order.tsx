@@ -31,10 +31,9 @@ import { useRouter } from 'next/navigation'
 const Order = () => {
   const { cart, removeFromCart, addToCart, clearCart } = useCart()
   const totalPrice = cart.reduce((sum, item) => sum + item.totalPrice, 0)
-  const [error, setError] = useState<string | null>(null)
   const router = useRouter()
 
-  async function handleSubmit(formData: FormData) {
+  const handleSubmit = async (formData: FormData) => {
     const orderData = {
       firstName: formData.get('first-name') as string,
       lastName: formData.get('last-name') as string,
@@ -55,9 +54,10 @@ const Order = () => {
       // Optional: Show success message
       toast.success(
         'Köszönjük a rendelését! Email-ben elküldtük a visszaigazolást.',
+        { duration: 10000 },
       )
     } else {
-      setError(result.error || 'Something went wrong')
+      toast.error('A rendelés leadása sikertelen.', { duration: 10000 })
     }
   }
 
@@ -70,7 +70,7 @@ const Order = () => {
   // )
 
   return (
-    <div className="mx-auto max-w-2xl pb-24 pt-12 lg:max-w-8xl">
+    <div className="mx-auto max-w-2xl pb-24 pt-12 lg:max-w-9xl">
       <h2 className="sr-only">Rendelés leadása</h2>
 
       <form
@@ -81,11 +81,11 @@ const Order = () => {
           <h2 className="text-lg font-medium text-gray-900">
             Kapcsolattartási adatok
           </h2>
-          <div className="mt-4 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-4">
+          <div className="mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-4">
             <div>
               <label
                 htmlFor="first-name"
-                className="block text-sm/6 font-medium text-gray-700"
+                className="block text-sm/6 font-semibold text-gray-900"
               >
                 Keresztnév
               </label>
@@ -103,7 +103,7 @@ const Order = () => {
             <div>
               <label
                 htmlFor="last-name"
-                className="block text-sm/6 font-medium text-gray-700"
+                className="block text-sm/6 font-semibold text-gray-900"
               >
                 Vezetéknév
               </label>
@@ -121,7 +121,7 @@ const Order = () => {
             <div className="sm:col-span-2">
               <label
                 htmlFor="email-address"
-                className="block text-sm/6 font-medium text-gray-700"
+                className="block text-sm/6 font-semibold text-gray-900"
               >
                 Email
               </label>
@@ -139,7 +139,7 @@ const Order = () => {
             <div className="sm:col-span-2">
               <label
                 htmlFor="phone"
-                className="block text-sm/6 font-medium text-gray-700"
+                className="block text-sm/6 font-semibold text-gray-900"
               >
                 Telefonszám
               </label>
@@ -154,8 +154,6 @@ const Order = () => {
               </div>
             </div>
           </div>
-
-          {error && <div className="mt-4 text-red-500">{error}</div>}
 
           {/* <div className="mt-10 border-t border-gray-200 pt-10">
             <h2 className="text-lg font-medium text-gray-900">

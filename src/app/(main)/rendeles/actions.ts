@@ -1,8 +1,7 @@
 'use server'
 
-import { Resend } from 'resend'
-
 import { CartItem } from '@/lib/types'
+import { Resend } from 'resend'
 import OrderConfirmationEmail from './OrderConfirmationEmail'
 
 const resend = new Resend(process.env.RESEND_API_KEY)
@@ -36,7 +35,6 @@ export async function submitOrder(data: OrderData) {
 
     return { success: true }
   } catch (error) {
-    console.error('Order submission error:', error)
-    return { success: false, error: 'Failed to process order' }
+    return { success: false }
   }
 }

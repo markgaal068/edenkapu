@@ -1,7 +1,7 @@
 import { StaticImageData } from 'next/image'
 
 export type CartItem = {
-  id: number
+  id: string
   name: string
   basePrice: number
   totalPrice: number
@@ -11,7 +11,7 @@ export type CartItem = {
 }
 
 export type ProductType = {
-  id: number
+  id: string
   name: string
   price: number
   description: string

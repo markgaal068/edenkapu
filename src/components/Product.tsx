@@ -10,7 +10,7 @@ import {
 import { ProductType } from '@/lib/types'
 import Link from 'next/dist/client/link'
 import Image from 'next/image'
-import AddToCartButton from '../AddToCartButton'
+import AddToCartButton from '@/components/AddToCartButton'
 
 const product = {
   name: 'Basic Tee',
@@ -97,7 +97,7 @@ const Product = ({ product }: { product: ProductType }) => {
 
   return (
     <div className="pb-16 pt-6 sm:pb-24">
-      <nav aria-label="Breadcrumb" className="mx-auto max-w-8xl">
+      <nav aria-label="Breadcrumb" className="max-w-9xl mx-auto">
         <ol role="list" className="flex items-center space-x-4">
           <li>
             <div className="flex items-center">
@@ -131,7 +131,7 @@ const Product = ({ product }: { product: ProductType }) => {
           </li>
         </ol>
       </nav>
-      <div className="mx-auto mt-8 max-w-2xl lg:max-w-8xl">
+      <div className="lg:max-w-9xl mx-auto mt-8 max-w-2xl">
         <div className="lg:grid lg:auto-rows-min lg:grid-cols-12 lg:gap-x-8">
           <div className="lg:col-span-5 lg:col-start-8">
             <div className="flex justify-between">

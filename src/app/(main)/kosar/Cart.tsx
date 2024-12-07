@@ -21,7 +21,7 @@ export function Cart() {
   const totalPrice = cart.reduce((sum, item) => sum + item.totalPrice, 0)
 
   if (cart.length === 0) {
-    return <p className="mt-2 text-gray-500">A kosár üres</p>
+    return <p className="mt-2 text-gray-600">A kosár üres</p>
   }
 
   return (
@@ -160,7 +160,7 @@ export function Cart() {
         <div className="mt-6">
           <Link
             href="/rendeles"
-            className="block w-full rounded-md bg-brown-400 px-4 py-3 text-center font-semibold text-white shadow-sm transition-colors hover:bg-brown-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brown-400"
+            className="block w-full rounded-md bg-brown-400 px-4 py-3 text-center font-medium text-white shadow-sm transition-colors hover:bg-brown-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brown-400"
           >
             Tovább a rendeléshez
           </Link>
