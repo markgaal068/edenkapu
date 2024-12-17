@@ -55,24 +55,26 @@ const OrderEmail = ({
           </Section>
 
           <Section style={informationTable}>
-            <Row style={informationTableRow} align="left">
-              <Column style={informationTableColumn}>
-                <Text style={informationTableLabel}>Név</Text>
-                <Text style={informationTableValue}>{name}</Text>
-              </Column>
-            </Row>
-            <Row style={informationTableRow} align="left">
-              <Column style={informationTableColumn}>
-                <Text style={informationTableLabel}>Email</Text>
-                <Text style={informationTableValue}>{email}</Text>
-              </Column>
-            </Row>
-            <Row style={informationTableRow} align="left">
-              <Column style={informationTableColumn}>
-                <Text style={informationTableLabel}>Telefonszám</Text>
-                <Text style={informationTableValue}>{phone}</Text>
-              </Column>
-            </Row>
+            <Column colSpan={4}>
+              <Row style={informationTableRow}>
+                <Column style={informationTableColumn}>
+                  <Text style={informationTableLabel}>Név</Text>
+                  <Text style={informationTableValue}>{name}</Text>
+                </Column>
+              </Row>
+              <Row style={informationTableRow}>
+                <Column style={informationTableColumn}>
+                  <Text style={informationTableLabel}>Email</Text>
+                  <Text style={informationTableValue}>{email}</Text>
+                </Column>
+              </Row>
+              <Row style={informationTableRow}>
+                <Column style={informationTableColumn}>
+                  <Text style={informationTableLabel}>Telefonszám</Text>
+                  <Text style={informationTableValue}>{phone}</Text>
+                </Column>
+              </Row>
+            </Column>
           </Section>
 
           <Section style={productTitleTable}>
