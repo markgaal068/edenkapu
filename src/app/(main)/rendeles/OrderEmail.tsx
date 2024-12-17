@@ -189,17 +189,11 @@ const informationTable = {
   marginTop: '40px',
 }
 
-const informationTableRow = {
-  maxWidth: '380px',
-  width: '100%',
-}
-
 const informationTableColumn = {
   paddingTop: '12px',
   paddingRight: '20px',
   paddingBottom: '12px',
   paddingLeft: '20px',
-  width: '100%',
 }
 
 const informationTableLabel = {
