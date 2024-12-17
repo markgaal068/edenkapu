@@ -55,7 +55,7 @@ const OrderEmail = ({
           </Section>
 
           <Section style={informationTable}>
-            <Column colSpan={2}>
+            <Column>
               <Row>
                 <Column style={informationTableColumn}>
                   <Text style={informationTableLabel}>Név</Text>
