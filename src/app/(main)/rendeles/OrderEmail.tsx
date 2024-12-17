@@ -42,7 +42,8 @@ const OrderEmail = ({
               <Column>
                 <Img
                   src="https://www.edenkapu.hu/assets/images/logos/logo2.png"
-                  className="h-12 w-auto"
+                  width={174}
+                  height={48}
                   alt="édenkapu logo"
                   style={logo}
                 />
@@ -121,7 +122,8 @@ const OrderEmail = ({
               <Column align="center">
                 <Img
                   src="https://www.edenkapu.hu/assets/images/logos/logo2.png"
-                  className="h-8 w-auto"
+                  width={87}
+                  height={24}
                   alt="édenkapu logo"
                   style={logoSmall}
                 />
