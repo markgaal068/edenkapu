@@ -55,20 +55,20 @@ const OrderEmail = ({
           </Section>
 
           <Section style={informationTable}>
-            <Column colSpan={4}>
-              <Row style={informationTableRow} align="left">
+            <Column colSpan={2}>
+              <Row>
                 <Column style={informationTableColumn}>
                   <Text style={informationTableLabel}>Név</Text>
                   <Text style={informationTableValue}>{name}</Text>
                 </Column>
               </Row>
-              <Row style={informationTableRow} align="left">
+              <Row>
                 <Column style={informationTableColumn}>
                   <Text style={informationTableLabel}>Email</Text>
                   <Text style={informationTableValue}>{email}</Text>
                 </Column>
               </Row>
-              <Row style={informationTableRow} align="left">
+              <Row>
                 <Column style={informationTableColumn}>
                   <Text style={informationTableLabel}>Telefonszám</Text>
                   <Text style={informationTableValue}>{phone}</Text>
@@ -191,17 +191,11 @@ const informationTable = {
   marginTop: '40px',
 }
 
-const informationTableRow = {
-  maxWidth: '380px',
-  width: '100%',
-}
-
 const informationTableColumn = {
   paddingTop: '12px',
   paddingRight: '20px',
   paddingBottom: '12px',
   paddingLeft: '20px',
-  width: '100%',
 }
 
 const informationTableLabel = {
