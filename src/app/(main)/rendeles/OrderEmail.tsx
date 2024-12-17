@@ -56,26 +56,24 @@ const OrderEmail = ({
 
           <Section style={informationTable}>
             <Row>
-              <Column style={informationTableOuterColumn}>
-                <Row style={informationTableRow}>
-                  <Column style={informationTableColumn}>
-                    <Text style={informationTableLabel}>Név</Text>
-                    <Text style={informationTableValue}>{name}</Text>
-                  </Column>
-                </Row>
-                <Row style={informationTableRow}>
-                  <Column style={informationTableColumn}>
-                    <Text style={informationTableLabel}>Email</Text>
-                    <Text style={informationTableValue}>{email}</Text>
-                  </Column>
-                </Row>
-                <Row style={informationTableRow}>
-                  <Column style={informationTableColumn}>
-                    <Text style={informationTableLabel}>Telefonszám</Text>
-                    <Text style={informationTableValue}>{phone}</Text>
-                  </Column>
-                </Row>
-              </Column>
+              <Row style={informationTableRow}>
+                <Column style={informationTableColumn}>
+                  <Text style={informationTableLabel}>Név</Text>
+                  <Text style={informationTableValue}>{name}</Text>
+                </Column>
+              </Row>
+              <Row style={informationTableRow}>
+                <Column style={informationTableColumn}>
+                  <Text style={informationTableLabel}>Email</Text>
+                  <Text style={informationTableValue}>{email}</Text>
+                </Column>
+              </Row>
+              <Row style={informationTableRow}>
+                <Column style={informationTableColumn}>
+                  <Text style={informationTableLabel}>Telefonszám</Text>
+                  <Text style={informationTableValue}>{phone}</Text>
+                </Column>
+              </Row>
             </Row>
           </Section>
 
@@ -195,10 +193,6 @@ const informationTable = {
   borderRadius: '8px',
   fontSize: '12px',
   marginTop: '40px',
-}
-
-const informationTableOuterColumn = {
-  verticalAlign: 'top',
 }
 
 const informationTableRow = {
