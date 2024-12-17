@@ -39,6 +39,7 @@ export function Footer() {
           <div className="flex gap-6">
             <Link
               href="https://www.facebook.com/Edenkapu"
+              target="_blank"
               className="transition-opacity hover:opacity-70"
             >
               <Image src={facebook} alt="facebook ikon" className="h-10 w-10" />
@@ -46,6 +47,7 @@ export function Footer() {
 
             <Link
               href="https://www.instagram.com/edenkapufagyizo?igsh=cXExMmZjd3MwY2Jx"
+              target="_blank"
               className="transition-opacity hover:opacity-70"
             >
               <Image
@@ -57,6 +59,7 @@ export function Footer() {
 
             <Link
               href="https://www.tiktok.com/@edenkapu_gyor?_t=ZN-8s1PNiqv1mw&_r=1"
+              target="_blank"
               className="transition-opacity hover:opacity-70"
             >
               <Image src={tiktok} alt="tiktok ikon" className="h-10 w-10" />
