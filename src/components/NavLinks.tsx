@@ -4,6 +4,7 @@ type NavLink = [string, string]
 
 export function NavLinks({ links }: { links?: NavLink[] }) {
   const defaultLinks: [string, string][] = [
+    ['Webshop', '#kinalatunk'],
     ['Desszertek', '/desszertek'],
     ['Macaronok', '/macaronok'],
     ['Sós sütemények', '/sos-sutemenyek'],

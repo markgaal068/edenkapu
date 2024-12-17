@@ -1,6 +1,10 @@
 @tailwind base;
 
 @layer base {
+  html {
+    scrollbar-gutter: stable;
+  }
+
   *,
   *::before,
   *::after {

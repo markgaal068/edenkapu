@@ -1,21 +1,24 @@
 'use client'
 
-import Link from 'next/link'
-import {
-  Popover,
-  PopoverButton,
-  PopoverBackdrop,
-  PopoverPanel,
-} from '@headlessui/react'
-import { AnimatePresence, motion } from 'framer-motion'
-
-import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
 import { NavLinks } from '@/components/NavLinks'
-import logo from '@/images/logo2.png'
-import Image from 'next/image'
-import { FaShoppingCart } from 'react-icons/fa'
 import { useCart } from '@/context/CartContext'
+import logo from '@/images/logos/logo2.png'
+import {
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuItems,
+  Popover,
+  PopoverBackdrop,
+  PopoverButton,
+  PopoverPanel,
+} from '@headlessui/react'
+import { ChevronDownIcon } from '@heroicons/react/16/solid'
+import { AnimatePresence, motion } from 'framer-motion'
+import Image from 'next/image'
+import Link from 'next/link'
+import { FaShoppingCart } from 'react-icons/fa'
 
 function MenuIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
@@ -67,17 +70,39 @@ export function Header() {
     <header className="absolute inset-x-0 top-0 z-50">
       <nav>
         <Container className="z-50 mt-8">
-          <div className="grid grid-cols-2 rounded-xl bg-brown-400 px-4 py-4 sm:px-6 sm:py-6 lg:grid-cols-[1fr_auto_1fr] lg:px-8 lg:py-8">
+          <div className="grid grid-cols-2 rounded-lg bg-brown-400 px-4 py-4 sm:px-6 sm:py-6 lg:grid-cols-[1fr_auto_1fr] lg:px-8 lg:py-8">
             <div className="hidden items-center lg:flex lg:gap-10">
-              <NavLinks
-                links={[
-                  ['Desszertek', '/desszertek'],
-                  ['Macaronok', '/macaronok'],
-                  ['Sós sütemények', '/sos-sutemenyek'],
-                  ['Fagylaltok', '/fagylaltok'],
-                  ['Bejglik', '/bejglik'],
-                ]}
-              />
+              <Menu as="div" className="relative z-50">
+                <MenuButton className="inline-flex items-center gap-2 rounded-md bg-gray-800 px-3 py-1.5 text-sm/6 font-semibold text-white transition-colors data-[hover]:bg-gray-700 data-[open]:bg-gray-700">
+                  Kínálatunk
+                  <ChevronDownIcon className="size-4 fill-white/60" />
+                </MenuButton>
+
+                <MenuItems
+                  transition
+                  anchor="bottom start"
+                  className="z-50 w-52 origin-top-right rounded-lg bg-gray-800 p-1 text-sm/6 text-white transition duration-100 ease-out [--anchor-gap:0.25rem] data-[closed]:scale-95 data-[closed]:opacity-0"
+                >
+                  {[
+                    ['Desszertek', '/desszertek'],
+                    ['Macaronok', '/macaronok'],
+                    ['Sós sütemények', '/sos-sutemenyek'],
+                    ['Fagylaltok', '/fagylaltok'],
+                    ['Bejglik', '/bejglik'],
+                  ].map(([label, href]) => (
+                    <MenuItem key={href}>
+                      {({ active }) => (
+                        <Link
+                          href={href}
+                          className="group flex w-full items-center gap-2 rounded-lg px-3 py-1.5 transition-colors data-[focus]:bg-gray-700"
+                        >
+                          {label}
+                        </Link>
+                      )}
+                    </MenuItem>
+                  ))}
+                </MenuItems>
+              </Menu>
             </div>
 
             <div className="hidden lg:flex lg:justify-center">
@@ -194,7 +219,7 @@ export function Header() {
 
               <Link
                 href="/kosar"
-                className="relative hidden justify-center gap-2 rounded-lg bg-gray-800 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-gray-900 lg:flex"
+                className="relative hidden justify-center gap-2 rounded-lg bg-gray-800 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-gray-700 lg:flex"
               >
                 <span>Kosár</span>
                 <span className="absolute -right-[10px] -top-[10px] flex size-6 items-center justify-center rounded-full bg-red-500 text-xs text-white">
