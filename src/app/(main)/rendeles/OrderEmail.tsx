@@ -54,20 +54,20 @@ const OrderEmail = ({
             </Row>
           </Section>
 
-          <Section style={informationTable} align="left">
-            <Row style={informationTableRow}>
+          <Section style={informationTable}>
+            <Row style={informationTableRow} align="left">
               <Column style={informationTableColumn}>
                 <Text style={informationTableLabel}>Név</Text>
                 <Text style={informationTableValue}>{name}</Text>
               </Column>
             </Row>
-            <Row style={informationTableRow}>
+            <Row style={informationTableRow} align="left">
               <Column style={informationTableColumn}>
                 <Text style={informationTableLabel}>Email</Text>
                 <Text style={informationTableValue}>{email}</Text>
               </Column>
             </Row>
-            <Row style={informationTableRow}>
+            <Row style={informationTableRow} align="left">
               <Column style={informationTableColumn}>
                 <Text style={informationTableLabel}>Telefonszám</Text>
                 <Text style={informationTableValue}>{phone}</Text>
