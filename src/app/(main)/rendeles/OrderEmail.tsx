@@ -159,16 +159,12 @@ const container = {
 }
 
 const logo = {
-  width: '60px',
-  height: '60px',
   margin: '0',
   display: 'block',
   backgroundColor: '#1F2937',
 }
 
 const logoSmall = {
-  width: '30px',
-  height: '30px',
   margin: '48px auto 0 auto',
   display: 'block',
   backgroundColor: '#1F2937',
