@@ -15,7 +15,7 @@ import logoForbes from '@/images/logos/forbes.svg'
 import logoHuffpost from '@/images/logos/huffpost.svg'
 import logoTechcrunch from '@/images/logos/techcrunch.svg'
 import logoWired from '@/images/logos/wired.svg'
-import hero from '@/images/hero.webp'
+import hero from '/public/assets/images/hero.webp'
 import Link from 'next/link'
 
 function BackgroundIllustration(props: React.ComponentPropsWithoutRef<'div'>) {

@@ -7,11 +7,11 @@ import { TextField } from '@/components/Fields'
 import { Logomark } from '@/components/Logo'
 import { NavLinks } from '@/components/NavLinks'
 import qrCode from '@/images/qr-code.svg'
-import logo from '@/images/logos/logo2.png'
+import logo from '/public/assets/images/logos/logo2.png'
 import { FaFacebookSquare } from 'react-icons/fa'
-import facebook from '@/images/svgs/facebook.svg'
-import instagram from '@/images/svgs/instagram.svg'
-import tiktok from '@/images/svgs/tiktok.svg'
+import facebook from '/public/assets/images/svgs/facebook.svg'
+import instagram from '/public/assets/images/svgs/instagram.svg'
+import tiktok from '/public/assets/images/svgs/tiktok.svg'
 
 function QrCodeBorder(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
@@ -95,14 +95,14 @@ export function Footer() {
           </div>
           <div className="flex gap-6">
             <Link
-              href="/docs/aszf.docx"
+              href="/assets/docs/aszf.docx"
               target="_blank"
               className="text-sm text-gray-500 transition-opacity hover:opacity-70"
             >
               ÁSZF
             </Link>
             <Link
-              href="/docs/adatvedelmi.docx"
+              href="/assets/docs/adatvedelmi.docx"
               target="_blank"
               className="text-sm text-gray-500 transition-opacity hover:opacity-70"
             >

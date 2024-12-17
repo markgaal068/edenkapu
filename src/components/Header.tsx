@@ -3,7 +3,6 @@
 import { Container } from '@/components/Container'
 import { NavLinks } from '@/components/NavLinks'
 import { useCart } from '@/context/CartContext'
-import logo from '@/images/logos/logo2.png'
 import {
   Menu,
   MenuButton,
@@ -19,6 +18,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
 import { FaShoppingCart } from 'react-icons/fa'
+import logo from '/public/assets/images/logos/logo2.png'
 
 function MenuIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (

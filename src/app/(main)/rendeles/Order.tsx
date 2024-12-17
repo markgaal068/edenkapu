@@ -88,6 +88,7 @@ const Order = () => {
                 className="block text-sm/6 font-semibold text-gray-900"
               >
                 Keresztnév
+                <span className="ml-1 text-brown-400">*</span>
               </label>
               <div className="mt-2">
                 <input
@@ -95,6 +96,7 @@ const Order = () => {
                   name="first-name"
                   type="text"
                   autoComplete="given-name"
+                  required
                   className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 transition-shadow placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-brown-400 sm:text-sm/6"
                 />
               </div>
@@ -106,6 +108,7 @@ const Order = () => {
                 className="block text-sm/6 font-semibold text-gray-900"
               >
                 Vezetéknév
+                <span className="ml-1 text-brown-400">*</span>
               </label>
               <div className="mt-2">
                 <input
@@ -113,6 +116,7 @@ const Order = () => {
                   name="last-name"
                   type="text"
                   autoComplete="family-name"
+                  required
                   className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 transition-shadow placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-brown-400 sm:text-sm/6"
                 />
               </div>
@@ -124,6 +128,7 @@ const Order = () => {
                 className="block text-sm/6 font-semibold text-gray-900"
               >
                 Email
+                <span className="ml-1 text-brown-400">*</span>
               </label>
               <div className="mt-2">
                 <input
@@ -131,6 +136,7 @@ const Order = () => {
                   name="email-address"
                   type="email"
                   autoComplete="email"
+                  required
                   className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 transition-shadow placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-brown-400 sm:text-sm/6"
                 />
               </div>
@@ -142,13 +148,19 @@ const Order = () => {
                 className="block text-sm/6 font-semibold text-gray-900"
               >
                 Telefonszám
+                <span className="ml-1 text-brown-400">*</span>
               </label>
               <div className="mt-2">
                 <input
                   id="phone"
                   name="phone"
-                  type="text"
+                  type="tel"
                   autoComplete="tel"
+                  inputMode="numeric"
+                  required
+                  onChange={(e) => {
+                    e.target.value = e.target.value.replace(/[^\d]/g, '')
+                  }}
                   className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 transition-shadow placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-brown-400 sm:text-sm/6"
                 />
               </div>
