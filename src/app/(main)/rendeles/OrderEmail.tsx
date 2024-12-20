@@ -32,14 +32,14 @@ const OrderEmail = ({
 }: OrderEmailProps) => (
   <Html>
     <Head />
-    <Preview>Édenkapu - Rendelés visszaigazolás</Preview>
+    <Preview>Rendelés visszaigazolás</Preview>
 
     <Body>
       <div style={main}>
         <Container style={container}>
           <Section>
             <Row>
-              <Column>
+              <Column style={headerColumn}>
                 <Img
                   src="https://www.edenkapu.hu/assets/images/logos/logo2.png"
                   width={174}
@@ -48,7 +48,7 @@ const OrderEmail = ({
                   style={logo}
                 />
               </Column>
-              <Column align="right" style={tableCell}>
+              <Column align="right" style={headerTextColumn}>
                 <Text style={heading}>Rendelés visszaigazolás</Text>
               </Column>
             </Row>
@@ -120,8 +120,8 @@ const OrderEmail = ({
               <Column align="center">
                 <Img
                   src="https://www.edenkapu.hu/assets/images/logos/logo2.png"
-                  width={87}
-                  height={24}
+                  width={116}
+                  height={32}
                   alt="édenkapu logo"
                   style={logoSmall}
                 />
@@ -149,8 +149,8 @@ export default OrderEmail
 
 const main = {
   fontFamily: '"Helvetica Neue",Helvetica,Arial,sans-serif',
-  backgroundColor: '#1F2937',
-  color: '#ffffff',
+  backgroundColor: '#fafafa',
+  color: '#171717',
 }
 
 const container = {
@@ -160,16 +160,30 @@ const container = {
   width: '100%',
 }
 
+const headerColumn = {
+  display: 'block' as const,
+  marginBottom: '26px',
+}
+
+const headerTextColumn = {
+  display: 'block' as const,
+  textAlign: 'left' as const,
+}
+
 const logo = {
   margin: '0',
   display: 'block',
-  backgroundColor: '#1F2937',
+  backgroundColor: '#bc956c',
+  padding: '16px',
+  borderRadius: '8px',
 }
 
 const logoSmall = {
   margin: '48px auto 0 auto',
   display: 'block',
-  backgroundColor: '#1F2937',
+  backgroundColor: '#bc956c',
+  padding: '8px',
+  borderRadius: '8px',
 }
 
 const tableCell = { display: 'table-cell' }
@@ -177,15 +191,15 @@ const tableCell = { display: 'table-cell' }
 const heading = {
   fontSize: '32px',
   fontWeight: '300',
-  color: '#D1D5DB',
+  color: '#171717',
   margin: '0',
 }
 
 const informationTable = {
   borderCollapse: 'collapse' as const,
   borderSpacing: '0px',
-  color: '#ffffff',
-  backgroundColor: '#2A3441',
+  color: '#171717',
+  backgroundColor: '#ffffff',
   borderRadius: '8px',
   fontSize: '12px',
   marginTop: '40px',
@@ -199,7 +213,7 @@ const informationTableColumn = {
 }
 
 const informationTableLabel = {
-  color: '#D1D5DB',
+  color: '#737373',
   fontSize: '10px',
   margin: '0',
   padding: '0',
@@ -212,14 +226,14 @@ const informationTableValue = {
   margin: '0',
   padding: '0',
   lineHeight: 1.4,
-  color: '#ffffff',
+  color: '#171717',
   wordBreak: 'break-word' as const,
 }
 
 const productTitleTable = {
   borderCollapse: 'collapse' as const,
   borderSpacing: '0px',
-  backgroundColor: '#2A3441',
+  backgroundColor: '#ffffff',
   borderRadius: '8px',
   fontSize: '12px',
   margin: '48px 0 15px 0',
@@ -233,7 +247,7 @@ const productsTitle = {
   fontSize: '14px',
   fontWeight: '500',
   margin: '0',
-  color: '#ffffff',
+  color: '#171717',
 }
 
 const productTitle = {
@@ -242,12 +256,12 @@ const productTitle = {
   margin: '0',
   padding: '12px 0',
   lineHeight: 1.4,
-  color: '#ffffff',
+  color: '#171717',
 }
 
 const productPriceTotal = {
   margin: '0',
-  color: '#D1D5DB',
+  color: '#737373',
   fontSize: '10px',
   fontWeight: '600',
   padding: '0px 30px 0px 0px',
@@ -256,13 +270,13 @@ const productPriceTotal = {
 
 const productPriceLine = {
   margin: '30px 0 0 0',
-  borderColor: '#374151',
+  borderColor: '#e5e5e5',
 }
 
 const productPriceVerticalLine = {
   height: '48px',
   borderLeft: '1px solid',
-  borderColor: '#374151',
+  borderColor: '#e5e5e5',
 }
 
 const productPriceLargeWrapper = {
@@ -276,17 +290,17 @@ const productPriceLarge = {
   fontWeight: '600',
   whiteSpace: 'nowrap' as const,
   textAlign: 'right' as const,
-  color: '#ffffff',
+  color: '#171717',
 }
 
 const productPriceLineBottom = {
   margin: '0 0 75px 0',
-  borderColor: '#374151',
+  borderColor: '#e5e5e5',
 }
 
 const footerTextCenter = {
   fontSize: '12px',
-  color: '#D1D5DB',
+  color: '#737373',
   margin: '24px 0',
   lineHeight: '1.5',
   textAlign: 'center' as const,
@@ -296,12 +310,12 @@ const footerLinksWrapper = {
   margin: '8px 0 0 0',
   textAlign: 'center' as const,
   fontSize: '12px',
-  color: '#D1D5DB',
+  color: '#737373',
 }
 
 const footerCopyright = {
   margin: '25px 0 0 0',
   textAlign: 'center' as const,
   fontSize: '12px',
-  color: '#D1D5DB',
+  color: '#737373',
 }

@@ -91,18 +91,17 @@ export function Header() {
                     ['Bejglik', '/bejglik'],
                   ].map(([label, href]) => (
                     <MenuItem key={href}>
-                      {({ active }) => (
-                        <Link
-                          href={href}
-                          className="group flex w-full items-center gap-2 rounded-lg px-3 py-1.5 transition-colors data-[focus]:bg-gray-700"
-                        >
-                          {label}
-                        </Link>
-                      )}
+                      <Link
+                        href={href}
+                        className="group flex w-full items-center gap-2 rounded-lg px-3 py-1.5 transition-colors data-[focus]:bg-gray-700"
+                      >
+                        {label}
+                      </Link>
                     </MenuItem>
                   ))}
                 </MenuItems>
               </Menu>
+              <NavLinks links={[[' Viszonteladóknak', '/viszonteladoknak']]} />
             </div>
 
             <div className="hidden lg:flex lg:justify-center">
