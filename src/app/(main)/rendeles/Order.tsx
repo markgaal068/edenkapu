@@ -62,7 +62,7 @@ const Order = () => {
   }
 
   if (cart.length === 0) {
-    return <p className="mt-2 text-gray-500">A kosár ürest</p>
+    return <p className="mt-2 text-gray-500">A kosár üres</p>
   }
 
   // const [selectedDeliveryMethod, setSelectedDeliveryMethod] = useState(
