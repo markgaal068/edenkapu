@@ -149,7 +149,7 @@ export default OrderEmail
 
 const main = {
   fontFamily: '"Helvetica Neue",Helvetica,Arial,sans-serif',
-  backgroundColor: '#fafafa',
+  backgroundColor: '#ffffff',
   color: '#171717',
 }
 
@@ -199,7 +199,7 @@ const informationTable = {
   borderCollapse: 'collapse' as const,
   borderSpacing: '0px',
   color: '#171717',
-  backgroundColor: '#ffffff',
+  backgroundColor: '#e4e4e7',
   borderRadius: '8px',
   fontSize: '12px',
   marginTop: '40px',
@@ -233,7 +233,7 @@ const informationTableValue = {
 const productTitleTable = {
   borderCollapse: 'collapse' as const,
   borderSpacing: '0px',
-  backgroundColor: '#ffffff',
+  backgroundColor: '#e4e4e7',
   borderRadius: '8px',
   fontSize: '12px',
   margin: '48px 0 15px 0',
