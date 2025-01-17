@@ -41,7 +41,7 @@ const OrderEmail = ({
             <Row>
               <Column style={headerColumn}>
                 <Img
-                  src="https://www.edenkapu.hu/assets/images/logos/logo2.png"
+                  src="https://edenkapu.vercel.app/assets/images/logos/logo2.png"
                   width={174}
                   height={48}
                   alt="édenkapu logo"
@@ -119,7 +119,7 @@ const OrderEmail = ({
             <Row>
               <Column align="center">
                 <Img
-                  src="https://www.edenkapu.hu/assets/images/logos/logo2.png"
+                  src="https://edenkapu.vercel.app/assets/images/logos/logo2.png"
                   width={116}
                   height={32}
                   alt="édenkapu logo"
