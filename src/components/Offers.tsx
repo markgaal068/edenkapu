@@ -36,7 +36,7 @@ export function Offers() {
           </p>
         </div>
 
-        <div className="mx-auto mt-16 max-w-2xl rounded-2xl sm:mt-20 lg:max-w-none">
+        <div className="mx-auto mt-16 max-w-4xl rounded-2xl sm:mt-20">
           <Carousel
             swipeable={true}
             draggable={true}
