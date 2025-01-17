@@ -199,7 +199,7 @@ const informationTable = {
   borderCollapse: 'collapse' as const,
   borderSpacing: '0px',
   color: '#171717',
-  backgroundColor: '#f4f4f5',
+  backgroundColor: '#fafafa',
   borderRadius: '8px',
   fontSize: '12px',
   marginTop: '40px',
@@ -233,7 +233,7 @@ const informationTableValue = {
 const productTitleTable = {
   borderCollapse: 'collapse' as const,
   borderSpacing: '0px',
-  backgroundColor: '#f4f4f5',
+  backgroundColor: '#fafafa',
   borderRadius: '8px',
   fontSize: '12px',
   margin: '48px 0 15px 0',
