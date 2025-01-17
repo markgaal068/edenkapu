@@ -101,7 +101,7 @@ export function Header() {
                   ))}
                 </MenuItems>
               </Menu>
-              <NavLinks links={[[' Viszonteladóknak', '/viszonteladoknak']]} />
+              {/* <NavLinks links={[[' Viszonteladóknak', '/viszonteladoknak']]} /> */}
             </div>
 
             <div className="hidden lg:flex lg:justify-center">
