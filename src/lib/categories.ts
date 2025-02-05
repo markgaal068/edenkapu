@@ -1,27 +1,36 @@
-import almas_pite from '/public/assets/images/almas_pite.jpg'
 import citromos_fagylalt from '/public/assets/images/citromos_fagylalt.jpg'
 import csokis_fagylalt from '/public/assets/images/csokis_fagylalt.jpg'
 import csokis_macaron from '/public/assets/images/csokis_macaron.jpg'
-import csokitorta from '/public/assets/images/csokitorta.jpg'
+import cakepop from '/public/assets/images/desserts/cakepop.jpg'
+import etcsokis_malnas_torta from '/public/assets/images/desserts/etcsokis_malnas_torta.jpg'
+import fehercsokis_malnas_torta from '/public/assets/images/desserts/fehercsokis_malnas_torta.jpg'
+import genovai_csokolademousse from '/public/assets/images/desserts/genovai_csokolademousse.jpg'
+import paleo_gesztenyes_meggyes_sutemeny from '/public/assets/images/desserts/paleo_gesztenyes_meggyes_sutemeny.jpg'
+import halloween_muffinok from '/public/assets/images/desserts/halloweeni_muffinok.jpg'
+import karamellas_sajttorta from '/public/assets/images/desserts/karamellas_sajttorta.jpg'
+import mangos_sajttorta from '/public/assets/images/desserts/mangos_sajttorta.jpg'
+import narancsos_csokolades_torta from '/public/assets/images/desserts/narancsos_csokolades_torta.jpg'
+import nutellas_sutemeny from '/public/assets/images/desserts/nutellas_sutemeny.jpg'
+import paleo_citromos_sutemeny from '/public/assets/images/desserts/paleo_citromos_sutemeny.jpg'
+import paleo_golyo from '/public/assets/images/desserts/paleo_golyo.jpeg'
+import paleo_rumos_dios_sutemeny from '/public/assets/images/desserts/paleo_rumos_dios_sutemeny.jpg'
+import paleo_somloi_galuska from '/public/assets/images/desserts/paleo_somloi_galuska.jpg'
+import pisztacias_sajttorta from '/public/assets/images/desserts/pisztacias_sajttorta.jpg'
+import rumos_gesztenyemousse_torta from '/public/assets/images/desserts/rumos_gesztenyemousse_torta.jpg'
+import rumos_gesztenyes_tekercs from '/public/assets/images/desserts/rumos_gesztenyes_tekercs.jpg'
+import triplacsokolades_mousse_torta from '/public/assets/images/desserts/triplacsokolades_mousse_torta.jpg'
+import vegan_malnas_pisztacias_torta from '/public/assets/images/desserts/vegan_malnas_pisztacias_torta.jpg'
+import vegan_sutotokos_pite from '/public/assets/images/desserts/vegan_sutotokos_pite.jpg'
 import dios_bejgli from '/public/assets/images/dios_bejgli.jpg'
 import epres_macaron from '/public/assets/images/epres_macaron.jpg'
-import gyumolcsos_pavlova from '/public/assets/images/gyumolcsos_pavlova.jpg'
 import makos_bejgli from '/public/assets/images/makos_bejgli.jpg'
 import malnas_fagylalt from '/public/assets/images/malnas_fagylalt.jpg'
-import medvehagymas_pogacsa from '/public/assets/images/medvehagymas_pogacsa.jpg'
+import bejglik from '/public/assets/images/offers/bejglik.jpg'
+import desszertek from '/public/assets/images/offers/desszertek_1.jpeg'
+import fagylaltok from '/public/assets/images/offers/fagylaltok_1.png'
+import macaronok from '/public/assets/images/offers/macaronok.png'
 import pisztacias_fagylalt from '/public/assets/images/pisztacias_fagylalt.jpg'
 import pisztacias_macaron from '/public/assets/images/pisztacias_macaron.jpg'
-import sajtos_croissant from '/public/assets/images/sajtos_croissant.jpg'
-import sajtos_pogacsa from '/public/assets/images/sajtos_pogacsa.jpeg'
-import sos_rud from '/public/assets/images/sos_rud.jpg'
-import bejglik from '/public/assets/images/bejglik.jpeg'
-import desszertek from '/public/assets/images/desszertek.jpg'
-import macaronok from '/public/assets/images/macaronok.jpg'
-import sos_sutemenyek from '/public/assets/images/sos_sutemenyek.jpeg'
-import fagylaltok from '/public/assets/images/fagylaltok.jpg'
-import tepertos_pogacsa from '/public/assets/images/tepertos_pogacsa.jpg'
-import tiramisu from '/public/assets/images/tiramisu.jpg'
-import turotorta from '/public/assets/images/turotorta.jpg'
 import vanilias_fagylalt from '/public/assets/images/vanilias_fagylalt.jpg'
 import vanilias_macaron from '/public/assets/images/vanilias_macaron.jpg'
 
@@ -35,69 +44,268 @@ const categories = [
     image: desszertek,
     products: [
       {
-        id: 'csokitorta',
-        name: 'Csokitorta',
+        id: 'cakepop',
+        name: 'Cakepop',
+        price: 990,
+        description: 'Különleges cake pop válogatás különböző ízekben.',
+        options: '1 db',
+        image: cakepop,
+        imageAlt: 'cake pop válogatás',
+        breadcrumb: {
+          name: 'Desszertek',
+          href: '/desszertek',
+        },
+      },
+      {
+        id: 'etcsokis-malnas-torta',
+        name: 'Étcsokoládés-málnás torta',
         price: 4900,
         description:
-          'Gazdag csokoládés torta, három rétegű piskótával és selymes csokoládékrémmel.',
-        options: '8, 16 szeletes',
-        image: csokitorta,
-        imageAlt: 'Három rétegű csokoládétorta, csokoládé bevonattal.',
+          'Étcsokoládés torta friss málnával díszítve és málnás töltelékkel.',
+        options: '8, 10, 16 szeletes',
+        image: etcsokis_malnas_torta,
+        imageAlt: 'étcsokoládés-málnás torta',
         breadcrumb: {
           name: 'Desszertek',
           href: '/desszertek',
         },
       },
       {
-        id: 'tiramisu',
-        name: 'Tiramisu',
-        price: 5200,
+        id: 'fehercsokis-malnas-torta',
+        name: 'Fehércsokoládés-málnás torta',
+        price: 4900,
         description:
-          'Klasszikus olasz desszert mascarpone krémmel és kávéval átitatott piskótával.',
-        options: '8 szeletes',
-        image: tiramisu,
-        imageAlt: 'Tiramisu desszert.',
+          'Fehércsokoládés torta friss málnával és málnás töltelékkel.',
+        options: '8, 10, 16 szeletes',
+        image: fehercsokis_malnas_torta,
+        imageAlt: 'fehércsokoládés-málnás torta',
         breadcrumb: {
           name: 'Desszertek',
           href: '/desszertek',
         },
       },
       {
-        id: 'gyumolcsos-pavlova',
-        name: 'Gyümölcsös Pavlova',
+        id: 'genovai-csokolademousse',
+        name: 'Genovai csokoládémousse',
+        price: 4900,
+        description:
+          'Genovai jellegű csokoládés mousse torta, selymes csokoládékrémmel.',
+        options: '8, 10, 16 szeletes',
+        image: genovai_csokolademousse,
+        imageAlt: 'genovai csokoládémousse torta',
+        breadcrumb: {
+          name: 'Desszertek',
+          href: '/desszertek',
+        },
+      },
+      {
+        id: 'gesztenyes-meggyes-paleo-sutemeny',
+        name: 'Gesztenyés-meggyes paleo sütemény',
         price: 4500,
         description:
-          'Ropogós habcsók alap friss gyümölcsökkel és tejszínhabbal díszítve.',
-        options: '6-8 szeletes',
-        image: gyumolcsos_pavlova,
-        imageAlt: 'Gyümölcsös pavlova.',
+          'Paleo gesztenyés-meggyes sütemény, természetes összetevőkből.',
+        options: '8, 10, 16 szeletes',
+        image: paleo_gesztenyes_meggyes_sutemeny,
+        imageAlt: 'Paleo gesztenyés-meggyes sütemény.',
         breadcrumb: {
           name: 'Desszertek',
           href: '/desszertek',
         },
       },
       {
-        id: 'almas-pite',
-        name: 'Almás Pite',
-        price: 3900,
-        description:
-          'Házi készítésű omlós tésztával és fahéjas almatöltelékkel.',
-        options: '8 szeletes',
-        image: almas_pite,
-        imageAlt: 'Almás pite.',
+        id: 'halloween-muffinok',
+        name: 'Halloween muffinok',
+        price: 990,
+        description: 'Szezonális Halloween témájú muffinok egyedi díszítéssel.',
+        options: '1 db',
+        image: halloween_muffinok,
+        imageAlt: 'halloween témájú muffinok',
         breadcrumb: {
           name: 'Desszertek',
           href: '/desszertek',
         },
       },
       {
-        id: 'turotorta',
-        name: 'Túrótorta',
-        price: 4700,
-        description: 'Krémes túrótorta mazsolával és vaníliás ízesítéssel.',
+        id: 'karamellas-sajttorta',
+        name: 'Karamellás sajttorta',
+        price: 4900,
+        description: 'Krémes karamellás sajttorta',
+        options: '8, 10, 16 szeletes',
+        image: karamellas_sajttorta,
+        imageAlt: 'krémes karamellás sajttorta',
+        breadcrumb: {
+          name: 'Desszertek',
+          href: '/desszertek',
+        },
+      },
+      {
+        id: 'mangos-sajttorta',
+        name: 'Mangós sajttorta',
+        price: 4900,
+        description: 'Krémes mangós sajttorta',
+        options: '8, 10, 16 szeletes',
+        image: mangos_sajttorta,
+        imageAlt: 'krémes mangós sajttorta',
+
+        breadcrumb: {
+          name: 'Desszertek',
+          href: '/desszertek',
+        },
+      },
+      {
+        id: 'narancsos-csokis-torta',
+        name: 'Narancsos-csokoládés torta',
+        price: 4900,
+        description: 'Csokoládés torta narancs ízű krémmel.',
+        options: '8, 10, 16 szeletes',
+        image: narancsos_csokolades_torta,
+        imageAlt: 'narancsos-csokoládés torta',
+        breadcrumb: {
+          name: 'Desszertek',
+          href: '/desszertek',
+        },
+      },
+      {
+        id: 'nutellas-sutemeny',
+        name: 'Nutellás sütemény',
+        price: 990,
+        description: 'Nutellás sütemény, gazdag mogyorókrém ízzel.',
+        options: '1 db',
+        image: nutellas_sutemeny,
+        imageAlt: 'nutellás sütemény',
+        breadcrumb: {
+          name: 'Desszertek',
+          href: '/desszertek',
+        },
+      },
+      {
+        id: 'paleo-citromos-sutemeny',
+        name: 'Paleo citromos sütemény',
+        price: 4500,
+        description: 'Paleo citromos sütemény, természetes édesítőszerrel.',
+        options: '1 db',
+        image: paleo_citromos_sutemeny,
+        imageAlt: 'paleo citromos sütemény',
+        breadcrumb: {
+          name: 'Desszertek',
+          href: '/desszertek',
+        },
+      },
+      {
+        id: 'paleo-golyo',
+        name: 'Paleo golyó',
+        price: 4500,
+        description: 'Paleo golyó, természetes összetevőkből.',
+        options: '1 db',
+        image: paleo_golyo,
+        imageAlt: 'paleo golyó',
+        breadcrumb: {
+          name: 'Desszertek',
+          href: '/desszertek',
+        },
+      },
+      {
+        id: 'paleo-somloi-galuska',
+        name: 'Paleo somlói galuska',
+        price: 990,
+        description: 'Paleo somlói galuska, természetes összetevőkből.',
+        options: '1 adag',
+        image: paleo_somloi_galuska,
+        imageAlt: 'paleo somlói galuska',
+        breadcrumb: {
+          name: 'Desszertek',
+          href: '/desszertek',
+        },
+      },
+      {
+        id: 'pisztacias-sajttorta',
+        name: 'Pisztáciás sajttorta',
+        price: 4900,
+        description: 'Krémes pisztáciás sajttorta',
+        options: '8, 10, 16 szeletes',
+        image: pisztacias_sajttorta,
+        imageAlt: 'krémes pisztáciás sajttorta',
+
+        breadcrumb: {
+          name: 'Desszertek',
+          href: '/desszertek',
+        },
+      },
+      {
+        id: 'paleo-rumos-dios-sutemeny',
+        name: 'Paleo rumos-diós sütemény',
+        price: 4500,
+        description: 'Paleo rumos-diós sütemény, természetes összetevőkből.',
+        options: '1 db',
+        image: paleo_rumos_dios_sutemeny,
+        imageAlt: 'paleo rumos-diós sütemény',
+        breadcrumb: {
+          name: 'Desszertek',
+          href: '/desszertek',
+        },
+      },
+      {
+        id: 'rumos-gesztenye-mousse',
+        name: 'Rumos gesztenyemousse',
+        price: 4900,
+        description: 'Rumos gesztenyemousse torta, selymes gesztenyekrémmel.',
         options: '8, 16 szeletes',
-        image: turotorta,
-        imageAlt: 'Túrótorta.',
+        image: rumos_gesztenyemousse_torta,
+        imageAlt: 'rumos gesztenyemousse torta',
+        breadcrumb: {
+          name: 'Desszertek',
+          href: '/desszertek',
+        },
+      },
+      {
+        id: 'rumos-gesztenyes-tekercs',
+        name: 'Rumos gesztenyés tekercs',
+        price: 990,
+        description: 'Rumos gesztenyés tekercs, krémes gesztenyetöltelékkel.',
+        options: '1 szelet',
+        image: rumos_gesztenyes_tekercs,
+        imageAlt: 'rumos gesztenyés tekercs',
+        breadcrumb: {
+          name: 'Desszertek',
+          href: '/desszertek',
+        },
+      },
+      {
+        id: 'triplacsokis-mousse',
+        name: 'Triplacsokoládés mousse',
+        price: 4900,
+        description:
+          'Triplacsokoládés mousse torta három különböző csokoládérétegből.',
+        options: '8, 16 szeletes',
+        image: triplacsokolades_mousse_torta,
+        imageAlt: 'triplacsokoládés mousse torta',
+        breadcrumb: {
+          name: 'Desszertek',
+          href: '/desszertek',
+        },
+      },
+      {
+        id: 'vegan-malnas-pisztacias-torta',
+        name: 'Vegán málnás pisztáciás torta',
+        price: 4900,
+        description:
+          'Vegán málnás-pisztáciás torta, növényi alapú összetevőkből.',
+        options: '8, 16 szeletes',
+        image: vegan_malnas_pisztacias_torta,
+        imageAlt: 'vegán málnás-pisztáciás torta',
+        breadcrumb: {
+          name: 'Desszertek',
+          href: '/desszertek',
+        },
+      },
+      {
+        id: 'vegan-sutotokos-pite',
+        name: 'Vegán sütőtökös pite',
+        price: 4500,
+        description: 'Vegán sütőtökös pite, növényi alapú összetevőkből.',
+        options: '8 szeletes',
+        image: vegan_sutotokos_pite,
+        imageAlt: 'vegán sütőtökös pite',
         breadcrumb: {
           name: 'Desszertek',
           href: '/desszertek',
@@ -170,82 +378,82 @@ const categories = [
       },
     ],
   },
-  {
-    id: 'sos-sutemenyek',
-    title: 'Sós Sütemények',
-    description:
-      'Ropogós pogácsák és sós aprósütemények, tökéletes választás partikra és rendezvényekre.',
-    href: '/sos-sutemenyek',
-    image: sos_sutemenyek,
-    products: [
-      {
-        id: 'sajtos-pogacsa',
-        name: 'Sajtos Pogácsa',
-        price: 150,
-        description:
-          'Omlós, házi készítésű pogácsa valódi sajttal, tökéletes választás partikra.',
-        options: 'Minimum rendelés: 5db',
-        image: sajtos_pogacsa,
-        imageAlt: 'Aranybarnára sült sajtos pogácsa.',
-        breadcrumb: {
-          name: 'Sós Sütemények',
-          href: '/sos-sutemenyek',
-        },
-      },
-      {
-        id: 'tepertos-pogacsa',
-        name: 'Tepertős Pogácsa',
-        price: 180,
-        description: 'Hagyományos tepertős pogácsa, omlós tésztával.',
-        options: 'Minimum rendelés: 5db',
-        image: tepertos_pogacsa,
-        imageAlt: 'Tepertős pogácsa.',
-        breadcrumb: {
-          name: 'Sós Sütemények',
-          href: '/sos-sutemenyek',
-        },
-      },
-      {
-        id: 'sos-rud',
-        name: 'Sós Rúd',
-        price: 130,
-        description: 'Ropogós sós rúd köménymaggal szórva.',
-        options: 'Minimum rendelés: 5db',
-        image: sos_rud,
-        imageAlt: 'Sós rúd.',
-        breadcrumb: {
-          name: 'Sós Sütemények',
-          href: '/sos-sutemenyek',
-        },
-      },
-      {
-        id: 'sajtos-croissant',
-        name: 'Sajtos Croissant',
-        price: 650,
-        description: 'Leveles tésztából készült croissant sajttal töltve.',
-        options: 'Minimum rendelés: 5db',
-        image: sajtos_croissant,
-        imageAlt: 'Sajtos croissant.',
-        breadcrumb: {
-          name: 'Sós Sütemények',
-          href: '/sos-sutemenyek',
-        },
-      },
-      {
-        id: 'medvehagymas-pogacsa',
-        name: 'Medvehagymás Pogácsa',
-        price: 190,
-        description: 'Szezonális medvehagymás pogácsa, friss fűszernövénnyel.',
-        options: 'Minimum rendelés: 5db',
-        image: medvehagymas_pogacsa,
-        imageAlt: 'Medvehagymás pogácsa.',
-        breadcrumb: {
-          name: 'Sós Sütemények',
-          href: '/sos-sutemenyek',
-        },
-      },
-    ],
-  },
+  // {
+  //   id: 'sos-sutemenyek',
+  //   title: 'Sós Sütemények',
+  //   description:
+  //     'Ropogós pogácsák és sós aprósütemények, tökéletes választás partikra és rendezvényekre.',
+  //   href: '/sos-sutemenyek',
+  //   image: sos_sutemenyek,
+  //   products: [
+  //     {
+  //       id: 'sajtos-pogacsa',
+  //       name: 'Sajtos Pogácsa',
+  //       price: 150,
+  //       description:
+  //         'Omlós, házi készítésű pogácsa valódi sajttal, tökéletes választás partikra.',
+  //       options: 'Minimum rendelés: 5db',
+  //       image: sajtos_pogacsa,
+  //       imageAlt: 'Aranybarnára sült sajtos pogácsa.',
+  //       breadcrumb: {
+  //         name: 'Sós Sütemények',
+  //         href: '/sos-sutemenyek',
+  //       },
+  //     },
+  //     {
+  //       id: 'tepertos-pogacsa',
+  //       name: 'Tepertős Pogácsa',
+  //       price: 180,
+  //       description: 'Hagyományos tepertős pogácsa, omlós tésztával.',
+  //       options: 'Minimum rendelés: 5db',
+  //       image: tepertos_pogacsa,
+  //       imageAlt: 'Tepertős pogácsa.',
+  //       breadcrumb: {
+  //         name: 'Sós Sütemények',
+  //         href: '/sos-sutemenyek',
+  //       },
+  //     },
+  //     {
+  //       id: 'sos-rud',
+  //       name: 'Sós Rúd',
+  //       price: 130,
+  //       description: 'Ropogós sós rúd köménymaggal szórva.',
+  //       options: 'Minimum rendelés: 5db',
+  //       image: sos_rud,
+  //       imageAlt: 'Sós rúd.',
+  //       breadcrumb: {
+  //         name: 'Sós Sütemények',
+  //         href: '/sos-sutemenyek',
+  //       },
+  //     },
+  //     {
+  //       id: 'sajtos-croissant',
+  //       name: 'Sajtos Croissant',
+  //       price: 650,
+  //       description: 'Leveles tésztából készült croissant sajttal töltve.',
+  //       options: 'Minimum rendelés: 5db',
+  //       image: sajtos_croissant,
+  //       imageAlt: 'Sajtos croissant.',
+  //       breadcrumb: {
+  //         name: 'Sós Sütemények',
+  //         href: '/sos-sutemenyek',
+  //       },
+  //     },
+  //     {
+  //       id: 'medvehagymas-pogacsa',
+  //       name: 'Medvehagymás Pogácsa',
+  //       price: 190,
+  //       description: 'Szezonális medvehagymás pogácsa, friss fűszernövénnyel.',
+  //       options: 'Minimum rendelés: 5db',
+  //       image: medvehagymas_pogacsa,
+  //       imageAlt: 'Medvehagymás pogácsa.',
+  //       breadcrumb: {
+  //         name: 'Sós Sütemények',
+  //         href: '/sos-sutemenyek',
+  //       },
+  //     },
+  //   ],
+  // },
   {
     id: 'fagylaltok',
     title: 'Fagylaltok',
@@ -322,42 +530,42 @@ const categories = [
       },
     ],
   },
-  {
-    id: 'bejglik',
-    title: 'Bejglik',
-    description:
-      'Hagyományos diós és mákos bejgli, az ünnepek elengedhetetlen édessége.',
-    href: '/bejglik',
-    image: bejglik,
-    products: [
-      {
-        id: 'dios-bejgli',
-        name: 'Diós bejgli',
-        price: 3900,
-        description: 'Tradicionális karácsonyi bejgli gazdag diós töltelékkel.',
-        options: '30cm-es tekercs',
-        image: dios_bejgli,
-        imageAlt: 'Diós bejgli szelet.',
-        breadcrumb: {
-          name: 'Bejglik',
-          href: '/bejglik',
-        },
-      },
-      {
-        id: 'makos-bejgli',
-        name: 'Mákos Bejgli',
-        price: 3900,
-        description: 'Klasszikus mákos bejgli házi készítésű máktöltelékkel.',
-        options: '30cm-es tekercs',
-        image: makos_bejgli,
-        imageAlt: 'Mákos bejgli.',
-        breadcrumb: {
-          name: 'Bejglik',
-          href: '/bejglik',
-        },
-      },
-    ],
-  },
+  // {
+  //   id: 'bejglik',
+  //   title: 'Bejglik',
+  //   description:
+  //     'Hagyományos diós és mákos bejgli, az ünnepek elengedhetetlen édessége.',
+  //   href: '/bejglik',
+  //   image: bejglik,
+  //   products: [
+  //     {
+  //       id: 'dios-bejgli',
+  //       name: 'Diós bejgli',
+  //       price: 3900,
+  //       description: 'Tradicionális karácsonyi bejgli gazdag diós töltelékkel.',
+  //       options: '30cm-es tekercs',
+  //       image: dios_bejgli,
+  //       imageAlt: 'Diós bejgli szelet.',
+  //       breadcrumb: {
+  //         name: 'Bejglik',
+  //         href: '/bejglik',
+  //       },
+  //     },
+  //     {
+  //       id: 'makos-bejgli',
+  //       name: 'Mákos Bejgli',
+  //       price: 3900,
+  //       description: 'Klasszikus mákos bejgli házi készítésű máktöltelékkel.',
+  //       options: '30cm-es tekercs',
+  //       image: makos_bejgli,
+  //       imageAlt: 'Mákos bejgli.',
+  //       breadcrumb: {
+  //         name: 'Bejglik',
+  //         href: '/bejglik',
+  //       },
+  //     },
+  //   ],
+  // },
 ]
 
 export default categories

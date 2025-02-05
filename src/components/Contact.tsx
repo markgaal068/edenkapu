@@ -8,12 +8,12 @@ export function Contact() {
       id="kapcsolat"
       className="border-t border-gray-200 bg-gray-100 py-20 sm:py-32"
     >
-      <div className="lg:max-w-9xl mx-auto max-w-xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-xl px-4 sm:px-6 lg:max-w-9xl lg:px-8">
         <h2 className="text-3xl font-medium tracking-tight text-gray-900">
           Kapcsolatfelvétel
         </h2>
         <p className="mt-2 text-lg text-gray-600">
-          Ha bármilyen kérdése van, forduljon hozzánk bizalommal.
+          Ha bármilyen kérdésed van, fordulj hozzánk bizalommal.
         </p>
         <div className="mt-16 grid grid-cols-1 gap-16 sm:gap-y-20 lg:grid-cols-5">
           <form action="#" method="POST" className="lg:col-span-3">

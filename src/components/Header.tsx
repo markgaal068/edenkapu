@@ -70,8 +70,8 @@ export function Header() {
     <header className="absolute inset-x-0 top-0 z-50">
       <nav>
         <Container className="z-50 mt-8">
-          <div className="grid grid-cols-2 rounded-lg bg-brown-400 px-4 py-4 sm:px-6 sm:py-6 lg:grid-cols-[1fr_auto_1fr] lg:px-8 lg:py-8">
-            <div className="hidden items-center lg:flex lg:gap-10">
+          <div className="grid grid-cols-2 rounded-lg bg-brown-400 px-4 py-4 sm:px-6 sm:py-6 xl:grid-cols-[1fr_auto_1fr] xl:px-8 xl:py-8">
+            <div className="hidden items-center xl:flex xl:gap-10">
               <Menu as="div" className="relative z-50">
                 <MenuButton className="inline-flex items-center gap-2 rounded-md bg-gray-800 px-3 py-1.5 text-sm/6 font-semibold text-white transition-colors data-[hover]:bg-gray-700 data-[open]:bg-gray-700">
                   Kínálatunk
@@ -86,9 +86,9 @@ export function Header() {
                   {[
                     ['Desszertek', '/desszertek'],
                     ['Macaronok', '/macaronok'],
-                    ['Sós sütemények', '/sos-sutemenyek'],
+                    // ['Sós sütemények', '/sos-sutemenyek'],
                     ['Fagylaltok', '/fagylaltok'],
-                    ['Bejglik', '/bejglik'],
+                    // ['Bejglik', '/bejglik'],
                   ].map(([label, href]) => (
                     <MenuItem key={href}>
                       <Link
@@ -101,10 +101,9 @@ export function Header() {
                   ))}
                 </MenuItems>
               </Menu>
-              {/* <NavLinks links={[[' Viszonteladóknak', '/viszonteladoknak']]} /> */}
             </div>
 
-            <div className="hidden lg:flex lg:justify-center">
+            <div className="hidden xl:flex xl:justify-center">
               <Link href="/" aria-label="Home">
                 <Image
                   src={logo}
@@ -114,7 +113,7 @@ export function Header() {
               </Link>
             </div>
 
-            <div className="z-10 flex lg:hidden">
+            <div className="z-10 flex xl:hidden">
               <Link href="/" aria-label="Home" className="shrink-0">
                 <Image
                   src={logo}
@@ -125,7 +124,7 @@ export function Header() {
             </div>
 
             <div className="flex items-center justify-end gap-10">
-              <Popover className="lg:hidden">
+              <Popover className="xl:hidden">
                 {({ open }) => (
                   <>
                     <PopoverButton
@@ -170,20 +169,20 @@ export function Header() {
                               <MobileNavLink href="/macaronok">
                                 Macaronok
                               </MobileNavLink>
-                              <MobileNavLink href="/sos-sutemenyek">
+                              {/* <MobileNavLink href="/sos-sutemenyek">
                                 Sós sütemények
-                              </MobileNavLink>
+                              </MobileNavLink> */}
                               <MobileNavLink href="/fagylaltok">
                                 Fagylaltok
                               </MobileNavLink>
-                              <MobileNavLink href="/bejglik">
+                              {/* <MobileNavLink href="/bejglik">
                                 Bejglik
-                              </MobileNavLink>
+                              </MobileNavLink> */}
                               <MobileNavLink href="/rendezvenyek">
                                 Rendezvények
                               </MobileNavLink>
-                              <MobileNavLink href="/eskuvo">
-                                Esküvő
+                              <MobileNavLink href="/viszonteladoknak">
+                                Viszonteladóknak
                               </MobileNavLink>
                             </div>
                             <div className="mt-8 flex flex-col gap-4">
@@ -207,11 +206,11 @@ export function Header() {
                 )}
               </Popover>
 
-              <div className="hidden items-center lg:flex lg:justify-end lg:gap-10">
+              <div className="hidden items-center xl:flex xl:justify-end xl:gap-10">
                 <NavLinks
                   links={[
                     ['Rendezvények', '/rendezvenyek'],
-                    ['Esküvő', '/eskuvo'],
+                    ['Viszonteladóknak', '/viszonteladoknak'],
                   ]}
                 />
               </div>

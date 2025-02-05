@@ -1,91 +1,19 @@
-import { useId } from 'react'
-import Image from 'next/image'
-import clsx from 'clsx'
+'use client'
 
-import { AppDemo } from '@/components/AppDemo'
-import { AppStoreLink } from '@/components/AppStoreLink'
 import { Button } from '@/components/Button'
-import { Container } from '@/components/Container'
-import { PhoneFrame } from '@/components/PhoneFrame'
-import logoBbc from '@/images/logos/bbc.svg'
-import logoCbs from '@/images/logos/cbs.svg'
-import logoCnn from '@/images/logos/cnn.svg'
-import logoFastCompany from '@/images/logos/fast-company.svg'
-import logoForbes from '@/images/logos/forbes.svg'
-import logoHuffpost from '@/images/logos/huffpost.svg'
-import logoTechcrunch from '@/images/logos/techcrunch.svg'
-import logoWired from '@/images/logos/wired.svg'
-import hero from '/public/assets/images/hero.webp'
+import Image from 'next/image'
 import Link from 'next/link'
-
-function BackgroundIllustration(props: React.ComponentPropsWithoutRef<'div'>) {
-  let id = useId()
-
-  return (
-    <div {...props}>
-      <svg
-        viewBox="0 0 1026 1026"
-        fill="none"
-        aria-hidden="true"
-        className="absolute inset-0 h-full w-full animate-spin-slow"
-      >
-        <path
-          d="M1025 513c0 282.77-229.23 512-512 512S1 795.77 1 513 230.23 1 513 1s512 229.23 512 512Z"
-          stroke="#D4D4D4"
-          strokeOpacity="0.7"
-        />
-        <path
-          d="M513 1025C230.23 1025 1 795.77 1 513"
-          stroke={`url(#${id}-gradient-1)`}
-          strokeLinecap="round"
-        />
-        <defs>
-          <linearGradient
-            id={`${id}-gradient-1`}
-            x1="1"
-            y1="513"
-            x2="1"
-            y2="1025"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop stopColor="#06b6d4" />
-            <stop offset="1" stopColor="#06b6d4" stopOpacity="0" />
-          </linearGradient>
-        </defs>
-      </svg>
-      <svg
-        viewBox="0 0 1026 1026"
-        fill="none"
-        aria-hidden="true"
-        className="absolute inset-0 h-full w-full animate-spin-reverse-slower"
-      >
-        <path
-          d="M913 513c0 220.914-179.086 400-400 400S113 733.914 113 513s179.086-400 400-400 400 179.086 400 400Z"
-          stroke="#D4D4D4"
-          strokeOpacity="0.7"
-        />
-        <path
-          d="M913 513c0 220.914-179.086 400-400 400"
-          stroke={`url(#${id}-gradient-2)`}
-          strokeLinecap="round"
-        />
-        <defs>
-          <linearGradient
-            id={`${id}-gradient-2`}
-            x1="913"
-            y1="513"
-            x2="913"
-            y2="913"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop stopColor="#06b6d4" />
-            <stop offset="1" stopColor="#06b6d4" stopOpacity="0" />
-          </linearGradient>
-        </defs>
-      </svg>
-    </div>
-  )
-}
+import Carousel from 'react-multi-carousel'
+import CustomDot from './CustomDot'
+import CustomLeftArrow from './CustomLeftArrow'
+import CustomRightArrow from './CustomRightArrow'
+import asztalok1 from '/public/assets/images/hero/asztalok_1.jpg'
+import asztalok2 from '/public/assets/images/hero/asztalok_2.jpg'
+import desszertek2 from '/public/assets/images/hero/desszertek_2.jpg'
+import fagylaltok2 from '/public/assets/images/hero/fagylaltok_2.jpg'
+import fagylaltok3 from '/public/assets/images/hero/fagylaltok_3.jpg'
+import kave from '/public/assets/images/hero/kave.jpg'
+import uzlet from '/public/assets/images/hero/uzlet.jpg'
 
 function PlayIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
@@ -100,50 +28,46 @@ function PlayIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   )
 }
 
-export function Hero() {
-  return (
-    // <div className="overflow-hidden py-20 sm:py-32 lg:pb-32 xl:pb-36">
-    //   <Container>
-    //     <div className="lg:grid lg:grid-cols-12 lg:gap-20">
-    //       <div className="relative z-10 mx-auto max-w-2xl lg:col-span-7 lg:max-w-none lg:pt-6 xl:col-span-6">
-    //         <h1 className="text-4xl font-medium tracking-tight text-gray-900">
-    //           Édes élmények várnak nálunk!
-    //         </h1>
-    //         <p className="mt-6 text-lg text-gray-600">
-    //           Fedezd fel cukrászdánk varázslatos világát, ahol minden falat
-    //           különleges! Kézműves desszertek, színes macaronok, ropogós sós
-    //           sütemények, hűsítő fagylaltkülönlegességek és télen a hagyományos
-    //           bejgli ízei teszik felejthetetlenné a pillanatokat.
-    //         </p>
-    //         <p className="mt-6 text-lg text-gray-600">
-    //           Rendezvényekhez is tökéletes választás vagyunk! Legyen szó céges
-    //           eseményről vagy esküvőről, mi megvalósítjuk az álmaidat.
-    //         </p>
-    //         <div className="mt-8 flex flex-wrap gap-x-6 gap-y-4">
-    //           <Link
-    //             className="hover:bg-brown-300 bg-brown-400 flex items-center rounded-lg px-4 text-white transition-colors"
-    //             href="#kapcsolat"
-    //           >
-    //             Megkóstolom
-    //           </Link>
-    //           <Button
-    //             href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-    //             variant="outline"
-    //           >
-    //             <PlayIcon className="h-6 w-6 flex-none" />
-    //             <span className="ml-2.5">Videó megtekintése</span>
-    //           </Button>
-    //         </div>
-    //       </div>
+const heroImages = [
+  {
+    id: 1,
+    src: asztalok1,
+    alt: 'kávézó belső tér boltíves fallal',
+  },
 
-    //       <Image
-    //         className="relative mt-10 rounded-lg sm:mt-20 lg:col-span-5 lg:row-span-2 lg:mt-0 xl:col-span-6"
-    //         src={hero}
-    //         alt="hero"
-    //       />
-    //     </div>
-    //   </Container>
-    // </div>
+  {
+    id: 2,
+    src: asztalok2,
+    alt: 'kávézó belső tér ablakkal és dekorációval',
+  },
+  {
+    id: 3,
+    src: desszertek2,
+    alt: 'desszertek becsomagolva',
+  },
+  {
+    id: 4,
+    src: fagylaltok2,
+    alt: 'csokis fagylalt tölcsérben',
+  },
+  {
+    id: 5,
+    src: fagylaltok3,
+    alt: 'gyümölcsös fagylalt tölcsérben',
+  },
+  { id: 6, src: kave, alt: 'premium kávé' },
+  { id: 7, src: uzlet, alt: 'édenkapu üzlet kívülről' },
+]
+
+export function Hero() {
+  const responsive = {
+    desktop: {
+      breakpoint: { max: 3000, min: 0 },
+      items: 1,
+    },
+  }
+
+  return (
     <div className="relative isolate -z-10 overflow-hidden bg-gradient-to-b from-indigo-100/20 pt-14">
       <div
         aria-hidden="true"
@@ -151,24 +75,48 @@ export function Hero() {
       />
       <div className="mx-auto max-w-9xl px-6 py-32 sm:py-64 lg:px-8">
         <div className="mx-auto max-w-2xl lg:mx-0 lg:grid lg:max-w-none lg:grid-cols-2 lg:gap-x-16 lg:gap-y-8 xl:grid-cols-1 xl:grid-rows-1 xl:gap-x-16">
-          {/* <h1 class="max-w-2xl text-balance text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl lg:col-span-2 xl:col-auto">We’re changing the way people connect</h1> */}
           <h1 className="max-w-2xl text-balance text-5xl font-medium tracking-tight text-gray-900 sm:text-7xl lg:col-span-2 xl:col-auto">
             Édes élmények várnak nálunk!
           </h1>
-          <div className="mt-6 max-w-xl lg:mt-0 xl:col-end-1 xl:row-start-1">
-            <p className="text-pretty text-lg text-gray-600">
+          <div className="mt-6 max-w-xl space-y-6 lg:mt-0 xl:col-end-1 xl:row-start-1">
+            {/* <p className="text-pretty text-lg text-gray-600">
               Fedezd fel cukrászdánk varázslatos világát, ahol minden falat
               különleges! Kézműves desszertek, színes macaronok, ropogós sós
               sütemények, hűsítő fagylaltkülönlegességek és télen a hagyományos
               bejgli ízei teszik felejthetetlenné a pillanatokat.
+            </p> */}
+            <p className="text-pretty text-lg text-gray-600">
+              Az Édenkapu fagyizó és kávézó kiváló választás a családias légkör
+              kedvelőinek. Kézműves fagylaltjaink és süteményeink friss,
+              természetes alapanyagokból készülnek, így mindenki megtalálhatja a
+              kedvére való ízt, beleértve a paleo, cukor-, glutén- és
+              tejfehérje-mentes lehetőségeket is.
             </p>
-            <p className="mt-6 text-pretty text-lg text-gray-600">
-              Rendezvényekhez is tökéletes választás vagyunk! Legyen szó céges
-              eseményről vagy esküvőről, mi megvalósítjuk az álmaidat.
+            <p className="text-pretty text-lg text-gray-600">
+              A saját pörkölésű kávéink remek lehetőséget nyújtanak baráti
+              találkozókhoz vagy csak egy kis pihenéshez. Az Édenkapu célja,
+              hogy minden látogató egyedi élményekkel és finom ízekkel
+              gazdagodjon.
             </p>
+            <p className="text-pretty text-lg text-gray-600">
+              <Link
+                href="/rendezvenyek"
+                className="font-semibold text-brown-400 underline hover:text-brown-300"
+              >
+                Rendezvényekhez
+              </Link>{' '}
+              is tökéletes választás vagyunk! Legyen szó céges eseményről vagy
+              esküvőről, mi megvalósítjuk az álmaidat.
+            </p>
+            {/* <Link
+              className="mt-2 block w-fit rounded-lg bg-brown-400 px-4 py-2 text-white transition-colors hover:bg-brown-300"
+              href="/rendezvenyek"
+            >
+              Részletek itt
+            </Link> */}
             <div className="mt-8 flex flex-wrap gap-x-6 gap-y-4">
               <Link
-                className="flex items-center rounded-lg bg-brown-400 px-4 py-2 text-white transition-colors hover:bg-brown-300"
+                className="rounded-lg bg-brown-400 px-4 py-2 text-white transition-colors hover:bg-brown-300"
                 href="#kinalatunk"
               >
                 Rendelj most
@@ -182,11 +130,42 @@ export function Hero() {
               </Button>
             </div>
           </div>
-          <Image
+          {/* <Image
             alt="édenkapu épület"
             src={hero}
             className="mt-10 aspect-[6/5] w-full max-w-lg rounded-2xl object-cover sm:mt-16 lg:mt-0 lg:max-w-none xl:row-span-2 xl:row-end-2 xl:mt-36"
-          />
+          /> */}
+          <Carousel
+            swipeable={true}
+            draggable={true}
+            showDots={true}
+            customLeftArrow={<CustomLeftArrow />}
+            customRightArrow={<CustomRightArrow />}
+            customDot={<CustomDot />}
+            removeArrowOnDeviceType={['tablet', 'mobile']}
+            responsive={responsive}
+            ssr={true}
+            infinite={true}
+            autoPlay={true}
+            autoPlaySpeed={5000}
+            keyBoardControl={true}
+            itemClass="pb-14 rounded-2xl"
+            dotListClass="space-x-2"
+            className="mt-10 w-full max-w-lg rounded-2xl object-cover sm:mt-16 lg:mt-0 lg:max-w-none xl:row-span-2 xl:row-end-2 xl:mt-36"
+          >
+            {heroImages.map((image) => (
+              <div key={image.id} className="flex flex-col items-center">
+                <div className="relative aspect-[4/3] w-full max-w-2xl lg:max-w-none">
+                  <Image
+                    alt={image.alt}
+                    src={image.src}
+                    fill
+                    className="overflow-clip rounded-2xl object-cover"
+                  />
+                </div>
+              </div>
+            ))}
+          </Carousel>
         </div>
       </div>
       <div className="absolute inset-x-0 bottom-0 -z-10 h-24 bg-gradient-to-t from-gray-50 sm:h-32" />
