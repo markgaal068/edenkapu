@@ -136,7 +136,7 @@ export function Contact() {
                   src={founder}
                   width={96}
                   height={96}
-                  className="size-12 flex-none rounded-full bg-gray-50"
+                  className="size-12 flex-none rounded-full bg-gray-50 object-cover object-right"
                 />
                 <div>
                   <div className="text-base font-semibold text-gray-900">
