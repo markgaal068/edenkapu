@@ -6,7 +6,7 @@ const faqs = [
     {
       question: 'Milyen típusú desszerteket kínálnak?',
       answer:
-        'Széles választékban kínálunk különböző desszerteket, többek között macaronokat, sós süteményeket, fagylaltokat, és szezonálisan bejglit. Minden termékünk gondosan válogatott alapanyagokból készül.',
+        'Széles választékban kínálunk különböző desszerteket, többek között fagylaltokat, süteményeket, macaronokat és szezonálisan bejglit. Minden termékünk gondosan válogatott alapanyagokból készül a vendégek ízlésére szabva.',
     },
     {
       question: 'Vállalnak-e rendezvényekre catering szolgáltatást?',
@@ -16,7 +16,7 @@ const faqs = [
     {
       question: 'Hogyan lehet rendelést leadni?',
       answer:
-        'Rendelését leadhatja személyesen üzletünkben, telefonon, vagy weboldalunkon keresztül. Nagyobb rendezvények esetén javasoljuk, hogy időben, legalább 2-3 héttel előre jelezze igényét.',
+        'Rendelését leadhatja személyesen üzletünkben, telefonon, vagy weboldalunkon keresztül.',
     },
   ],
   [
@@ -31,9 +31,9 @@ const faqs = [
         'Természetesen! Vállaljuk egyedi desszertek készítését különleges alkalmakra. Legyen szó születésnapi tortáról, esküvői édességekről vagy céges logóval ellátott süteményekről, állunk rendelkezésére.',
     },
     {
-      question: 'Vannak-e glutén- vagy laktózmentes opciók?',
+      question: 'Vannak-e glutén- vagy tejmentes opciók?',
       answer:
-        'Igen, kínálatunkban megtalálhatók glutén- és laktózmentes alternatívák is. Kérjük, rendeléskor jelezze speciális étkezési igényeit, hogy a megfelelő opciókat tudjuk ajánlani.',
+        'Igen! Az Édenkapu fagyizó és kávézóban ezt is megtalálod legyen szó süteményről, fagyiról vagy a kedvenc kávédról!',
     },
   ],
   [
@@ -48,9 +48,9 @@ const faqs = [
         'Esküvői rendelések esetén minimum 1-2 hónappal az esemény előtt érdemes egyeztetni. Így tudjuk garantálni a tökéletes kivitelezést és időben való szállítást.',
     },
     {
-      question: 'Van-e házhozszállítás?',
+      question: 'Születésnapokra vállalunk-e kitelepülést fagyival?',
       answer:
-        'Igen, vállalunk házhozszállítást a környező területekre. Nagyobb rendezvények esetén a szállítási feltételekről és díjakról személyes egyeztetés során adunk tájékoztatást.',
+        'Természetesen! Dobd fel születésnapod egy finom fagyival kortól függetlenül. Részletek a rendezvények menüpontba!',
     },
   ],
 ]

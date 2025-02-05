@@ -7,96 +7,66 @@ import { useInView } from 'framer-motion'
 import { Container } from '@/components/Container'
 
 interface Review {
-  title: string
   body: string
   author: string
-  rating: 1 | 2 | 3 | 4 | 5
 }
 
 const reviews: Array<Review> = [
   {
-    title: 'Mennyei élmény!',
-    body: 'A macaronok egyszerűen fantasztikusak, minden alkalommal tökéletesek. A kedvencem az málnás-csokis változat!',
-    author: 'Kovács Anna',
-    rating: 5,
+    body: 'Kellemes hangulatú hely, kedves kiszolgálás! A pohárkrém isteni, de minden mást érdemes megkóstolni! Nagyon ajánlom!',
+    author: 'Betti',
   },
   {
-    title: 'Tökéletes esküvői torta',
-    body: 'Az esküvői tortánk minden várakozásunkat felülmúlta. Gyönyörű volt és az íze is csodálatos. Vendégeink még hetekig emlegették!',
-    author: 'Nagy Eszter',
-    rating: 5,
+    body: 'Remek hely! A személyzet rendkívül kedves és a sütemények elképesztőek! Ajánlom mindenkinek!',
+    author: 'Csaba',
   },
   {
-    title: 'A város legjobb bejglije',
-    body: 'Minden karácsonykor innen rendeljük a bejglit. A diós töltelék olyan bőséges, ahogy kell, a tésztája pedig pont olyan, mint a nagymamámé volt.',
-    author: 'Szabó János',
-    rating: 5,
+    body: 'Kedves kiszolgálás, finom fagyi. A belső tér dekorációja pedig gyönyörű.',
+    author: 'Kriszti',
   },
   {
-    title: 'Profi kiszolgálás',
-    body: 'A céges rendezvényünkre rendeltünk süteményeket. Időben, profin szállították, és minden vendégünk el volt ragadtatva a minőségtől.',
-    author: 'Tóth Péter',
-    rating: 5,
+    body: 'Magas minőségű nagyon finom fagyi, szuper kedves kiszolgálással. Ha fagyit ennél Győrben, mindenképp ide térj be! Különleges ízek és van tejmentes is.',
+    author: 'Szabina',
   },
   {
-    title: 'Imádom a fagylaltjaikat!',
-    body: 'A kézműves fagylaltok választéka lenyűgöző. A pisztáciás-meggyes kombináció a kedvencem, de minden íz különleges.',
-    author: 'Kiss Márta',
-    rating: 5,
+    body: 'Udvarias, mosolygós kiszolgálás. Finom, különleges és hagyományos ízvilágú (mentes is) sütemények, fagyik. A kávé finom, változatos tea kínálat. Ízléses, szép környezet. Tiszta mosdó.',
+    author: 'Zsuzsanna',
   },
   {
-    title: 'Végre gluténmentes finomságok!',
-    body: 'Cöliákiásként ritkán találok olyan cukrászdát, ahol ilyen széles választék van gluténmentes süteményekből. A csokis brownie-juk verhetetlen!',
-    author: 'Varga Zsófia',
-    rating: 5,
+    body: 'Nagyon finomak a fagylaltok és végre egy fagyizó, ahol nem csak egyfajta mentes fagyit kapni! Picit drága ugyan, de aki ételérzékeny, annak megéri az árát.',
+    author: 'Anett',
   },
   {
-    title: 'Csodás születésnapi torta',
-    body: 'A kislányom unikornisos tortája olyan lett, mintha egy mesekönyvből lépett volna ki. Az íze pedig még a kinézeténél is jobb volt!',
-    author: 'Molnár Erika',
-    rating: 5,
+    body: 'Mennyei sütemények és finomabbnál finomabb fagylaltok várják a vendégeket!',
+    author: 'Eszter',
   },
   {
-    title: 'Hangulatos hely',
-    body: 'A kedvenc helyünk lett a barátnőimmel. A vintage berendezés, a kellemes zene és persze az isteni sütemények miatt minden héten betérünk.',
-    author: 'Németh Kata',
-    rating: 5,
+    body: 'Nagyon finom mentes fagylaltjaik vannak, cukorral vagy édesítővel, lehet választani. Ráadásul a mentes fagyik között is akadt különleges ízvilág. Sőt kutyusoknak is van fagyi, ilyet még nem láttam azelőtt.',
+    author: 'Ágnes',
   },
   {
-    title: 'Laktózmentes kávé és süti',
-    body: 'Végre egy hely, ahol nem kell lemondanom a tejhabos kávéról! A laktózmentes választék kifogástalan, a barista pedig mindig kedves.',
-    author: 'Horváth Dóra',
-    rating: 5,
+    body: 'Finom volt a fagyi, nagyon jól esett, frissítő volt. A gyümölcs fagylatnak gyümölcs íze is volt, nem volt túl édes, kellemes volt. Érdemes ide beugrani, főleg akkor, amikor tikkasztó hőség van az utcán.',
+    author: 'Zoltán',
   },
   {
-    title: 'Sós finomságok',
-    body: 'Nem csak az édességek fantasztikusak! A sajtos pogácsa és a sós stangli miatt gyakran beugrok munka után. Mindig friss és ropogós!',
-    author: 'Fekete Gábor',
-    rating: 5,
+    body: 'Igen fiatalok! Szuper vedéglátás, így kell ezt csinálni! A minőség, a figyelmesség, és a vendég az első. Köszönjük szépen a szombat esti kellemes perceket!',
+    author: 'Gyöngyvér',
   },
   {
-    title: 'Gyönyörű díszdobozok',
-    body: 'Anyák napjára rendeltem egy válogatást a kézműves bonbonokból. A díszdoboz olyan szép volt, hogy anyu először ki sem akarta bontani!',
-    author: 'Balogh Réka',
-    rating: 5,
+    body: 'Itt ettem eddigi életem legfinomabb sóskaramellás sajttortáját. A hely nagyon hangulatos, a kiszolgálás hibátlan, mindenki nagyon kedves és segítőkész. Plusz pont a gyereksarok miatt.',
+    author: 'Dóra',
   },
   {
-    title: 'Francia hangulat',
-    body: 'A croissant-jaik olyanok, mint amiket Párizsban ettem! Hétvégente mindig ide jövünk reggelizni a családdal.',
-    author: 'Szilágyi Tamás',
-    rating: 5,
+    body: 'Nagyon finom süteményeket és kávékat ittunk. Mosolygós, kedves kiszolgálás. Bátran ajánlom mindenkinek.',
+    author: 'Előd',
   },
   {
-    title: 'Rugalmas és megbízható',
-    body: 'Az utolsó pillanatban kellett egy szülinapi torta, és ők megmentették a napot! Két óra alatt elkészítették, ráadásul gyönyörű lett.',
-    author: 'Takács Andrea',
-    rating: 5,
+    body: 'Nagyon barátságos kis hely, a fagyik és a sütik finomak, a kiszolgálás pedig nagyon kedves. Mindenkinek ajánlom.',
+    author: 'Réka',
   },
   {
-    title: 'Szezonális különlegességek',
-    body: 'Imádom, hogy mindig van valami új! A szezonális gyümölcsökből készült desszertek a kedvenceim, most épp az epres-rebarbarás pite.',
-    author: 'Pintér Júlia',
-    rating: 5,
+    body: 'Finom sütemények, minőségi kávék, és kifogásolhatatlan kiszolgálás! Egy felejthetetlen élmény! Köszönjük szépen!',
+    author: 'Máté',
   },
 ]
 
@@ -108,17 +78,11 @@ function StarIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   )
 }
 
-function StarRating({ rating }: { rating: Review['rating'] }) {
+function StarRating() {
   return (
     <div className="flex">
       {[...Array(5).keys()].map((index) => (
-        <StarIcon
-          key={index}
-          className={clsx(
-            'h-5 w-5',
-            rating > index ? 'fill-brown-400' : 'fill-gray-300',
-          )}
-        />
+        <StarIcon key={index} className="h-5 w-5 fill-brown-400" />
       ))}
     </div>
   )
@@ -128,7 +92,6 @@ function Review({
   title,
   body,
   author,
-  rating,
   className,
   ...props
 }: Omit<React.ComponentPropsWithoutRef<'figure'>, keyof Review> & Review) {
@@ -149,10 +112,7 @@ function Review({
       {...props}
     >
       <blockquote className="text-gray-900">
-        <StarRating rating={rating} />
-        <p className="mt-4 text-lg font-semibold leading-6 before:content-['“'] after:content-['”']">
-          {title}
-        </p>
+        <StarRating />
         <p className="mt-3 text-base leading-7">{body}</p>
       </blockquote>
       <figcaption className="mt-3 text-sm text-gray-600 before:content-['–_']">

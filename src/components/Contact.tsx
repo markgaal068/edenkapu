@@ -1,6 +1,6 @@
-import logo from '@/images/logo.png'
 import Image from 'next/image'
 import Link from 'next/link'
+import founder from '/public/assets/images/founder.jpeg'
 
 export function Contact() {
   return (
@@ -126,21 +126,21 @@ export function Contact() {
             <figure>
               <blockquote className="text-lg/8 font-semibold text-gray-900">
                 <p>
-                  “Az élet legédesebb pillanatai akkor születnek, amikor a
-                  gondosan elkészített ízek és a jó társaság találkoznak.”
+                  Fedezd fel édességeink világát, ahol minden falat egy új
+                  élmény!
                 </p>
               </blockquote>
               <figcaption className="mt-10 flex gap-x-6">
                 <Image
                   alt="alapító kép"
-                  src="https://i.pravatar.cc/96"
+                  src={founder}
                   width={96}
                   height={96}
                   className="size-12 flex-none rounded-full bg-gray-50"
                 />
                 <div>
                   <div className="text-base font-semibold text-gray-900">
-                    Példa Név
+                    Gál Szabolcs
                   </div>
                   <div className="text-sm/6 text-gray-600">
                     Az Édenkapu alapítója
