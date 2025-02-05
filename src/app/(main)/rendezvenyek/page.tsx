@@ -26,7 +26,7 @@ const EventsPage = () => {
             teszi a pillanatot! Legyen szó esküvőről, céges rendezvényekről,
             születésnapokról vagy bármilyen más eseményről, mi gondoskodunk
             arról, hogy a legfinomabb kézműves fagylaltjaink legyenek a
-            középpontban!a
+            középpontban!
           </p>
           <p className="text-pretty text-lg text-gray-600">
             Miért válassz minket?
