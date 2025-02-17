@@ -30,9 +30,9 @@ export function Offers() {
             Mit kínálunk?
           </h2>
           <p className="mt-2 text-lg text-gray-600">
-            A cukrászdánkban kézműves desszertek, színes macaronok, ropogós sós
-            sütemények, hűsítő fagylaltkülönlegességek és télen a hagyományos
-            bejgli ízei teszik felejthetetlenné a pillanatokat.
+            A cukrászdánkban kézműves desszertek, színes macaronok, hűsítő
+            fagylaltkülönlegességek és télen a hagyományos bejgli ízei teszik
+            felejthetetlenné a pillanatokat.
           </p>
         </div>
 
