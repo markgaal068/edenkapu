@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import event from '/public/assets/images/event.png'
+import rendezvenyek from '/public/assets/images/rendezvenyek.png'
 import Link from 'next/link'
 
 const listItems = [
@@ -42,18 +42,28 @@ const EventsPage = () => {
             Válaszd az Éden Kapu Fagylaltozót, és fedezd fel, hogyan válhat az
             eseményed egyedülálló, ínycsiklandó élménnyé!
           </p>
-          <p className="flex items-center gap-2 text-pretty text-lg text-gray-600">
-            📞 Lépj kapcsolatba velünk:
-            <Link
-              href="tel:+36703117202"
-              className="font-semibold text-brown-400 underline hover:text-brown-300"
-            >
-              06-70-311-7202
-            </Link>
-          </p>
+          <div>
+            <p className="text-pretty text-lg text-gray-600">
+              Lépj kapcsolatba velünk:
+            </p>
+            <div className="flex items-center gap-2">
+              <Link
+                href="tel:+36703117202"
+                className="font-semibold text-brown-400 underline hover:text-brown-300"
+              >
+                06-70-311-7202
+              </Link>
+              <Link
+                href="mailto:info@edenkapu.hu"
+                className="font-semibold text-brown-400 underline hover:text-brown-300"
+              >
+                info@edenkapu.hu
+              </Link>
+            </div>
+          </div>
         </div>
         <Image
-          src={event}
+          src={rendezvenyek}
           alt="rendezvény illusztráció"
           width={1200}
           height={800}

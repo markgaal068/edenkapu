@@ -86,11 +86,11 @@ export function Footer() {
               XXX
             </Link> */}
             <Link
-              href="mailto:edenkapukavezoesfagyizo@gmail.com"
+              href="mailto:info@edenkapu.hu"
               target="_blank"
               className="text-sm text-gray-500 transition-opacity hover:opacity-70"
             >
-              edenkapukavezoesfagyizo@gmail.com
+              info@edenkapu.hu
             </Link>
           </div>
           <div className="flex gap-6">

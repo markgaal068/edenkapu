@@ -65,7 +65,7 @@ export function Offers() {
                     alt={category.title.toLowerCase()}
                     src={category.image}
                     fill
-                    className="overflow-clip rounded-2xl object-cover"
+                    className="rounded-2xl object-cover"
                   />
                 </Link>
 

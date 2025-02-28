@@ -14,7 +14,7 @@ export type ProductType = {
   id: string
   name: string
   price: number
-  description: string
+  description?: string
   options: string
   image: StaticImageData
   imageAlt: string

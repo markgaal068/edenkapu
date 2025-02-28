@@ -18,8 +18,10 @@ import paleo_somloi_galuska from '/public/assets/images/desserts/paleo_somloi_ga
 import pisztacias_sajttorta from '/public/assets/images/desserts/pisztacias_sajttorta.webp'
 import rumos_gesztenyemousse_torta from '/public/assets/images/desserts/rumos_gesztenyemousse_torta.webp'
 import rumos_gesztenyes_tekercs from '/public/assets/images/desserts/rumos_gesztenyes_tekercs.webp'
-import triplacsokolades_mousse_torta from '/public/assets/images/desserts/triplacsokolades_mousse_torta.webp'
+import triplacsokolades_mousse_torta from '/public/assets/images/desserts/triplacsokolades_mousse_torta.jpg'
 import vegan_malnas_pisztacias_torta from '/public/assets/images/desserts/vegan_malnas_pisztacias_torta.webp'
+import limeos_mousse_afonyaval from '/public/assets/images/desserts/limeos_mousse_afonyaval.jpeg'
+import tiramisu from '/public/assets/images/desserts/tiramisu.jpg'
 import vegan_sutotokos_pite from '/public/assets/images/desserts/vegan_sutotokos_pite.webp'
 import dios_bejgli from '/public/assets/images/dios_bejgli.jpg'
 import epres_macaron from '/public/assets/images/epres_macaron.jpg'
@@ -57,42 +59,67 @@ const categories = [
       //   },
       // },
       {
-        id: 'etcsokis-malnas-torta',
-        name: 'Étcsokoládés-málnás torta',
-        price: 4900,
-        description:
-          'Étcsokoládés torta friss málnával díszítve és málnás töltelékkel.',
-        options: '8, 10, 16 szeletes',
+        id: 'etcsokis-malnas-mousse',
+        name: 'Étcsokis Málnás Mousse',
+        price: 1390,
+        // description:
+        //   'Étcsokoládés torta friss málnával díszítve és málnás töltelékkel.',
+        options: '10, 14, 18 szeletes',
         image: etcsokis_malnas_torta,
-        imageAlt: 'étcsokoládés-málnás torta',
+        imageAlt: 'étcsokis málnás mousse',
         breadcrumb: {
           name: 'Desszertek',
           href: '/desszertek',
         },
       },
       {
-        id: 'fehercsokis-malnas-torta',
-        name: 'Fehércsokoládés-málnás torta',
-        price: 4900,
-        description:
-          'Fehércsokoládés torta friss málnával és málnás töltelékkel.',
-        options: '8, 10, 16 szeletes',
+        id: 'fehercsokis-malnas-mousse',
+        name: 'Fehércsokis Málnás Mousse',
+        price: 1390,
+        // description:
+        //   'Fehércsokoládés torta friss málnával és málnás töltelékkel.',
+        options: '10, 14, 18 szeletes',
         image: fehercsokis_malnas_torta,
-        imageAlt: 'fehércsokoládés-málnás torta',
+        imageAlt: 'fehércsokis málnás mousse',
         breadcrumb: {
           name: 'Desszertek',
           href: '/desszertek',
         },
       },
       {
-        id: 'genovai-csokolademousse',
-        name: 'Genovai csokoládémousse',
-        price: 4900,
-        description:
-          'Genovai jellegű csokoládés mousse torta, selymes csokoládékrémmel.',
-        options: '8, 10, 16 szeletes',
+        id: 'limeos-mousse-afonyaval',
+        name: 'Limeos Mousse Afonyával',
+        price: 1390,
+        options: '10, 14, 18 szeletes',
+        image: limeos_mousse_afonyaval,
+        imageAlt: 'limeos mousse afonyával',
+        breadcrumb: {
+          name: 'Desszertek',
+          href: '/desszertek',
+        },
+      },
+      {
+        id: 'genovai-csoki-mousse',
+        name: 'Genovai Csoki Mousse',
+        price: 1290,
+        // description:
+        //   'Genovai jellegű csokoládés mousse torta, selymes csokoládékrémmel.',
+        options: '10, 14, 18 szeletes',
         image: genovai_csokolademousse,
-        imageAlt: 'genovai csokoládémousse torta',
+        imageAlt: 'genovai csoki mousse',
+        breadcrumb: {
+          name: 'Desszertek',
+          href: '/desszertek',
+        },
+      },
+      {
+        id: 'tiramisu',
+        name: 'Tiramisu',
+        price: 1390,
+        description: 'Cukor-, glutén- és tejfehérje-mentes',
+        options: '10, 14, 18 szeletes',
+        image: tiramisu,
+        imageAlt: 'tiramisu',
         breadcrumb: {
           name: 'Desszertek',
           href: '/desszertek',
@@ -126,13 +153,13 @@ const categories = [
       //   },
       // },
       {
-        id: 'karamellas-sajttorta',
-        name: 'Karamellás sajttorta',
-        price: 4900,
-        description: 'Krémes karamellás sajttorta',
-        options: '8, 10, 16 szeletes',
+        id: 'soskaramellas-sajttorta',
+        name: 'Sóskaramellás Sajttorta',
+        price: 1390,
+        // description: 'Krémes karamellás sajttorta',
+        options: '10, 14, 18 szeletes',
         image: karamellas_sajttorta,
-        imageAlt: 'krémes karamellás sajttorta',
+        imageAlt: 'sóskaramellás sajttorta',
         breadcrumb: {
           name: 'Desszertek',
           href: '/desszertek',
@@ -140,12 +167,12 @@ const categories = [
       },
       {
         id: 'mangos-sajttorta',
-        name: 'Mangós sajttorta',
-        price: 4900,
-        description: 'Krémes mangós sajttorta',
-        options: '8, 10, 16 szeletes',
+        name: 'Mangós Sajttorta',
+        price: 1390,
+        // description: 'Krémes mangós sajttorta',
+        options: '10, 14, 18 szeletes',
         image: mangos_sajttorta,
-        imageAlt: 'krémes mangós sajttorta',
+        imageAlt: 'mangós sajttorta',
 
         breadcrumb: {
           name: 'Desszertek',
@@ -153,13 +180,13 @@ const categories = [
         },
       },
       {
-        id: 'narancsos-csokis-torta',
-        name: 'Narancsos-csokoládés torta',
-        price: 4900,
-        description: 'Csokoládés torta narancs ízű krémmel.',
-        options: '8, 10, 16 szeletes',
+        id: 'narancsos-csoki-mousse',
+        name: 'Narancsos Csoki Mousse',
+        price: 1390,
+        // description: 'Csokoládés torta narancs ízű krémmel.',
+        options: '10, 14, 18 szeletes',
         image: narancsos_csokolades_torta,
-        imageAlt: 'narancsos-csokoládés torta',
+        imageAlt: 'narancsos csoki mousse',
         breadcrumb: {
           name: 'Desszertek',
           href: '/desszertek',
@@ -218,13 +245,13 @@ const categories = [
       //   },
       // },
       {
-        id: 'pisztacias-sajttorta',
-        name: 'Pisztáciás sajttorta',
-        price: 4900,
-        description: 'Krémes pisztáciás sajttorta',
-        options: '8, 10, 16 szeletes',
+        id: 'pisztacias-mousse',
+        name: 'Pisztáciás Mousse',
+        price: 1490,
+        // description: 'Krémes pisztáciás sajttorta',
+        options: '10, 14, 18 szeletes',
         image: pisztacias_sajttorta,
-        imageAlt: 'krémes pisztáciás sajttorta',
+        imageAlt: 'pisztáciás mousse',
 
         breadcrumb: {
           name: 'Desszertek',
@@ -244,19 +271,19 @@ const categories = [
       //     href: '/desszertek',
       //   },
       // },
-      {
-        id: 'rumos-gesztenye-mousse',
-        name: 'Rumos gesztenyemousse',
-        price: 4900,
-        description: 'Rumos gesztenyemousse torta, selymes gesztenyekrémmel.',
-        options: '8, 16 szeletes',
-        image: rumos_gesztenyemousse_torta,
-        imageAlt: 'rumos gesztenyemousse torta',
-        breadcrumb: {
-          name: 'Desszertek',
-          href: '/desszertek',
-        },
-      },
+      // {
+      //   id: 'rumos-gesztenye-mousse',
+      //   name: 'Rumos gesztenyemousse',
+      //   price: 4900,
+      //   description: 'Rumos gesztenyemousse torta, selymes gesztenyekrémmel.',
+      //   options: '8, 16 szeletes',
+      //   image: rumos_gesztenyemousse_torta,
+      //   imageAlt: 'rumos gesztenyemousse torta',
+      //   breadcrumb: {
+      //     name: 'Desszertek',
+      //     href: '/desszertek',
+      //   },
+      // },
       // {
       //   id: 'rumos-gesztenyes-tekercs',
       //   name: 'Rumos gesztenyés tekercs',
@@ -272,13 +299,13 @@ const categories = [
       // },
       {
         id: 'triplacsokis-mousse',
-        name: 'Triplacsokoládés mousse',
-        price: 4900,
-        description:
-          'Triplacsokoládés mousse torta három különböző csokoládérétegből.',
-        options: '8, 16 szeletes',
+        name: 'Triplacsokis Mousse',
+        price: 1390,
+        // description:
+        //   'Triplacsokoládés mousse torta három különböző csokoládérétegből.',
+        options: '10, 14, 18 szeletes',
         image: triplacsokolades_mousse_torta,
-        imageAlt: 'triplacsokoládés mousse torta',
+        imageAlt: 'triplacsokis mousse',
         breadcrumb: {
           name: 'Desszertek',
           href: '/desszertek',
@@ -286,31 +313,30 @@ const categories = [
       },
       {
         id: 'vegan-malnas-pisztacias-torta',
-        name: 'Vegán málnás pisztáciás torta',
-        price: 4900,
-        description:
-          'Vegán málnás-pisztáciás torta, növényi alapú összetevőkből.',
-        options: '8, 16 szeletes',
+        name: 'Vegán Málnás Pisztáciás Torta',
+        price: 1290,
+        description: ' Cukor-, glutén-, tejfehérje- és tojás-mentes',
+        options: '10, 14, 18 szeletes',
         image: vegan_malnas_pisztacias_torta,
-        imageAlt: 'vegán málnás-pisztáciás torta',
+        imageAlt: 'vegán málnás pisztáciás torta',
         breadcrumb: {
           name: 'Desszertek',
           href: '/desszertek',
         },
       },
-      {
-        id: 'vegan-sutotokos-pite',
-        name: 'Vegán sütőtökös pite',
-        price: 4500,
-        description: 'Vegán sütőtökös pite, növényi alapú összetevőkből.',
-        options: '8 szeletes',
-        image: vegan_sutotokos_pite,
-        imageAlt: 'vegán sütőtökös pite',
-        breadcrumb: {
-          name: 'Desszertek',
-          href: '/desszertek',
-        },
-      },
+      // {
+      //   id: 'vegan-sutotokos-pite',
+      //   name: 'Vegán sütőtökös pite',
+      //   price: 4500,
+      //   description: 'Vegán sütőtökös pite, növényi alapú összetevőkből.',
+      //   options: '8 szeletes',
+      //   image: vegan_sutotokos_pite,
+      //   imageAlt: 'vegán sütőtökös pite',
+      //   breadcrumb: {
+      //     name: 'Desszertek',
+      //     href: '/desszertek',
+      //   },
+      // },
     ],
   },
   {

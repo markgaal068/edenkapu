@@ -8,7 +8,7 @@ import Link from 'next/link'
 import { useState } from 'react'
 
 const Desserts = () => {
-  const [selectedQuantity, setSelectedQuantity] = useState(1)
+  const [selectedQuantity, setSelectedQuantity] = useState<number>(10)
   const category = categories.find((category) => category.id === 'desszertek')
 
   return (
@@ -38,14 +38,18 @@ const Desserts = () => {
                   >
                     <h3 className="text-sm">{product.name}</h3>
                   </Link>
-                  <p className="text-sm text-gray-500">{product.description}</p>
+                  {product.description && (
+                    <p className="text-sm text-gray-500">
+                      {product.description}
+                    </p>
+                  )}
                   <div className="flex flex-1 flex-col justify-end">
                     <p className="text-sm italic text-gray-500">
                       {product.options}
                     </p>
                     <div className="flex items-center justify-between">
                       <p className="text-base font-medium text-gray-900">
-                        {product.price} Ft
+                        {product.price} Ft / szelet
                       </p>
 
                       <div className="flex gap-3">
@@ -53,15 +57,14 @@ const Desserts = () => {
                           className="select select-bordered h-10 min-h-10 w-[75px] border-none bg-transparent leading-none text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-brown-400"
                           name={`quantity-${product.id}`}
                           aria-label={`Quantity, ${product.name}`}
+                          value={selectedQuantity}
                           onChange={(e) => {
                             setSelectedQuantity(parseInt(e.target.value))
                           }}
                         >
-                          {[...Array(99)].map((_, i) => (
-                            <option key={i + 1} value={i + 1}>
-                              {i + 1}
-                            </option>
-                          ))}
+                          <option value="10">10</option>
+                          <option value="14">14</option>
+                          <option value="18">18</option>
                         </select>
 
                         <AddToCartButton
