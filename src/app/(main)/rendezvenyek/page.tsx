@@ -5,7 +5,7 @@ import Link from 'next/link'
 const listItems = [
   'Fagylaltjaink friss, természetes alapanyagokból készülnek',
   'Klasszikus fagylaltok',
-  'Cukor-, glutén- és tejfehérje-mentes lehetőségek',
+  'Cukor-, glutén- és tejfehérjementes lehetőségek',
   'Gyermek fagylaltok',
 ]
 
