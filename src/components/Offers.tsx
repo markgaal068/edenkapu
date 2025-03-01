@@ -32,7 +32,7 @@ export function Offers() {
           <p className="mt-2 text-lg text-gray-600">
             A cukrászdánkban kézműves desszertek, színes macaronok, hűsítő
             fagylaltkülönlegességek és télen a hagyományos bejgli ízei teszik
-            felejthetetlenné a pillanatokat..
+            felejthetetlenné a pillanatokat.
           </p>
         </div>
 
