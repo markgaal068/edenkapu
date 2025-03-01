@@ -18,10 +18,10 @@ function classNames(...classes: (string | boolean | undefined)[]) {
 
 const Product = ({
   product,
-  categoryTitle,
+  iceCreams,
 }: {
   product: ProductType
-  categoryTitle: string | undefined
+  iceCreams?: boolean
 }) => {
   // const [selectedColor, setSelectedColor] = useState(product.colors[0])
   // const [selectedSize, setSelectedSize] = useState(product.sizes[2])
@@ -64,7 +64,7 @@ const Product = ({
               <h1 className="text-xl font-medium text-gray-900">
                 {product.name}
               </h1>
-              {categoryTitle !== 'Fagylaltok' && (
+              {iceCreams && (
                 <p className="text-xl font-medium text-gray-900">
                   {product.price} Ft
                 </p>
@@ -143,7 +143,7 @@ const Product = ({
             </div>
           </div>
 
-          {categoryTitle !== 'Fagylaltok' && (
+          {iceCreams && (
             <div className="mt-8 lg:col-span-5">
               <div className="flex gap-3">
                 {/* Color picker */}
