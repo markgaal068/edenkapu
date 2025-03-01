@@ -85,9 +85,9 @@ export function Header() {
                 >
                   {[
                     ['Desszertek', '/desszertek'],
+                    ['Fagylaltok', '/fagylaltok'],
                     ['Macaronok', '/macaronok'],
                     // ['Sós sütemények', '/sos-sutemenyek'],
-                    // ['Fagylaltok', '/fagylaltok'],
                     // ['Bejglik', '/bejglik'],
                   ].map(([label, href]) => (
                     <MenuItem key={href}>
@@ -166,14 +166,14 @@ export function Header() {
                               <MobileNavLink href="/desszertek">
                                 Desszertek
                               </MobileNavLink>
+                              <MobileNavLink href="/fagylaltok">
+                                Fagylaltok
+                              </MobileNavLink>
                               <MobileNavLink href="/macaronok">
                                 Macaronok
                               </MobileNavLink>
                               {/* <MobileNavLink href="/sos-sutemenyek">
                                 Sós sütemények
-                              </MobileNavLink>
-                              <MobileNavLink href="/fagylaltok">
-                                Fagylaltok
                               </MobileNavLink>
                               <MobileNavLink href="/bejglik">
                                 Bejglik

@@ -55,7 +55,7 @@ const ResellersPage = () => {
           </p>
           <div>
             <p className="text-pretty text-lg text-gray-600">
-              Lépj kapcsolatba velünk:
+              Lépjen kapcsolatba velünk:
             </p>
             <div className="flex items-center gap-2">
               <Link
@@ -72,6 +72,12 @@ const ResellersPage = () => {
               </Link>
             </div>
           </div>
+          <Link
+            className="block w-fit rounded-lg bg-brown-400 px-4 py-2 text-white transition-colors hover:bg-brown-300"
+            href="/fagylaltok"
+          >
+            Tekintse meg kínálatunkat
+          </Link>
         </div>
         <Image
           src={viszonteladoknak}

@@ -44,9 +44,11 @@ const Desserts = () => {
                     </p>
                   )}
                   <div className="flex flex-1 flex-col justify-end">
-                    <p className="text-sm italic text-gray-500">
-                      {product.options}
-                    </p>
+                    {product.options && (
+                      <p className="text-sm italic text-gray-500">
+                        {product.options}
+                      </p>
+                    )}
                     <div className="flex items-center justify-between">
                       <p className="text-base font-medium text-gray-900">
                         {product.price} Ft / szelet
