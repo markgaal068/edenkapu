@@ -21,7 +21,7 @@ import rumos_gesztenyes_tekercs from '/public/assets/images/desserts/rumos_geszt
 import triplacsokolades_mousse_torta from '/public/assets/images/desserts/triplacsokolades_mousse_torta.jpg'
 import vegan_malnas_pisztacias_torta from '/public/assets/images/desserts/vegan_malnas_pisztacias_torta.webp'
 import limeos_mousse_afonyaval from '/public/assets/images/desserts/limeos_mousse_afonyaval.jpeg'
-import tiramisu from '/public/assets/images/desserts/tiramisu.jpg'
+import tiramisu from '/public/assets/images/desserts/tiramisu.webp'
 import vegan_sutotokos_pite from '/public/assets/images/desserts/vegan_sutotokos_pite.webp'
 import dios_bejgli from '/public/assets/images/dios_bejgli.jpg'
 import epres_macaron from '/public/assets/images/epres_macaron.jpg'
