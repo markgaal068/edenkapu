@@ -18,10 +18,10 @@ function classNames(...classes: (string | boolean | undefined)[]) {
 
 const Product = ({
   product,
-  resellers,
+  categoryTitle,
 }: {
   product: ProductType
-  resellers?: boolean
+  categoryTitle: string | undefined
 }) => {
   // const [selectedColor, setSelectedColor] = useState(product.colors[0])
   // const [selectedSize, setSelectedSize] = useState(product.sizes[2])
@@ -34,10 +34,10 @@ const Product = ({
           <li>
             <div className="flex items-center">
               <Link
-                href={resellers ? '/viszonteladoknak' : product.breadcrumb.href}
+                href={product.breadcrumb.href}
                 className="mr-4 text-sm font-medium text-gray-900"
               >
-                {resellers ? 'Viszonteladóknak' : product.breadcrumb.name}
+                {product.breadcrumb.name}
               </Link>
               <svg
                 viewBox="0 0 6 20"
@@ -64,7 +64,7 @@ const Product = ({
               <h1 className="text-xl font-medium text-gray-900">
                 {product.name}
               </h1>
-              {!resellers && (
+              {categoryTitle !== 'Fagylaltok' && (
                 <p className="text-xl font-medium text-gray-900">
                   {product.price} Ft
                 </p>
@@ -143,10 +143,11 @@ const Product = ({
             </div>
           </div>
 
-          <div className="mt-8 lg:col-span-5">
-            <div className="flex gap-3">
-              {/* Color picker */}
-              {/* <div>
+          {categoryTitle !== 'Fagylaltok' && (
+            <div className="mt-8 lg:col-span-5">
+              <div className="flex gap-3">
+                {/* Color picker */}
+                {/* <div>
                 <h2 className="text-sm font-medium text-gray-900">Color</h2>
 
                 <fieldset aria-label="Choose a color" className="mt-2">
@@ -178,8 +179,8 @@ const Product = ({
                 </fieldset>
               </div> */}
 
-              {/* Size picker */}
-              {/* <div className="mt-8">
+                {/* Size picker */}
+                {/* <div className="mt-8">
                 <div className="flex items-center justify-between">
                   <h2 className="text-sm font-medium text-gray-900">Size</h2>
                   <a
@@ -214,68 +215,64 @@ const Product = ({
                   </RadioGroup>
                 </fieldset>
               </div> */}
-              <select
-                className="select select-bordered h-12 min-h-12 w-[75px] border-none bg-transparent leading-none text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-brown-400"
-                name={`quantity-${product.id}`}
-                aria-label={`Quantity, ${product.name}`}
-                onChange={(e) => {
-                  setSelectedQuantity(parseInt(e.target.value))
-                }}
-              >
-                {[...Array(99)].map((_, i) => (
-                  <option key={i + 1} value={i + 1}>
-                    {i + 1}
-                  </option>
-                ))}
-              </select>
-
-              <AddToCartButton
-                product={{
-                  id: product.id,
-                  name: product.name,
-                  basePrice: product.price,
-                  totalPrice: product.price * selectedQuantity,
-                  image: product.image,
-                  imageAlt: product.imageAlt,
-                  quantity: selectedQuantity,
-                }}
-                productPage
-              />
-            </div>
-
-            {/* Product details */}
-            <div className="mt-10">
-              <h2 className="text-sm font-medium text-gray-900">Leírás</h2>
-
-              {/* <div
-                dangerouslySetInnerHTML={{ __html: product.description }}
-                className="mt-4 space-y-4 text-sm/6 text-gray-500"
-              /> */}
-              <p className="mt-4 space-y-4 text-sm/6 text-gray-500">
-                {product.description}
-              </p>
-            </div>
-
-            <div className="mt-8 border-t border-gray-200 pt-8">
-              <h2 className="text-sm font-medium text-gray-900">Jellemzők</h2>
-
-              <div className="mt-4">
-                <ul
-                  role="list"
-                  className="list-disc space-y-1 pl-5 text-sm/6 text-gray-500 marker:text-gray-300"
+                <select
+                  className="select select-bordered h-12 min-h-12 w-[75px] border-none bg-transparent leading-none text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-brown-400"
+                  name={`quantity-${product.id}`}
+                  aria-label={`Quantity, ${product.name}`}
+                  onChange={(e) => {
+                    setSelectedQuantity(parseInt(e.target.value))
+                  }}
                 >
-                  {/* {product.details.map((item) => (
-                    <li key={item} className="pl-2">
-                      {item}
-                    </li>
-                  ))} */}
-                  <li className="pl-2">{product.options}</li>
-                </ul>
-              </div>
-            </div>
+                  {[...Array(99)].map((_, i) => (
+                    <option key={i + 1} value={i + 1}>
+                      {i + 1}
+                    </option>
+                  ))}
+                </select>
 
-            {/* Policies */}
-            {/* <section aria-labelledby="policies-heading" className="mt-10">
+                <AddToCartButton
+                  product={{
+                    id: product.id,
+                    name: product.name,
+                    basePrice: product.price,
+                    totalPrice: product.price * selectedQuantity,
+                    image: product.image,
+                    imageAlt: product.imageAlt,
+                    quantity: selectedQuantity,
+                  }}
+                  productPage
+                />
+              </div>
+
+              {/* Product details */}
+              {product.description && (
+                <div className="mt-10">
+                  <h2 className="text-sm font-medium text-gray-900">Leírás</h2>
+                  <p className="mt-4 space-y-4 text-sm/6 text-gray-500">
+                    {product.description}
+                  </p>
+                </div>
+              )}
+
+              {product.options && (
+                <div className="mt-8 border-t border-gray-200 pt-8">
+                  <h2 className="text-sm font-medium text-gray-900">
+                    Jellemzők
+                  </h2>
+
+                  <div className="mt-4">
+                    <ul
+                      role="list"
+                      className="list-disc space-y-1 pl-5 text-sm/6 text-gray-500 marker:text-gray-300"
+                    >
+                      <li className="pl-2">{product.options}</li>
+                    </ul>
+                  </div>
+                </div>
+              )}
+
+              {/* Policies */}
+              {/* <section aria-labelledby="policies-heading" className="mt-10">
               <h2 id="policies-heading" className="sr-only">
                 Our Policies
               </h2>
@@ -302,7 +299,8 @@ const Product = ({
                 ))}
               </dl>
             </section> */}
-          </div>
+            </div>
+          )}
         </div>
       </div>
     </div>

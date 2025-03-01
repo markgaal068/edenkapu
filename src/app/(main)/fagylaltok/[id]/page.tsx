@@ -6,6 +6,10 @@ const IceCreamPage = ({ params }: { params: { id: string } }) => {
     .flatMap((category) => category.products)
     .find((product) => product.id === params.id)
 
+  const categoryTitle = categories.find((category) =>
+    category.products.some((product) => product.id === params.id),
+  )?.title
+
   return (
     <div className="mx-auto max-w-2xl px-4 py-32 sm:px-6 sm:py-64 lg:max-w-9xl lg:px-8">
       {!product ? (
@@ -17,7 +21,7 @@ const IceCreamPage = ({ params }: { params: { id: string } }) => {
           <h1 className="text-3xl font-medium tracking-tight text-gray-900 sm:text-4xl">
             Termék
           </h1>
-          <Product product={product} />
+          <Product product={product} categoryTitle={categoryTitle} />
         </>
       )}
     </div>
