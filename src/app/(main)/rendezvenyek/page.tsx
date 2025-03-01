@@ -51,13 +51,13 @@ const EventsPage = () => {
                 href="tel:+36703117202"
                 className="font-semibold text-brown-400 underline hover:text-brown-300"
               >
-                06-70-311-7202
+                📞 06-70-311-7202
               </Link>
               <Link
                 href="mailto:info@edenkapu.hu"
                 className="font-semibold text-brown-400 underline hover:text-brown-300"
               >
-                info@edenkapu.hu
+                📧 info@edenkapu.hu
               </Link>
             </div>
           </div>
