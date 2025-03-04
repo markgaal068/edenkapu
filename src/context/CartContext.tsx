@@ -47,20 +47,28 @@ export function CartProvider({ children }: { children: ReactNode }) {
     console.log('Adding item:', item) // Debug log
 
     setCart((prev) => {
-      const existingItem = prev.find((cartItem) => cartItem.id === item.id)
+      const existingItem = prev.find((cartItem) => cartItem.type === item.type)
       if (existingItem) {
         return prev.map((cartItem) =>
-          cartItem.id === item.id
+          cartItem.type === item.type
             ? {
                 ...cartItem,
                 quantity: cartItem.quantity + item.quantity,
                 totalPrice:
-                  (cartItem.quantity + item.quantity) * item.basePrice,
+                  (cartItem.quantity + item.quantity) *
+                  item.basePrice *
+                  item.type,
               }
             : cartItem,
         )
       }
-      return [...prev, { ...item, totalPrice: item.quantity * item.basePrice }]
+      return [
+        ...prev,
+        {
+          ...item,
+          totalPrice: item.quantity * item.basePrice * item.type,
+        },
+      ]
     })
   }
 

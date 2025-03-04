@@ -25,8 +25,8 @@ export function Cart() {
   }
 
   return (
-    <form className="mt-12 lg:grid lg:grid-cols-12 lg:items-start lg:gap-x-12 xl:gap-x-16">
-      <section aria-labelledby="cart-heading" className="lg:col-span-7">
+    <form className="mt-12 xl:grid xl:grid-cols-12 xl:items-start xl:gap-x-16">
+      <section aria-labelledby="cart-heading" className="xl:col-span-7">
         <h2 id="cart-heading" className="sr-only">
           A kosarad tartalma
         </h2>
@@ -73,7 +73,34 @@ export function Cart() {
                     </p>
                   </div>
 
-                  <div className="mt-4 sm:mt-0 sm:pr-9">
+                  <div className="mt-4 flex flex-wrap gap-2 sm:mt-0 sm:pr-9">
+                    <select
+                      className="select select-bordered h-10 min-h-10 border-none bg-transparent leading-none text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-brown-400"
+                      name={`type-${product.id}`}
+                      aria-label={`Type, ${product.name}`}
+                      onChange={(e) => {
+                        const type = parseInt(e.target.value)
+                        console.log(type)
+
+                        const updatedProduct = {
+                          ...product,
+                          type: type,
+                          totalPrice:
+                            product.quantity * product.basePrice * type,
+                        }
+
+                        console.log(updatedProduct)
+
+                        // Remove the old item and add the updated one
+                        removeFromCart(product.id)
+                        addToCart(updatedProduct)
+                      }}
+                    >
+                      <option value="10">10 szeletes</option>
+                      <option value="14">14 szeletes</option>
+                      <option value="18">18 szeletes</option>
+                    </select>
+
                     <select
                       className="select select-bordered h-10 min-h-10 w-[75px] border-none bg-transparent leading-none text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-brown-400"
                       name={`quantity-${product.id}`}
@@ -87,7 +114,8 @@ export function Cart() {
                         const updatedProduct = {
                           ...product,
                           quantity: quantity,
-                          totalPrice: product.basePrice * quantity, // Calculate new total using basePrice
+                          totalPrice:
+                            quantity * product.basePrice * product.type, // Calculate new total using basePrice
                         }
 
                         console.log(updatedProduct)
@@ -142,7 +170,7 @@ export function Cart() {
       {/* Order summary */}
       <section
         aria-labelledby="summary-heading"
-        className="mt-16 rounded-lg bg-gray-50 px-4 py-6 sm:p-6 lg:col-span-5 lg:mt-0 lg:p-8"
+        className="mt-16 rounded-lg bg-gray-50 px-4 py-6 sm:p-6 xl:col-span-5 xl:mt-0 xl:p-8"
       >
         <h2 id="summary-heading" className="text-lg font-medium text-gray-900">
           Rendelés összesítése

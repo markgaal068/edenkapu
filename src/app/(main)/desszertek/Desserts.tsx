@@ -8,7 +8,8 @@ import Link from 'next/link'
 import { useState } from 'react'
 
 const Desserts = () => {
-  const [selectedQuantity, setSelectedQuantity] = useState<number>(10)
+  const [selectedQuantity, setSelectedQuantity] = useState<number>(1)
+  const [selectedType, setSelectedType] = useState<number>(10)
   const category = categories.find((category) => category.id === 'desszertek')
 
   return (
@@ -43,43 +44,64 @@ const Desserts = () => {
                       {product.description}
                     </p>
                   )}
-                  <div className="flex flex-1 flex-col justify-end">
+                  <div className="flex flex-1 flex-col justify-end gap-2">
                     {product.options && (
                       <p className="text-sm italic text-gray-500">
                         {product.options}
                       </p>
                     )}
-                    <div className="flex items-center justify-between">
+                    <div className="space-y-6">
                       <p className="text-base font-medium text-gray-900">
                         {product.price} Ft / szelet
                       </p>
+                      <div className="space-y-2">
+                        <p className="text-base font-medium text-gray-900">
+                          {product.price * selectedType} Ft
+                        </p>
+                        <div className="flex gap-2">
+                          <select
+                            className="select select-bordered h-10 min-h-10 border-none bg-transparent leading-none text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-brown-400"
+                            name={`type-${product.id}`}
+                            aria-label={`Type, ${product.name}`}
+                            value={selectedType}
+                            onChange={(e) => {
+                              setSelectedType(parseInt(e.target.value))
+                            }}
+                          >
+                            <option value="10">10 szeletes</option>
+                            <option value="14">14 szeletes</option>
+                            <option value="18">18 szeletes</option>
+                          </select>
 
-                      <div className="flex gap-3">
-                        <select
-                          className="select select-bordered h-10 min-h-10 w-[75px] border-none bg-transparent leading-none text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-brown-400"
-                          name={`quantity-${product.id}`}
-                          aria-label={`Quantity, ${product.name}`}
-                          value={selectedQuantity}
-                          onChange={(e) => {
-                            setSelectedQuantity(parseInt(e.target.value))
-                          }}
-                        >
-                          <option value="10">10</option>
-                          <option value="14">14</option>
-                          <option value="18">18</option>
-                        </select>
+                          <select
+                            className="select select-bordered h-10 min-h-10 border-none bg-transparent leading-none text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-brown-400"
+                            name={`quantity-${product.id}`}
+                            aria-label={`Quantity, ${product.name}`}
+                            value={selectedQuantity}
+                            onChange={(e) => {
+                              setSelectedQuantity(parseInt(e.target.value))
+                            }}
+                          >
+                            {[...Array(99)].map((_, i) => (
+                              <option key={i + 1} value={i + 1}>
+                                {i + 1} db
+                              </option>
+                            ))}
+                          </select>
 
-                        <AddToCartButton
-                          product={{
-                            id: product.id,
-                            name: product.name,
-                            basePrice: product.price,
-                            totalPrice: product.price * selectedQuantity,
-                            image: product.image,
-                            imageAlt: product.imageAlt,
-                            quantity: selectedQuantity,
-                          }}
-                        />
+                          <AddToCartButton
+                            product={{
+                              id: product.id,
+                              name: product.name,
+                              basePrice: product.price,
+                              totalPrice: product.price * selectedType,
+                              image: product.image,
+                              imageAlt: product.imageAlt,
+                              type: selectedType,
+                              quantity: selectedQuantity,
+                            }}
+                          />
+                        </div>
                       </div>
                     </div>
                   </div>

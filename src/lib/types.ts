@@ -7,6 +7,7 @@ export type CartItem = {
   totalPrice: number
   image: StaticImageData
   imageAlt: string
+  type: number
   quantity: number
 }
 
