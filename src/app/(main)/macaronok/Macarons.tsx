@@ -78,6 +78,7 @@ const Macarons = () => {
                             totalPrice: product.price * selectedQuantity,
                             image: product.image,
                             imageAlt: product.imageAlt,
+                            type: selectedQuantity,
                             quantity: selectedQuantity,
                           }}
                         />
