@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import viszonteladoknak from '/public/assets/images/viszonteladoknak.jpg'
+import viszonteladoknak from '/public/assets/images/viszonteladoknak.webp'
 import Link from 'next/link'
 
 const ResellersPage = () => {
