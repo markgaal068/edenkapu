@@ -933,9 +933,9 @@ const categories = [
       {
         id: 'karamell-macaron',
         name: 'Karamell Macaron',
-        price: 1590,
+        price: 600,
         // description: 'Lágy karamellkrémmel töltött macaron.',
-        options: '3, 4 darabos',
+        options: '1-10 darabos',
         image: karamell,
         imageAlt: 'Karamell macaron',
         breadcrumb: {
@@ -946,9 +946,9 @@ const categories = [
       {
         id: 'mango-kokusz-macaron',
         name: 'Mangó-Kókusz Macaron',
-        price: 1590,
+        price: 600,
         // description: 'Egzotikus mangó és kókusz ízesítésű macaron.',
-        options: '3, 4 darabos',
+        options: '1-10 darabos',
         image: mango_kokusz,
         imageAlt: 'Mangó-kókusz macaron',
         breadcrumb: {
@@ -959,9 +959,9 @@ const categories = [
       {
         id: 'nutella-macaron',
         name: 'Nutella Macaron',
-        price: 1590,
+        price: 600,
         // description: 'Nutella krémmel töltött macaron.',
-        options: '3, 4 darabos',
+        options: '1-10 darabos',
         image: nutella,
         imageAlt: 'Nutella macaron',
         breadcrumb: {
@@ -972,9 +972,9 @@ const categories = [
       {
         id: 'pisztacia-macaron',
         name: 'Pisztácia Macaron',
-        price: 1590,
+        price: 600,
         // description: 'Valódi pisztáciával készült macaron.',
-        options: '3, 4 darabos',
+        options: '1-10 darabos',
         image: pisztacia,
         imageAlt: 'Pisztácia macaron',
         breadcrumb: {
@@ -985,9 +985,9 @@ const categories = [
       {
         id: 'tonkababos-csokolade-macaron',
         name: 'Tonkababos Csokoládé Macaron',
-        price: 1590,
+        price: 600,
         // description: 'Tonkababbal ízesített csokoládés macaron.',
-        options: '3, 4 darabos',
+        options: '1-10 darabos',
         image: tonkababos_csokis,
         imageAlt: 'Tonkababos csokoládé macaron',
         breadcrumb: {
@@ -998,9 +998,9 @@ const categories = [
       {
         id: 'yuzu-malna-macaron',
         name: 'Yuzu-Málna Macaron',
-        price: 1590,
+        price: 600,
         // description: 'Yuzu citrussal és málnával ízesített macaron.',
-        options: '3, 4 darabos',
+        options: '1-10 darabos',
         image: yuzu_malna,
         imageAlt: 'Yuzu-málna macaron',
         breadcrumb: {

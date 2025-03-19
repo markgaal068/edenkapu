@@ -240,6 +240,7 @@ const Product = ({
                     imageAlt: product.imageAlt,
                     type: selectedQuantity,
                     quantity: selectedQuantity,
+                    breadcrumb: product.breadcrumb,
                   }}
                   productPage
                 />

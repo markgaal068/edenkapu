@@ -7,8 +7,12 @@ export type CartItem = {
   totalPrice: number
   image: StaticImageData
   imageAlt: string
-  type: number
+  type?: number
   quantity: number
+  breadcrumb: {
+    name: string
+    href: string
+  }
 }
 
 export type ProductType = {

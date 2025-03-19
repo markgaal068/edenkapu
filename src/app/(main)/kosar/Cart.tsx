@@ -74,63 +74,100 @@ export function Cart() {
                   </div>
 
                   <div className="mt-4 flex flex-wrap gap-2 sm:mt-0 sm:pr-9">
-                    <select
-                      className="select select-bordered h-10 min-h-10 border-none bg-transparent leading-none text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-brown-400"
-                      name={`type-${product.id}`}
-                      aria-label={`Type, ${product.name}`}
-                      onChange={(e) => {
-                        const type = parseInt(e.target.value)
-                        console.log(type)
+                    {product.breadcrumb.name === 'Desszertek' && (
+                      <>
+                        <select
+                          className="select select-bordered h-10 min-h-10 border-none bg-transparent leading-none text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-brown-400"
+                          name={`type-${product.id}`}
+                          aria-label={`Type, ${product.name}`}
+                          defaultValue={product.type}
+                          onChange={(e) => {
+                            const type = parseInt(e.target.value)
+                            console.log(type)
 
-                        const updatedProduct = {
-                          ...product,
-                          type: type,
-                          totalPrice:
-                            product.quantity * product.basePrice * type,
-                        }
+                            const updatedProduct = {
+                              ...product,
+                              type: type,
+                              totalPrice:
+                                product.quantity * product.basePrice * type,
+                            }
 
-                        console.log(updatedProduct)
+                            console.log(updatedProduct)
 
-                        // Remove the old item and add the updated one
-                        removeFromCart(product.id)
-                        addToCart(updatedProduct)
-                      }}
-                    >
-                      <option value="10">10 szeletes</option>
-                      <option value="14">14 szeletes</option>
-                      <option value="18">18 szeletes</option>
-                    </select>
+                            // Remove the old item and add the updated one
+                            removeFromCart(product.id)
+                            addToCart(updatedProduct)
+                          }}
+                        >
+                          <option value="10">10 szeletes</option>
+                          <option value="14">14 szeletes</option>
+                          <option value="18">18 szeletes</option>
+                        </select>
 
-                    <select
-                      className="select select-bordered h-10 min-h-10 w-[75px] border-none bg-transparent leading-none text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-brown-400"
-                      name={`quantity-${product.id}`}
-                      aria-label={`Quantity, ${product.name}`}
-                      defaultValue={product.quantity}
-                      onChange={(e) => {
-                        const quantity = parseInt(e.target.value)
-                        console.log(quantity)
+                        <select
+                          className="select select-bordered h-10 min-h-10 border-none bg-transparent leading-none text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-brown-400"
+                          name={`quantity-${product.id}`}
+                          aria-label={`Quantity, ${product.name}`}
+                          defaultValue={product.quantity}
+                          onChange={(e) => {
+                            const quantity = parseInt(e.target.value)
+                            console.log(quantity)
 
-                        // Update the cart item with the new quantity
-                        const updatedProduct = {
-                          ...product,
-                          quantity: quantity,
-                          totalPrice:
-                            quantity * product.basePrice * product.type, // Calculate new total using basePrice
-                        }
+                            // Update the cart item with the new quantity
+                            const updatedProduct = {
+                              ...product,
+                              quantity: quantity,
+                              totalPrice:
+                                quantity * product.basePrice * product.type!, // Calculate new total using basePrice
+                            }
 
-                        console.log(updatedProduct)
+                            console.log(updatedProduct)
 
-                        // Remove the old item and add the updated one
-                        removeFromCart(product.id)
-                        addToCart(updatedProduct)
-                      }}
-                    >
-                      {[...Array(99)].map((_, i) => (
-                        <option key={i + 1} value={i + 1}>
-                          {i + 1}
-                        </option>
-                      ))}
-                    </select>
+                            // Remove the old item and add the updated one
+                            removeFromCart(product.id)
+                            addToCart(updatedProduct)
+                          }}
+                        >
+                          {[...Array(99)].map((_, i) => (
+                            <option key={i + 1} value={i + 1}>
+                              {i + 1} db
+                            </option>
+                          ))}
+                        </select>
+                      </>
+                    )}
+
+                    {product.breadcrumb.name !== 'Desszertek' && (
+                      <select
+                        className="select select-bordered h-10 min-h-10 border-none bg-transparent leading-none text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-brown-400"
+                        name={`quantity-${product.id}`}
+                        aria-label={`Quantity, ${product.name}`}
+                        defaultValue={product.quantity}
+                        onChange={(e) => {
+                          const quantity = parseInt(e.target.value)
+                          console.log(quantity)
+
+                          // Update the cart item with the new quantity
+                          const updatedProduct = {
+                            ...product,
+                            quantity: quantity,
+                            totalPrice: quantity * product.basePrice, // Calculate new total using basePrice
+                          }
+
+                          console.log(updatedProduct)
+
+                          // Remove the old item and add the updated one
+                          removeFromCart(product.id)
+                          addToCart(updatedProduct)
+                        }}
+                      >
+                        {[...Array(99)].map((_, i) => (
+                          <option key={i + 1} value={i + 1}>
+                            {i + 1} db
+                          </option>
+                        ))}
+                      </select>
+                    )}
 
                     <div className="absolute right-0 top-0">
                       <DeleteFromCartButton product={product} />

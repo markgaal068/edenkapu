@@ -78,6 +78,7 @@ const IceCreams = () => {
                             image: product.image,
                             imageAlt: product.imageAlt,
                             quantity: selectedQuantity,
+                            breadcrumb: product.breadcrumb,
                           }}
                         />
                       </div>

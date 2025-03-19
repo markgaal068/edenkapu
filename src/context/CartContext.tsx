@@ -46,30 +46,57 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const addToCart = (item: CartItem) => {
     console.log('Adding item:', item) // Debug log
 
-    setCart((prev) => {
-      const existingItem = prev.find((cartItem) => cartItem.type === item.type)
-      if (existingItem) {
-        return prev.map((cartItem) =>
-          cartItem.type === item.type
-            ? {
-                ...cartItem,
-                quantity: cartItem.quantity + item.quantity,
-                totalPrice:
-                  (cartItem.quantity + item.quantity) *
-                  item.basePrice *
-                  item.type,
-              }
-            : cartItem,
+    if (item.breadcrumb.name === 'Desszertek') {
+      setCart((prev) => {
+        const existingItem = prev.find(
+          (cartItem) => cartItem.type === item.type,
         )
-      }
-      return [
-        ...prev,
-        {
-          ...item,
-          totalPrice: item.quantity * item.basePrice * item.type,
-        },
-      ]
-    })
+        if (existingItem) {
+          return prev.map((cartItem) =>
+            cartItem.type === item.type
+              ? {
+                  ...cartItem,
+                  quantity: cartItem.quantity + item.quantity,
+                  totalPrice:
+                    (cartItem.quantity + item.quantity) *
+                    item.basePrice *
+                    item.type!,
+                }
+              : cartItem,
+          )
+        }
+        return [
+          ...prev,
+          {
+            ...item,
+            totalPrice: item.quantity * item.basePrice * item.type!,
+          },
+        ]
+      })
+    } else {
+      setCart((prev) => {
+        const existingItem = prev.find((cartItem) => cartItem.id === item.id)
+        if (existingItem) {
+          return prev.map((cartItem) =>
+            cartItem.id === item.id
+              ? {
+                  ...cartItem,
+                  quantity: cartItem.quantity + item.quantity,
+                  totalPrice:
+                    (cartItem.quantity + item.quantity) * item.basePrice,
+                }
+              : cartItem,
+          )
+        }
+        return [
+          ...prev,
+          {
+            ...item,
+            totalPrice: item.quantity * item.basePrice,
+          },
+        ]
+      })
+    }
   }
 
   const removeFromCart = (itemId: string) => {
