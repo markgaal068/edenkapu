@@ -97,12 +97,12 @@ const ResellersPage = () => {
           <Image
             src={eletizek}
             alt="viszonteladó illusztráció"
-            className="w-40 rounded-2xl"
+            className="w-40"
           />
           <Image
             src={lajta_fagyi}
             alt="viszonteladó illusztráció"
-            className="w-40 rounded-2xl"
+            className="w-40"
           />
         </div>
       </div>
