@@ -35,7 +35,7 @@ export async function submitOrder(data: OrderEmailProps) {
     // Email az adminnak / cégnek
     await resend.emails.send({
       from: process.env.RESEND_FROM!,
-      to: 'rendelesek@edenkapu.hu', 
+      to: 'info@edenkapu.hu', 
       subject: 'Új rendelés érkezett',
       html: `
         <h2>Új rendelés érkezett</h2>
