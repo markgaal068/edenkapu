@@ -1,5 +1,9 @@
+'use client'
+
 import { Container } from '@/components/Container'
 import Link from 'next/link'
+import { Disclosure } from '@headlessui/react'
+import { ChevronUpIcon } from '@heroicons/react/24/outline'
 
 const faqs = [
   [
@@ -60,46 +64,53 @@ export function Faqs() {
     <section
       id="gyakori-kerdesek"
       aria-labelledby="faqs-title"
-      className="border-t border-gray-200 py-20 sm:py-32"
+      className="border-t border-gray-200 bg-gray-50 py-20 sm:py-32"
     >
       <Container>
-        <div className="mx-auto max-w-2xl lg:mx-0">
+        <div className="mx-auto max-w-3xl text-center">
           <h2
             id="faqs-title"
-            className="text-3xl font-medium tracking-tight text-gray-900"
+            className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl"
           >
             Gyakori kérdések
           </h2>
-          <p className="mt-2 text-lg text-gray-600">
-            Ha bármi más kérdésed van,{' '}
+          <p className="mt-4 text-lg leading-8 text-gray-600">
+            Ha nem találod a választ,{' '}
             <Link
-              href="mailto:info@example.com"
-              className="text-gray-900 underline transition-opacity hover:opacity-70"
+              href="#kapcsolat"
+              className="underline text-brown-400 hover:text-brown-300 transition-colors"
             >
-              keress meg minket bátran
+              vedd fel velünk a kapcsolatot
             </Link>
-            .
+            !
           </p>
         </div>
-        <ul
-          role="list"
-          className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 sm:mt-20 lg:max-w-none lg:grid-cols-3"
-        >
+
+        <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {faqs.map((column, columnIndex) => (
-            <li key={columnIndex}>
-              <ul role="list" className="space-y-10">
-                {column.map((faq, faqIndex) => (
-                  <li key={faqIndex}>
-                    <h3 className="text-lg font-semibold leading-6 text-gray-900">
-                      {faq.question}
-                    </h3>
-                    <p className="mt-4 text-sm text-gray-700">{faq.answer}</p>
-                  </li>
-                ))}
-              </ul>
-            </li>
+            <div key={columnIndex} className="space-y-6">
+              {column.map((faq, faqIndex) => (
+                <Disclosure key={faqIndex}>
+                  {({ open }) => (
+                    <div className="rounded-2xl bg-white shadow-sm p-6">
+                      <Disclosure.Button className="flex w-full justify-between items-center text-left text-lg font-medium text-gray-900">
+                        {faq.question}
+                        <ChevronUpIcon
+                          className={`${
+                            open ? 'rotate-180 transform' : ''
+                          } h-6 w-6 text-brown-400 transition-transform`}
+                        />
+                      </Disclosure.Button>
+                      <Disclosure.Panel className="mt-4 text-gray-600 leading-7 text-base">
+                        {faq.answer}
+                      </Disclosure.Panel>
+                    </div>
+                  )}
+                </Disclosure>
+              ))}
+            </div>
           ))}
-        </ul>
+        </div>
       </Container>
     </section>
   )

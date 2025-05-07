@@ -6,107 +6,106 @@ import Link from 'next/link'
 
 const ResellersPage = () => {
   return (
-    <div className="mx-auto max-w-2xl space-y-12 px-4 py-40 sm:px-6 sm:py-64 lg:max-w-9xl lg:px-8">
-      <div className="space-y-6">
-        <h1 className="text-3xl font-medium tracking-tight text-gray-900 sm:text-4xl">
-          Viszonteladóknak
-        </h1>
-        <div className="grid grid-cols-1 gap-6 xl:grid-cols-2">
-          <div className="space-y-6">
-            <p className="text-pretty text-lg text-gray-600">
-              Prémium minőségű fagylalt viszonteladóknak!
-            </p>
-            <p className="text-pretty text-lg text-gray-600">
-              Szeretnéd bővíteni kínálatodat prémium minőségű fagylaltokkal?
-              Olyan termékeket keresel, amelyek garantáltan elnyerik vásárlóid
-              tetszését? Nálunk megtalálod a tökéletes megoldást!
-            </p>
-            <p className="text-pretty text-lg text-gray-600">
-              Miért válassz minket?
-            </p>
-            <ul className="list-inside list-disc space-y-2">
-              <li className="text-pretty text-lg text-gray-600">
-                <span className="font-semibold text-gray-900">
-                  Széles ízválaszték
-                </span>{' '}
-                – Klasszikus, Gyümölcs, Cukor-, glutén- és tejfehérje-mentes
-                lehetőségek
+    <section className="text-gray-800">
+      {/* HERO SECTION */}
+      <div className="relative isolate bg-[#f9f4ef] py-28 sm:pt-60">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center">
+          <h1 className="text-5xl font-extrabold tracking-tight text-gray-900 sm:text-6xl">
+            Fagylalt viszonteladóknak – prémium minőség
+          </h1>
+          <p className="mt-6 text-xl text-gray-700 max-w-3xl mx-auto">
+            Emeld vállalkozásod szintjét <strong>kézműves fagylaltjainkkal</strong>, amelyek a természetes alapanyagoknak és a gondos odafigyelésnek köszönhetően kiemelkednek a piacon.
+          </p>
+        </div>
+      </div>
+
+      {/* INFO SECTION */}
+      <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8 grid grid-cols-1 xl:grid-cols-2 gap-16 items-center">
+        <div className="space-y-6">
+          <h2 className="text-3xl font-bold text-gray-900">
+            Miért érdemes minket választani?
+          </h2>
+          <p className="text-lg text-gray-700">
+            Ha olyan fagylaltkínálatot keresel, amely nemcsak minőségével, de változatosságával is meggyőzi vásárlóidat, jó helyen jársz.
+          </p>
+          <ul className="grid gap-4 text-lg text-gray-700">
+            {[
+              ['Széles ízválaszték', 'Klasszikus és gyümölcsös, valamint mentes opciók.'],
+              ['Kiváló minőség', 'Gondosan válogatott, természetes alapanyagok.'],
+              ['Versenyképes árak', 'Rugalmas mennyiségi kedvezmények.'],
+              ['Megbízható szállítás', 'Gyors és pontos kiszolgálás, hogy mindig időben érkezzen a fagylalt.'],
+            ].map(([title, desc]) => (
+              <li key={title} className="flex gap-3 items-start">
+                <span className="text-[#c0946c] text-2xl">🍨</span>
+                <div>
+                  <strong className="text-gray-900">{title}</strong> – {desc}
+                </div>
               </li>
-              <li className="text-pretty text-lg text-gray-600">
-                <span className="font-semibold text-gray-900">
-                  Kiváló minőség
-                </span>{' '}
-                – Gondosan válogatott alapanyagokból
-              </li>
-              <li className="text-pretty text-lg text-gray-600">
-                <span className="font-semibold text-gray-900">
-                  Versenyképes árak
-                </span>{' '}
-                – Rugalmas árazás és mennyiségi kedvezmények
-              </li>
-              <li className="text-pretty text-lg text-gray-600">
-                <span className="font-semibold text-gray-900">
-                  Megbízható szállítás
-                </span>{' '}
-                – Gyors és rugalmas kiszállítás, hogy mindig friss termékkel
-                szolgálhasd ki vendégeidet
-              </li>
-            </ul>
-            <p className="text-pretty text-lg text-gray-600">
-              Válaszd az Éden Kapu Fagylaltozót, és fedezd fel, hogyan válhat az
-              eseményed egyedülálló, ínycsiklandó élménnyé!
-            </p>
-            <div>
-              <p className="text-pretty text-lg text-gray-600">
-                Lépjen kapcsolatba velünk:
-              </p>
-              <div className="flex items-center gap-2">
-                <Link
-                  href="tel:+36703117202"
-                  className="font-semibold text-brown-400 underline hover:text-brown-300"
-                >
-                  📞 06-70-311-7202
-                </Link>
-                <Link
-                  href="mailto:info@edenkapu.hu"
-                  className="font-semibold text-brown-400 underline hover:text-brown-300"
-                >
-                  📧 info@edenkapu.hu
-                </Link>
-              </div>
+            ))}
+          </ul>
+          <p className="text-lg text-gray-700">
+            Legyen szó kávézóról, étteremről vagy szezonális büféről – nálunk megtalálod a megfelelő termékeket.
+          </p>
+
+          {/* CONTACT + CTA */}
+          <div className="mt-6 space-y-4">
+            <p className="text-lg font-medium text-gray-800">📩 Kapcsolatfelvétel:</p>
+            <div className="flex flex-col sm:flex-row gap-4 sm:items-center">
+              <Link
+                href="tel:+36703117202"
+                className="rounded-full bg-[#c0946c] px-6 py-3 text-white font-semibold hover:bg-[#a3784f] transition-colors"
+              >
+                📞 +36 70 311 7202
+              </Link>
+              <Link
+                href="mailto:info@edenkapu.hu"
+                className="rounded-full border border-[#c0946c] px-6 py-3 text-[#c0946c] font-semibold hover:bg-[#f3ebe4] transition-colors"
+              >
+                📧 info@edenkapu.hu
+              </Link>
             </div>
             <Link
-              className="block w-fit rounded-lg bg-brown-400 px-4 py-2 text-white transition-colors hover:bg-brown-300"
+              className="inline-block mt-4 rounded-lg bg-[#c0946c] px-5 py-2.5 text-white font-medium hover:bg-[#a3784f] transition"
               href="/fagylaltok"
             >
               Tekintse meg kínálatunkat
             </Link>
           </div>
+        </div>
+
+        <div className="overflow-hidden rounded-3xl shadow-xl transform transition-transform duration-500 hover:scale-105">
           <Image
             src={viszonteladoknak}
-            alt="viszonteladó illusztráció"
-            className="rounded-2xl"
+            alt="Fagylalt viszonteladóknak – Éden Kapu"
+            className="rounded-3xl object-cover"
+            width={1200}
+            height={800}
+            priority
           />
         </div>
       </div>
-      <div className="space-y-6">
-        <h2 className="text-2xl font-medium tracking-tight text-gray-900">
-          Partnereink
-        </h2>
-        <div className="grid w-fit grid-cols-2 items-center gap-6">
-          <Image
-            src={eletizek}
-            alt="viszonteladó illusztráció"
-            className="w-40"
-          />
-          <Image
-            src={lajta_fagyi}
-            alt="viszonteladó illusztráció"
-            className="w-40"
-          />
+
+      {/* PARTNEREK */}
+      <div className="bg-[#f9f4ef] py-20">
+        <div className="mx-auto max-w-5xl px-6 text-center">
+          <h3 className="text-2xl font-semibold text-gray-900 mb-10">
+            Büszkén dolgozunk együtt partnereinkkel
+          </h3>
+          <div className="flex justify-center gap-10 flex-wrap items-center">
+            <Image
+              src={eletizek}
+              alt="Életízek partner"
+              className="w-40 grayscale hover:grayscale-0 transition duration-300"
+            />
+            <Image
+              src={lajta_fagyi}
+              alt="Lajta Fagyi partner"
+              className="w-40 grayscale hover:grayscale-0 transition duration-300"
+            />
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 

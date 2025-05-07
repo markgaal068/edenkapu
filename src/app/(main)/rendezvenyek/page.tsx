@@ -1,76 +1,98 @@
 import Image from 'next/image'
-import rendezvenyek from '/public/assets/images/rendezvenyek.png'
 import Link from 'next/link'
-
-const listItems = [
-  'Fagylaltjaink friss, természetes alapanyagokból készülnek',
-  'Klasszikus fagylaltok',
-  'Cukor-, glutén- és tejfehérjementes lehetőségek',
-  'Gyermek fagylaltok',
-]
+import rendezvenyek from '/public/assets/images/rendezvenyek.png'
 
 const EventsPage = () => {
   return (
-    <div className="mx-auto max-w-2xl px-4 py-40 sm:px-6 sm:py-64 lg:max-w-9xl lg:px-8">
-      <h1 className="text-3xl font-medium tracking-tight text-gray-900 sm:text-4xl">
-        Rendezvények
-      </h1>
-      <div className="mt-6 grid grid-cols-1 gap-6 xl:grid-cols-2">
+    <section className="text-gray-800">
+      {/* HERO SECTION */}
+      <div className="relative isolate overflow-hidden bg-[#f9f4ef] py-32 sm:py-40 sm:mt-20">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center">
+          <h1 className="text-5xl font-extrabold tracking-tight text-gray-900 sm:text-6xl drop-shadow-sm">
+            Fagylalt, ami élménnyé varázsolja a rendezvényed
+          </h1>
+          <p className="mt-6 text-xl text-gray-700 max-w-3xl mx-auto">
+            Az Éden Kapu Fagylaltozó elhozza a <strong>kézműves fagylalt</strong> világát a rendezvényed helyszínére – személyre szabva, stílusosan, felejthetetlenül.
+          </p>
+        </div>
+      </div>
+
+      {/* STORY SECTION */}
+      <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8 grid grid-cols-1 xl:grid-cols-2 gap-16 items-center">
         <div className="space-y-6">
-          <p className="text-pretty text-lg text-gray-600">
-            Éden Kapu Fagylaltozó és Kávézó – Fagylalt Kitelepülések, amelyek
-            feledhetetlenné teszik a pillanatokat!
+          <h2 className="text-3xl font-bold text-gray-900">
+            Minden pillanat különleges lehet
+          </h2>
+          <p className="text-lg text-gray-700">
+            Legyen szó <strong>esküvőről</strong>, <strong>céges eseményről</strong>, születésnapról vagy nyári fesztiválról – fagylaltpultunk exkluzív megjelenése és ízei garantáltan mosolyt csalnak minden vendég arcára.
           </p>
-          <p className="text-pretty text-lg text-gray-600">
-            Az Éden Kapu Fagylaltozó és Kávézó ami, garantáltan emlékezetessé
-            teszi a pillanatot! Legyen szó esküvőről, céges rendezvényekről,
-            születésnapokról vagy bármilyen más eseményről, mi gondoskodunk
-            arról, hogy a legfinomabb kézműves fagylaltjaink legyenek a
-            középpontban!
+          <p className="text-lg text-gray-700">
+            Mobil kitelepülésünk rugalmasan alkalmazkodik az eseményhez – mi visszük a hűsítő varázslatot, te élvezheted a gondtalan élményt.
           </p>
-          <p className="text-pretty text-lg text-gray-600">
-            Miért válassz minket?
-          </p>
-          <ul className="list-inside list-disc space-y-2">
-            {listItems.map((item) => (
-              <li className="text-pretty text-lg text-gray-600" key={item}>
-                {item}
+        </div>
+        <div className="overflow-hidden rounded-3xl shadow-xl transform transition-transform duration-500 hover:scale-105">
+          <Image
+            src={rendezvenyek}
+            alt="Kézműves fagylalt rendezvényeken – Éden Kapu"
+            width={1200}
+            height={800}
+            className="rounded-3xl object-cover"
+            priority
+          />
+        </div>
+      </div>
+
+      {/* WHY CHOOSE US */}
+      <div className="bg-[#f9f4ef] py-24">
+        <div className="mx-auto max-w-5xl px-6 text-center">
+          <h2 className="text-3xl font-semibold text-gray-900 mb-6">
+            Miért válaszd az Éden Kaput rendezvényedre?
+          </h2>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-lg text-gray-700 text-left max-w-3xl mx-auto">
+            {[
+              'Természetes alapanyagokból készült kézműves fagylalt',
+              'Cukor-, glutén- és tejfehérjementes opciók',
+              'Prémium tálalás és látványos pultdesign',
+              'Gyermekbarát és felnőtteknek szóló ízvilág',
+            ].map((item) => (
+              <li
+                key={item}
+                className="flex items-start gap-3 hover:text-[#a3784f] transition-colors"
+              >
+                <span className="text-[#c0946c] text-xl">🍦</span>
+                <span>{item}</span>
               </li>
             ))}
           </ul>
-          <p className="text-pretty text-lg text-gray-600">
-            Válaszd az Éden Kapu Fagylaltozót, és fedezd fel, hogyan válhat az
-            eseményed egyedülálló, ínycsiklandó élménnyé!
+        </div>
+      </div>
+
+      {/* CTA SECTION */}
+      <div className="bg-[#f9f4ef] py-20">
+        <div className="mx-auto max-w-3xl px-6 text-center">
+          <h3 className="text-3xl font-bold text-gray-900 mb-4">
+            Készen állsz egy édes élményre?
+          </h3>
+          <p className="text-lg text-gray-700 mb-8">
+            Vedd fel velünk a kapcsolatot, és teremtsünk együtt egy felejthetetlen rendezvényt!
           </p>
-          <div>
-            <p className="text-pretty text-lg text-gray-600">
-              Lépj kapcsolatba velünk:
-            </p>
-            <div className="flex items-center gap-2">
-              <Link
-                href="tel:+36703117202"
-                className="font-semibold text-brown-400 underline hover:text-brown-300"
-              >
-                📞 06-70-311-7202
-              </Link>
-              <Link
-                href="mailto:info@edenkapu.hu"
-                className="font-semibold text-brown-400 underline hover:text-brown-300"
-              >
-                📧 info@edenkapu.hu
-              </Link>
-            </div>
+          <div className="flex flex-col sm:flex-row justify-center gap-4 text-lg font-semibold">
+            <Link
+              href="tel:+36703117202"
+              className="rounded-full bg-[#c0946c] px-6 py-3 text-white hover:bg-[#a3784f] transition-colors"
+            >
+              📞 +36 70 311 7202
+            </Link>
+            <Link
+              href="mailto:info@edenkapu.hu"
+              className="rounded-full border border-[#c0946c] px-6 py-3 text-[#c0946c] hover:bg-[#f3ebe4] transition-colors"
+            >
+              📧 info@edenkapu.hu
+            </Link>
           </div>
         </div>
-        <Image
-          src={rendezvenyek}
-          alt="rendezvény illusztráció"
-          width={1200}
-          height={800}
-          className="rounded-2xl"
-        />
       </div>
-    </div>
+    </section>
   )
 }
 

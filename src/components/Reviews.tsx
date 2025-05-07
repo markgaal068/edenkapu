@@ -78,14 +78,38 @@ function StarIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   )
 }
 
+
 function StarRating() {
+  const [rating, setRating] = useState(0);
+
+  useEffect(() => {
+    // Weighted random selection for star rating (more likely to get 5 stars)
+    const randomRating = getRandomRating();
+    setRating(randomRating);
+  }, []);
+
+  const getRandomRating = () => {
+    // Weighted distribution: 5 stars is most likely, 4 stars next, 3 stars least likely
+    const rand = Math.random();
+    if (rand < 0.1) {
+      return 3; // 10% chance of 3 stars
+    } else if (rand < 0.4) {
+      return 4; // 30% chance of 4 stars
+    } else {
+      return 5; // 60% chance of 5 stars
+    }
+  };
+
   return (
     <div className="flex">
       {[...Array(5).keys()].map((index) => (
-        <StarIcon key={index} className="h-5 w-5 fill-brown-400" />
+        <StarIcon
+          key={index}
+          className={`h-5 w-5 ${index < rating ? 'fill-brown-400' : 'fill-gray-300'}`}
+        />
       ))}
     </div>
-  )
+  );
 }
 
 function Review({
