@@ -46,7 +46,7 @@ const EventsPage = () => {
       <div className="bg-[#f9f4ef] py-24">
         <div className="mx-auto max-w-5xl px-6 text-center">
           <h2 className="text-3xl font-semibold text-gray-900 mb-6">
-            Miért válaszd az Éden Kaput rendezvényedre?
+            Miért válaszd az Édenkaput rendezvényedre?
           </h2>
           <ul className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-lg text-gray-700 text-left max-w-3xl mx-auto">
             {[

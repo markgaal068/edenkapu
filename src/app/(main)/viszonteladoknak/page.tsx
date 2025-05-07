@@ -76,7 +76,7 @@ const ResellersPage = () => {
         <div className="overflow-hidden rounded-3xl shadow-xl transform transition-transform duration-500 hover:scale-105">
           <Image
             src={viszonteladoknak}
-            alt="Fagylalt viszonteladóknak – Éden Kapu"
+            alt="Fagylalt viszonteladóknak – Édenkapu"
             className="rounded-3xl object-cover"
             width={1200}
             height={800}
