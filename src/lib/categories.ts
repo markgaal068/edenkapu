@@ -86,6 +86,16 @@ import karamell from '/public/assets/images/macarons/karamell.webp'
 import nutella from '/public/assets/images/macarons/nutella.webp'
 import mango_kokusz from '/public/assets/images/macarons/mango_kokusz.webp'
 import pisztacia from '/public/assets/images/macarons/pisztacia.webp'
+import affogato from '/public/assets/images/coffees/affogato.jpg'
+import espresso_tonic from '/public/assets/images/coffees/espresso_tonic.jpg'
+import jeges_chai_latte from '/public/assets/images/coffees/jeges_chai_latte.jpg'
+import jeges_matcha_latte from '/public/assets/images/coffees/jeges_matcha_latte.jpg'
+import jeges_latte from '/public/assets/images/coffees/jeges_latte.jpg'
+import klasszikus_jegeskávé from '/public/assets/images/coffees/klasszikus_jegeskávé.jpg'
+import jeges_málnahabos_matcha_latte from '/public/assets/images/coffees/jeges_málnahabos_matcha_latte.jpg'
+import kavek from '/public/assets/images/coffees/kavek.jpg'
+
+
 
 const categories = [
   {
@@ -1006,6 +1016,105 @@ const categories = [
         breadcrumb: {
           name: 'Macaronok',
           href: '/macaronok',
+        },
+      },
+    ],
+  },
+  {
+    id: 'kavek',
+    title: 'Kávék',
+    href: '/kavek',
+    image: kavek,
+    products: [
+      {
+        id: 'affogato',
+        name: 'Affogato',
+        price: 600,
+        // description: 'Lágy karamellkrémmel töltött macaron.',
+        // options: '1-10 darabos',
+        image: affogato,
+        imageAlt: 'Affogato',
+        breadcrumb: {
+          name: 'Kávék',
+          href: '/kavek',
+        },
+      },
+      {
+        id: 'espresso_tonic',
+        name: 'Espresso tnoic',
+        price: 600,
+        // description: 'Egzotikus mangó és kókusz ízesítésű macaron.',
+        //options: '1-10 darabos',
+        image: espresso_tonic,
+        imageAlt: 'Espresso tonic',
+        breadcrumb: {
+          name: 'Kávék',
+          href: '/kavek',
+        },
+      },
+      {
+        id: 'jeges_chai_latte',
+        name: 'Jeges chai latte',
+        price: 600,
+        // description: 'Nutella krémmel töltött macaron.',
+        //options: '1-10 darabos',
+        image: jeges_chai_latte,
+        imageAlt: 'Jeges chai latte',
+        breadcrumb: {
+          name: 'Kávék',
+          href: '/kavek',
+        },
+      },
+      {
+        id: 'jeges_latte',
+        name: 'Jeges latte',
+        price: 600,
+        // description: 'Valódi pisztáciával készült macaron.',
+        //options: '1-10 darabos',
+        image: jeges_latte,
+        imageAlt: 'Jeges latte',
+        breadcrumb: {
+          name: 'Kávék',
+          href: '/kavek',
+        },
+      },
+      {
+        id: 'jeges_malnahabos_matcha_latte',
+        name: 'Jeges málnahabos matcha latte',
+        price: 600,
+        // description: 'Tonkababbal ízesített csokoládés macaron.',
+        //options: '1-10 darabos',
+        image: jeges_málnahabos_matcha_latte,
+        imageAlt: 'Jeges málnahabos matcha latte',
+        breadcrumb: {
+          name: 'Kávék',
+          href: '/kavek',
+        },
+      },
+      {
+        id: 'jeges_matcha_latte',
+        name: 'Jeges matcha latte',
+        price: 600,
+        // description: 'Yuzu citrussal és málnával ízesített macaron.',
+        //options: '1-10 darabos',
+        image: jeges_matcha_latte,
+        imageAlt: 'Jeges matcha latte',
+        breadcrumb: {
+          name: 'Kávék',
+          href: '/kavek',
+        },
+      }, 
+      {
+        id: 'klasszikus_jegeskave',
+        name: 'Klasszikus jegeskávé',
+        price: 600,
+        // description: 'Yuzu citrussal és málnával ízesített macaron.',
+        //options: '1-10 darabos',
+        image: klasszikus_jegeskávé,
+        imageAlt: 'Klasszikus jegeskávé',
+        breadcrumb: {
+          name: 'Kávék',
+          href: '/kavek',
         },
       },
     ],

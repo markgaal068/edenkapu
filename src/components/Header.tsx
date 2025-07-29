@@ -87,6 +87,7 @@ export function Header() {
                     ['Desszertek', '/desszertek'],
                     ['Fagylaltok', '/fagylaltok'],
                     ['Macaronok', '/macaronok'],
+                    ['Kávék', '/kavek'],
                     // ['Sós sütemények', '/sos-sutemenyek'],
                     // ['Bejglik', '/bejglik'],
                   ].map(([label, href]) => (
