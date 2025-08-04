@@ -14,6 +14,7 @@ interface OrderEmailProps {
   phone: string
   items: CartItem[]
   totalPrice: number
+  pickupDate: string
 }
 
 export async function submitOrder(data: OrderEmailProps) {
@@ -29,13 +30,15 @@ export async function submitOrder(data: OrderEmailProps) {
         phone: data.phone,
         items: data.items,
         totalPrice: data.totalPrice,
+        pickupDate: data.pickupDate,
       }),
+
     });
 
     // Email az adminnak / cégnek
     await resend.emails.send({
       from: process.env.RESEND_FROM!,
-      to: 'info@edenkapu.hu', 
+      to: 'info@edenkapu.hu',
       subject: 'Új rendelés érkezett',
       html: `
         <h2>Új rendelés érkezett</h2>
