@@ -24,7 +24,7 @@ const EventsPage = () => {
             Minden pillanat különleges lehet
           </h2>
           <p className="text-lg text-gray-700">
-            Legyen szó <strong>esküvőről</strong>, <strong>céges eseményről</strong>, születésnapról vagy nyári fesztiválról – fagylaltpultunk exkluzív megjelenése és ízei garantáltan mosolyt csalnak minden vendég arcára.
+            Legyen szó <strong>esküvőről</strong>, vagy nyári fesztiválról – fagylaltpultunk exkluzív megjelenése és ízei garantáltan mosolyt csalnak minden vendég arcára.
           </p>
           <p className="text-lg text-gray-700">
             Mobil kitelepülésünk rugalmasan alkalmazkodik az eseményhez – mi visszük a hűsítő varázslatot, te élvezheted a gondtalan élményt.
@@ -33,7 +33,7 @@ const EventsPage = () => {
         <div className="overflow-hidden rounded-3xl shadow-xl transform transition-transform duration-500 hover:scale-105">
           <Image
             src={rendezvenyek}
-            alt="Kézműves fagylalt rendezvényeken – Éden Kapu"
+            alt="Kézműves fagylalt rendezvényeken – Édenkapu"
             width={1200}
             height={800}
             className="rounded-3xl object-cover"
