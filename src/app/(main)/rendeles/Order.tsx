@@ -165,6 +165,27 @@ const Order = () => {
                 />
               </div>
             </div>
+            <div className="sm:col-span-2">
+              <label
+                htmlFor="pickup-date"
+                className="block text-sm/6 font-semibold text-gray-900"
+              >
+                Rendelés átvétele
+                <span className="ml-1 text-brown-400">*</span>
+              </label>
+              <div className="mt-2">
+                <input
+                  id="pickup-date"
+                  name="pickup-date"
+                  type="date"
+                  required
+                  min={new Date(Date.now() + 5 * 24 * 60 * 60 * 1000)
+                    .toISOString()
+                    .split('T')[0]}
+                  className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 transition-shadow placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-brown-400 sm:text-sm/6"
+                />
+              </div>
+            </div>
           </div>
 
           {/* <div className="mt-10 border-t border-gray-200 pt-10">

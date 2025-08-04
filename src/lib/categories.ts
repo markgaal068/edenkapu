@@ -405,18 +405,6 @@ const categories = [
     image: fagylaltok,
     products: [
       {
-        id: 'aperol_spritz',
-        name: 'Aperol Spritz',
-        price: 590,
-        // options: 'Tölcséres vagy poharas',
-        image: aperol_spritz,
-        imageAlt: 'aperol spritz',
-        breadcrumb: {
-          name: 'Fagylaltok',
-          href: '/fagylaltok',
-        },
-      },
-      {
         id: 'boci_karamell',
         name: 'Boci Karamell',
         price: 450,

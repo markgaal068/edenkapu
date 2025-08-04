@@ -19,6 +19,7 @@ interface OrderEmailProps {
   name: string
   email: string
   phone: string
+  pickupDate: string // ÚJ mező
   items: CartItem[]
   totalPrice: number
 }
@@ -27,6 +28,7 @@ const OrderEmail = ({
   name,
   email,
   phone,
+  pickupDate,
   items,
   totalPrice,
 }: OrderEmailProps) => (
@@ -72,6 +74,18 @@ const OrderEmail = ({
                 <Column style={informationTableColumn}>
                   <Text style={informationTableLabel}>Telefonszám</Text>
                   <Text style={informationTableValue}>{phone}</Text>
+                </Column>
+              </Row>
+              <Row>
+                <Column style={informationTableColumn}>
+                  <Text style={informationTableLabel}>Rendelés átvétele</Text>
+                  <Text style={informationTableValue}>
+                    {new Date(pickupDate).toLocaleDateString('hu-HU', {
+                      year: 'numeric',
+                      month: 'long',
+                      day: 'numeric',
+                    })}
+                  </Text>
                 </Column>
               </Row>
             </Column>

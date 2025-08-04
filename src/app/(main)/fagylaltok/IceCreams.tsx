@@ -49,40 +49,7 @@ const IceCreams = () => {
                         {product.options}
                       </p>
                     )}
-                    {/* <div className="flex items-center justify-between">
-                      <p className="text-base font-medium text-gray-900">
-                        {product.price} Ft
-                      </p>
-                      <div className="flex gap-3">
-                        <select
-                          className="select select-bordered h-10 min-h-10 w-[75px] border-none bg-transparent leading-none text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-brown-400"
-                          name={`quantity-${product.id}`}
-                          aria-label={`Quantity, ${product.name}`}
-                          onChange={(e) => {
-                            setSelectedQuantity(parseInt(e.target.value))
-                          }}
-                        >
-                          {[...Array(99)].map((_, i) => (
-                            <option key={i + 1} value={i + 1}>
-                              {i + 1}
-                            </option>
-                          ))}
-                        </select>
 
-                        <AddToCartButton
-                          product={{
-                            id: product.id,
-                            name: product.name,
-                            basePrice: product.price,
-                            totalPrice: product.price * selectedQuantity,
-                            image: product.image,
-                            imageAlt: product.imageAlt,
-                            quantity: selectedQuantity,
-                            breadcrumb: product.breadcrumb,
-                          }}
-                        />
-                      </div>
-                    </div> */}
                   </div>
                 </div>
               </div>
