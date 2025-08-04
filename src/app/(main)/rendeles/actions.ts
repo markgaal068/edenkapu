@@ -45,6 +45,7 @@ export async function submitOrder(data: OrderEmailProps) {
         <p><strong>Név:</strong> ${data.firstName} ${data.lastName}</p>
         <p><strong>Email:</strong> ${data.email}</p>
         <p><strong>Telefon:</strong> ${data.phone}</p>
+        <p><strong>Átvétel:</strong> ${data.pickupDate}</p>
         <p><strong>Rendelt tételek:</strong></p>
         <ul>
           ${data.items.map(item => `<li>${item.name} (${item.quantity} db)</li>`).join('')}
