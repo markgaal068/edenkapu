@@ -51,7 +51,7 @@ export function Contact() {
             <ul className="space-y-4 text-gray-600">
               <li>
                 <a
-                  href="#"
+                  href="https://www.facebook.com/Edenkapu/?locale=hu_HU"
                   target="_blank"
                   className="flex items-center justify-center gap-2 hover:text-brown-400 transition-colors"
                 >
@@ -61,7 +61,7 @@ export function Contact() {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="https://www.instagram.com/edenkapufagyizo/?hl=hu"
                   target="_blank"
                   className="flex items-center justify-center gap-2 hover:text-brown-400 transition-colors"
                 >
@@ -71,7 +71,7 @@ export function Contact() {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="https://www.tiktok.com/@edenkapu_gyor"
                   target="_blank"
                   className="flex items-center justify-center gap-2 hover:text-brown-400 transition-colors"
                 >
@@ -98,7 +98,7 @@ export function Contact() {
               className="rounded-full object-cover"
             /> */}
             <div className="text-2xl font-semibold text-gray-900">Gál Szabolcs</div>
-            <div className="text-gray-600 text-sm">Alapító & Főpékségmester</div>
+            <div className="text-gray-600 text-sm">Alapító & Tulajdonos</div>
             <blockquote className="mt-4 text-gray-700 italic text-base max-w-xs">
               „A szenvedélyünk a minőségi alapanyagokból készült különleges édességek.”
             </blockquote>
