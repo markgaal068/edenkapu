@@ -1,4 +1,5 @@
-"use client"
+'use client'
+
 import { useState } from 'react'
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaFacebookF, FaInstagram, FaTiktok } from 'react-icons/fa'
 import Image from 'next/image'
@@ -20,7 +21,9 @@ export function Contact() {
             Kapcsolat
           </h2>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            <i>Édességparadicsom Győr szívében..</i>
+            <i>
+              Az Édenkapu Fagyizó Győr belvárosában várja vendégeit kézműves fagylaltokkal, friss süteményekkel és prémium kávékülönlegességekkel.
+            </i>
           </p>
         </div>
 
@@ -28,7 +31,9 @@ export function Contact() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-20">
           {/* Elérhetőség */}
           <div className="flex flex-col items-center text-center space-y-6">
-            <h3 className="text-2xl font-semibold text-gray-900">Elérhetőség</h3>
+            <h3 className="text-2xl font-semibold text-gray-900">
+              Elérhetőség
+            </h3>
             <ul className="space-y-4 text-gray-600">
               <li className="flex items-center gap-2 justify-center">
                 <FaPhoneAlt className="text-brown-400 w-5 h-5" />
@@ -36,18 +41,20 @@ export function Contact() {
               </li>
               <li className="flex items-center gap-2 justify-center">
                 <FaEnvelope className="text-brown-400 w-5 h-5" />
-                info@edekapu.hu
+                info@edenkapu.hu
               </li>
               <li className="flex items-center gap-2 justify-center">
                 <FaMapMarkerAlt className="text-brown-400 w-5 h-5" />
-                Győr, Dunakapu tér 4, 9022
+                Édenkapu Fagyizó – Győr, Dunakapu tér 4, 9022
               </li>
             </ul>
           </div>
 
           {/* Közösségi média */}
           <div className="flex flex-col items-center text-center space-y-6">
-            <h3 className="text-2xl font-semibold text-gray-900">Közösségi média</h3>
+            <h3 className="text-2xl font-semibold text-gray-900">
+              Közösségi média
+            </h3>
             <ul className="space-y-4 text-gray-600">
               <li>
                 <a
@@ -90,13 +97,6 @@ export function Contact() {
             viewport={{ once: true }}
             className="flex flex-col items-center text-center space-y-4"
           >
-            {/* <Image
-              src={founder}
-              alt="Gál Szabolcs - alapító"
-              width={96}
-              height={96}
-              className="rounded-full object-cover"
-            /> */}
             <div className="text-2xl font-semibold text-gray-900">Gál Szabolcs</div>
             <div className="text-gray-600 text-sm">Alapító & Tulajdonos</div>
             <blockquote className="mt-4 text-gray-700 italic text-base max-w-xs">
@@ -113,7 +113,7 @@ export function Contact() {
             onClick={() => setShowMap(!showMap)}
             className="inline-flex items-center justify-center rounded-full bg-brown-400 px-8 py-3 text-sm font-semibold text-white shadow-md hover:bg-brown-300 transition-all mb-8"
           >
-            {showMap ? 'Térkép elrejtése' : 'Térkép megjelenítése'}
+            {showMap ? 'Térkép elrejtése' : 'Édenkapu Fagyizó Győr térkép megtekintése'}
           </motion.button>
 
           <AnimatePresence>
@@ -138,6 +138,33 @@ export function Contact() {
           </AnimatePresence>
         </div>
       </div>
+
+      {/* Schema markup */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "IceCreamShop",
+            "name": "Édenkapu Fagyizó",
+            "image": "https://edenkapu.hu/assets/images/founder.jpeg",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Dunakapu tér 4",
+              "addressLocality": "Győr",
+              "postalCode": "9022",
+              "addressCountry": "HU"
+            },
+            "telephone": "+36 30 123 4567",
+            "url": "https://edenkapu.hu",
+            "sameAs": [
+              "https://www.facebook.com/Edenkapu/?locale=hu_HU",
+              "https://www.instagram.com/edenkapufagyizo/?hl=hu",
+              "https://www.tiktok.com/@edenkapu_gyor"
+            ]
+          })
+        }}
+      />
     </section>
   )
 }
