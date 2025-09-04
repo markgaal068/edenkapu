@@ -41,19 +41,15 @@ const heroImages = [
     image: fagylaltok_2,
     alt: "Édenkapu Fagyizó Győr – prémium fagylaltkülönlegességek",
   },
-  // { id: 4, image: kave, alt: "Specialty kávé készítés Győrben" },
 ]
 
 export function Hero() {
   const responsive = {
-    all: {
-      breakpoint: { max: 4000, min: 0 },
-      items: 1,
-    },
+    all: { breakpoint: { max: 4000, min: 0 }, items: 1 },
   }
 
   return (
-    <section className="relative h-screen w-full">
+    <section className="relative h-[90vh] sm:h-screen w-full">
       {/* Carousel for Background Images */}
       <div className="absolute inset-0">
         <Carousel
@@ -70,14 +66,14 @@ export function Hero() {
           itemClass="h-full"
         >
           {heroImages.map((slide, index) => (
-            <div key={slide.id} className="relative h-screen w-full">
+            <div key={slide.id} className="relative h-[90vh] sm:h-screen w-full">
               <Image
                 src={slide.image}
                 alt={slide.alt}
                 fill
                 priority={index === 0}
                 className="object-cover"
-                sizes="(max-width: 768px) 100vw, 75vw"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 75vw"
                 loading={index === 0 ? 'eager' : 'lazy'}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-brown-900/50 via-brown-900/30 to-transparent" />
@@ -88,28 +84,29 @@ export function Hero() {
 
       {/* Hero Text & Call to Action */}
       <div className="relative flex h-full items-center justify-center text-center px-6 sm:px-16 opacity-90">
-        <div className="mx-auto max-w-2xl p-10 bg-[#c0946c] border rounded-lg sm:rounded-[50px] ">
+        <div className="mx-auto max-w-full sm:max-w-2xl p-6 sm:p-10 bg-[#c0946c] border rounded-lg sm:rounded-[50px]">
           {/* Kulcsszavas H1 */}
-          <h1 className="text-4xl font-medium text-white drop-shadow-lg sm:text-5xl md:text-6xl">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl font-medium text-white drop-shadow-lg leading-tight">
             {heroContent.title}
           </h1>
 
           {/* Alcím */}
-          <h2 className="mt-4 block text-xl text-brown-100 sm:text-2xl">
+          <h2 className="mt-4 text-lg sm:text-2xl text-brown-100">
             {heroContent.subtitle}
           </h2>
 
-          <p className="mx-auto mt-6 max-w-xl text-lg text-brown-50 sm:text-xl">
+          {/* Leírás */}
+          <p className="mx-auto mt-6 max-w-full sm:max-w-xl text-base sm:text-lg md:text-xl text-brown-50">
             {heroContent.description}
           </p>
 
           {/* Call to Action Buttons */}
-          <div className="mt-8 flex flex-col gap-6 sm:flex-row sm:gap-8 sm:justify-center">
+          <div className="mt-8 flex flex-col sm:flex-row gap-4 sm:gap-8 justify-center">
             {heroContent.ctas.map((cta) => (
               <Button
                 key={cta.text}
                 href={cta.href}
-                className="bg-brown-400 hover:bg-brown-300 px-8 py-3 text-lg font-medium rounded-lg"
+                className="bg-brown-400 hover:bg-brown-300 px-8 py-3 text-base sm:text-lg font-medium rounded-lg"
               >
                 {cta.text}
               </Button>
